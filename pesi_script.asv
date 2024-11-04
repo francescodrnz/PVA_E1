@@ -35,9 +35,6 @@ W_engine = thrust_ratio_des*WTO_curr/5.5; % [kg] motori
 W_fuelsys = 2.71*(b_ref*m2ft/cosd(sweep25_des)*N_serbatoi)^0.956*lb2kg; % [kg]
 
 % hydraulic system
-S_ref_hydr = S_ref*(1+1.44*(Sorizz_Sref+Svert_Sref))*sqm2sqft; % [ft^2] superficie per sistema idraulico
-if S_ref_hydr <= 3000
-    W_hydraulic = 45+1.318*S_ref_hydr*lb2kg; % [kg]
-else
-    W_hydraulic = (18.7*S_ref_hydr^0.712-1620)*lb2kg; % [kg]
-end
+S_ref_hydr =S_ref*(1+1.44*(Sorizz_Sref+Svert_Sref))*sqm2sqft; % [
+if S_ref*(1+1.44*(Sorizz_Sref+Svert_Sref))*sqm2sqft <= 3000
+    W_hydraulic = 45+

@@ -1,5 +1,5 @@
 
-f_lambda = 0.0524*lambda^4-0.15*lambda^3+0.1659*lambda^2-0.0706*lambda+0.0119; % formula interpolativa
+f_lambda = 0.0524*lambda_des^4-0.15*lambda_des^3+0.1659*lambda_des^2-0.0706*lambda_des+0.0119; % formula interpolativa
 oswald = cosd(sweep25_des)/(1+AR_des*f_lambda);
 k_polare = 1/(pi*AR_des*oswald);
 
@@ -16,7 +16,9 @@ f_fus = lunghezza_fus/sqrt(4/pi*A_fus); % fattore geometrico
 FF_fus = (1+60/f_fus^3+f_fus/400);
 Q_fus = 1.0;
 % stimo fusoliera come semisfera + cilindro + tronco di cono
-Swet_fus = pi*(diametro_esterno_fus^2/2+diametro_esterno_fus*(lunghezza_fus-diametro_esterno_fus/2-L_t)+(diametro_esterno_fus/2+1/2)*sqrt(L_t^2+(diametro_esterno_fus/2+1/2)^2));
+Swet_fus = pi*(diametro_esterno_fus^2/2+...
+    diametro_esterno_fus*(lunghezza_fus-diametro_esterno_fus/2-L_t)+...
+    (diametro_esterno_fus/2+1/2)*sqrt(L_t^2+(diametro_esterno_fus/2+1/2)^2));
 % piani di coda
 % orizzontali
 AR_orizz = 5;
@@ -39,8 +41,8 @@ Q_vert = 1.05;
 Svert_Sref = 0.2;
 Swet_vert = Svert_Sref*S_ref*(1.997+0.52*t_c_vert);
 % nacelle
-D_nac = 0.04*sqrt(T_curr/2);
-L_nac = 0.07*sqrt(T_curr/2); % da formula
+D_nac = 0.04*sqrt(T_curr/2)*ft2m; % [m]
+L_nac = 0.07*sqrt(T_curr/2)*ft2m; % [m] da formula
 A_nac = pi*(D_nac/2)^2;
 cF_nac = 0.455/(log10(Reynolds_1metro*L_nac)^2.58+(1+0.144*M_des)^0.65); 
 f_nac = L_nac/sqrt(4/pi*A_nac); % fattore geometrico

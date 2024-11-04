@@ -45,5 +45,6 @@ k_polare_livello0 = 1/(pi*AR*oswald_livello0); % calcolo Cd
 Vstall = 115*nm2km; % [km/h]
 g = 9.81; % [m/s^2]
 
-% aerodinamica
-lambda = 0.24; % taper ratio
+% pesi
+ultimate_load_fact = 3.75;
+N_serbatoi = 6;

@@ -41,6 +41,7 @@ for i_W_S = 1:length(W_S_vect)
                         t_c_des = t_c_vect(i_t_c);
                         sweep25_des = sweep25_vect(i_sweep25);
                         M_des = M_vect(i_M);
+                        lambda_des = taper_ratio_vect(i_taper);
                         
                         % ciclo di convergenza sul peso
                         delta_WTO = 1000; % [kg] inizializzazione per entrare nel while
