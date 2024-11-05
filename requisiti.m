@@ -1,6 +1,6 @@
 % Requisiti
 passeggeri = 180;
-crew = 6;
+crew = 2 + ceil(passeggeri / 50);
 range = 4500; % [km]
 diversione = 200 * nm2km; % [km]
 loiter1 = 8 / 60; % [h]

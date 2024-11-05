@@ -69,4 +69,4 @@ CD_i = k_polare * CL_des^2;
 
 
 % totale
-CD = CD_0 + CD_w + CD_i;
+CD_curr = CD_0 + CD_w + CD_i;

@@ -71,7 +71,7 @@ for i_W_S = 1:length(W_S_vect)
                             script_prestazioni; % frazioni di peso, fuel fraction, W_fuel/WTO.. codice task 2
                             
                             WTO_precedente = WTO_curr;
-                            WTO_curr = Wpayload + Wfuel + Woe_curr;
+                            WTO_curr = Wpayload + Wfuel + OEW_curr;
                             
                             delta_WTO = WTO_curr - WTO_precedente;
                             

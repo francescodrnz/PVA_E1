@@ -8,6 +8,7 @@ kg2lb = 1 / lb2kg;
 nm2km = 1.852;
 mps2kmph = 3.6;
 kmph2mps = 1 / mps2kmph;
+l2gal = 3.785411784;
 
 % Dati
 rho_SL = 1.225; % [kg/m^3]
