@@ -6,6 +6,7 @@ sqm2sqft = 1/sqft2sqm;
 lb2kg = 0.45359237;
 kg2lb = 1 / lb2kg;
 nm2km = 1.852;
+km2nm = 1 / nm2km;
 mps2kmph = 3.6;
 kmph2mps = 1 / mps2kmph;
 l2gal = 3.785411784;
@@ -41,10 +42,12 @@ max_fuel_volume = 24000; % [l]
 % matching_chart
 % BFL A320: 6900 ft
 TOP = 165; % [lb/ft^2]
+C_L_max_2D = 1.7; % profilo NASA SC(2)-0610
 oswald_livello0 = 0.8; % fattore di Oswald
 k_polare_livello0 = 1/(pi*AR*oswald_livello0); % calcolo Cd
 Vstall = 115*nm2km; % [km/h]
 g = 9.81; % [m/s^2]
+Cd0_livello0 = 0.017; %valore che ho usato per fare il matching chart preliminare
 
 % pesi
 ultimate_load_fact = 3.75;

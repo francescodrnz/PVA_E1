@@ -1,9 +1,8 @@
-
 f_lambda = 0.0524*lambda_des^4-0.15*lambda_des^3+0.1659*lambda_des^2-0.0706*lambda_des+0.0119; % formula interpolativa
 oswald = cosd(sweep25_des)/(1+AR_des*f_lambda);
 k_polare = 1/(pi*AR_des*oswald);
 
-% CD_0
+% Cd0
 Reynolds_1metro = V_cruise/(visc_dinamica_cruise/rho_cruise);
 % ala
 cF_ala = 0.455/(log10(Reynolds_1metro*standard_mean_chord_ala)^2.58+(1+0.144*M_des)^0.65); % coefficiente d'attrito equivalente
@@ -12,13 +11,13 @@ Q_ala = 1.0; % fattore di interferenza
 Swet_ala = S_ref*(1.997+0.52*t_c_des); % superficie bagnata
 % fusoliera
 cF_fus = 0.455/(log10(Reynolds_1metro*lunghezza_fus)^2.58+(1+0.144*M_des)^0.65);
-f_fus = lunghezza_fus/sqrt(4/pi*A_fus); % fattore geometrico
+f_fus = (lunghezza_fus*m2ft)/sqrt(4/pi*A_fus*sqm2sqft); % fattore geometrico
 FF_fus = (1+60/f_fus^3+f_fus/400);
 Q_fus = 1.0;
-% stimo fusoliera come semisfera + cilindro + tronco di cono
+% stimo fusoliera come semisfera + cilindro + trapezio
 Swet_fus = pi*(diametro_esterno_fus^2/2+...
-    diametro_esterno_fus*(lunghezza_fus-diametro_esterno_fus/2-L_t)+...
-    (diametro_esterno_fus/2+1/2)*sqrt(L_t^2+(diametro_esterno_fus/2+1/2)^2));
+    diametro_esterno_fus*(lunghezza_fus-diametro_esterno_fus/2-L_t))+...
+    (diametro_esterno_fus+pi)*L_t/2; % diametro posteriore 1 metro
 % piani di coda
 % orizzontali
 AR_orizz = 5;
@@ -45,28 +44,28 @@ D_nac = 0.04*sqrt(T_curr/2)*ft2m; % [m]
 L_nac = 0.07*sqrt(T_curr/2)*ft2m; % [m] da formula
 A_nac = pi*(D_nac/2)^2;
 cF_nac = 0.455/(log10(Reynolds_1metro*L_nac)^2.58+(1+0.144*M_des)^0.65); 
-f_nac = L_nac/sqrt(4/pi*A_nac); % fattore geometrico
+f_nac = (L_nac*m2ft)/sqrt(4/pi*A_nac*sqm2sqft); % fattore geometrico
 FF_nac = (1+60/f_nac^3+f_nac/400);
 Q_nac = 1.0;
 Swet_nac = pi*D_nac*L_nac;
 
-CD_0 = (cF_ala*FF_ala*Q_ala*Swet_ala + cF_fus*FF_fus*Q_fus*Swet_fus + cF_orizz*FF_orizz*Q_orizz*Swet_orizz + ...
+Cd0 = (cF_ala*FF_ala*Q_ala*Swet_ala + cF_fus*FF_fus*Q_fus*Swet_fus + cF_orizz*FF_orizz*Q_orizz*Swet_orizz + ...
     cF_vert*FF_vert*Q_vert*Swet_vert + cF_nac*FF_nac*Q_nac*Swet_nac) / S_ref;
 
 
 % drag raise
-CD_w = 0;
+Cdw = 0;
 k_A = 0.90; 
 k_C = 1/10; % costanti
-M_crit = (k_A/cosd(sweep25_des)-t_c_des/cosd(sweep25_des)^2-k_C*CL_des/cosd(sweep25_des)) - (0.1/80)^(1/3); % mach critico
+M_crit = (k_A/cosd(sweep25_des)-t_c_des/cosd(sweep25_des)^2-k_C*CL_des/cosd(sweep25_des)^3) - (0.1/80)^(1/3); % mach critico
 
 if M_crit < M_des
-    CD_w = 20*(M_des-M_crit)^4;
+    Cdw = 20*(M_des-M_crit)^4;
 end
 
 % indotto
-CD_i = k_polare * CL_des^2;
+Cdi = k_polare * CL_des^2;
 
 
 % totale
-CD_curr = CD_0 + CD_w + CD_i;
+CD_curr = Cd0 + Cdw + Cdi;

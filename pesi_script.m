@@ -29,7 +29,7 @@ W_LG_contr = W_LG_param*(0.13-6.56e-8*WTO_curr_lb); % [lb]
 W_LG = (W_LG_strutt + W_LG_freni + W_LG_pneum + W_LG_contr) * lb2kg; % [kg]
 
 % propulsione
-W_nac = 0.25*2*(D_nac*m2ft)*(L_nac*m2ft)*(T_curr/2)^0.36*lb2kg; % [kg] nacelle
+W_nac = 0.25*2*(D_nac*m2ft)*(L_nac*m2ft)*(T_curr_lb/2)^0.36*lb2kg; % [kg] nacelle
 W_engine = thrust_ratio_des*WTO_curr/5.5; % [kg] motori
 W_propulsione = W_nac + W_engine;
 
@@ -37,7 +37,7 @@ W_propulsione = W_nac + W_engine;
 W_fuelsys = 2.71*(b_ref*m2ft/cosd(sweep25_des)*N_serbatoi)^0.956*lb2kg; % [kg]
 
 % hydraulic system
-S_ref_hydr = S_ref*(1+1.44*(Sorizz_Sref+Svert_Sref))*sqm2sqft; % [ft^2] superficie per sistema idraulico
+S_ref_hydr = S_ref_ft*(1+1.44*(Sorizz_Sref+Svert_Sref)); % [ft^2] superficie per sistema idraulico
 if S_ref_hydr <= 3000
     W_hydraulic = 45+1.318*S_ref_hydr*lb2kg; % [kg]
 else
@@ -68,10 +68,12 @@ W_engine_sys = 133*2*lb2kg; % [kg]
 W_furn = (118.4*passeggeri-4190)*lb2kg; % [kg]
 
 % services
-W_services = (2.529*passeggeri*(range*nm2km/M_des)^0.225)*lb2kg; % [kg]
+W_services = (2.529*passeggeri*(range*km2nm/M_des)^0.225)*lb2kg; % [kg]
 
 % crew: piloti + assistenti
 W_crew = (2*225 + ceil(passeggeri / 50)*155)*lb2kg; % [kg]
 
 OEW_curr = W_wing + W_tail + W_fus + W_LG + W_propulsione + W_fuelsys + W_hydraulic + ...
     W_elec + W_pneumatic + W_antiice + W_instr + W_avionics + W_engine_sys + W_furn + W_services + W_crew; % [kg]
+
+W_payload = passeggeri*peso_passeggero + W_cargo; % [kg]

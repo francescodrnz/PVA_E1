@@ -31,37 +31,36 @@ xline(wing_load_max, 'LineWidth', 2);
 % Climb
 C_D_flap = 0.9 * (1/4.1935)^1.38 * Sflap/S * sind(35)^2;
 C_D_LG = 4.09e-03*(m_TO*kg2lb)^0.785*(S*sqm2sqft).^(-1);
-CD0_clean = 0.017;
 % first segment
 gamma1 = deg2rad(0);
-thrust_ratio1 = 2*(0.5*rho_SL*(1.2*Vstall/3.6)^2*(g*wing_load).^(-1).*((CD0_clean+C_D_flap+C_D_LG) + k_polare_livello0*(2*(g*wing_load)*cos(gamma1)/(rho_SL*(1.2*Vstall/3.6)^2)).^2) + sin(gamma1));
+thrust_ratio1 = 2*(0.5*rho_SL*(1.2*Vstall/3.6)^2*(g*wing_load).^(-1).*((Cd0_livello0+C_D_flap+C_D_LG) + k_polare_livello0*(2*(g*wing_load)*cos(gamma1)/(rho_SL*(1.2*Vstall/3.6)^2)).^2) + sin(gamma1));
 % second segment
 gamma2 = atan(2.4/100);
-thrust_ratio2 = 2*(0.5*rho_SL*(1.2*Vstall/3.6)^2*(g*wing_load).^(-1).*((CD0_clean+C_D_flap) + k_polare_livello0*(2*(g*wing_load)*cos(gamma2)/(rho_SL*(1.2*Vstall/3.6)^2)).^2) + sin(gamma2));
+thrust_ratio2 = 2*(0.5*rho_SL*(1.2*Vstall/3.6)^2*(g*wing_load).^(-1).*((Cd0_livello0+C_D_flap) + k_polare_livello0*(2*(g*wing_load)*cos(gamma2)/(rho_SL*(1.2*Vstall/3.6)^2)).^2) + sin(gamma2));
 % third segment
 gamma3 = atan(1.2/100);
-thrust_ratio3 = 2*(0.5*rho_SL*(1.25*Vstall/3.6)^2*(g*wing_load).^(-1).*((CD0_clean) + k_polare_livello0*(2.*(g*wing_load)*cos(gamma3)/(rho_SL*(1.25*Vstall/3.6)^2)).^2) + sin(gamma3));
+thrust_ratio3 = 2*(0.5*rho_SL*(1.25*Vstall/3.6)^2*(g*wing_load).^(-1).*((Cd0_livello0) + k_polare_livello0*(2.*(g*wing_load)*cos(gamma3)/(rho_SL*(1.25*Vstall/3.6)^2)).^2) + sin(gamma3));
 
 thrust_ratio_climb = max(max(thrust_ratio1, thrust_ratio2), thrust_ratio3);
 plot(wing_load, thrust_ratio_climb, 'b','Color', 'r', 'LineWidth', 2);
 
 % Cruise
 gammaCruise = 0;
-thrust_ratio_cruise = 2*(0.5*rho_cruise*(v_cruise/3.6)^2*(g*wing_load).^(-1).*((CD0_clean) + k_polare_livello0*(2.*(g*wing_load)*cos(gammaCruise)/(rho_cruise*(v_cruise/3.6)^2)).^2) + sin(gammaCruise));
+thrust_ratio_cruise = 2*(0.5*rho_cruise*(v_cruise/3.6)^2*(g*wing_load).^(-1).*((Cd0_livello0) + k_polare_livello0*(2.*(g*wing_load)*cos(gammaCruise)/(rho_cruise*(v_cruise/3.6)^2)).^2) + sin(gammaCruise));
 thrust_ratio_cruise = thrust_ratio_cruise/(rho_SL/rho_cruise); % riferisco il matching chart al SL
 plot(wing_load, thrust_ratio_cruise, 'b','Color', 'g', 'LineWidth', 2);
 
 % Landing climb
 vLdgClimb = 1.23*Vstall;
 gammaLdgClimb = atan(3.2/100);
-thrust_ratio_ldg_climb = 2*(0.5*rho_SL*(vLdgClimb/3.6)^2*(g*wing_load).^(-1).*((CD0_clean+C_D_flap+C_D_LG) + k_polare_livello0*(2.*(g*wing_load)*cos(gammaLdgClimb)/(rho_SL*(vLdgClimb/3.6)^2)).^2) + sin(gammaLdgClimb));
+thrust_ratio_ldg_climb = 2*(0.5*rho_SL*(vLdgClimb/3.6)^2*(g*wing_load).^(-1).*((Cd0_livello0+C_D_flap+C_D_LG) + k_polare_livello0*(2.*(g*wing_load)*cos(gammaLdgClimb)/(rho_SL*(vLdgClimb/3.6)^2)).^2) + sin(gammaLdgClimb));
 plot(wing_load, thrust_ratio_ldg_climb, 'b','Color', 'k', 'LineWidth', 2);
 
 % Approach climb
 vAppClimb = 1.41*Vstall;
 gammaAppClimb = atan(2.1/100);
 C_D_flap = 0.9 * (1/4.1935)^1.38 * Sflap/S * sin(deg2rad(20))^2;
-thrust_ratio_app_climb = 2*(0.5*rho_SL*(vAppClimb/3.6)^2*(g*wing_load).^(-1).*((CD0_clean+C_D_flap) + k_polare_livello0*(2.*(g*wing_load)*cos(gammaAppClimb)/(rho_SL*(vAppClimb/3.6)^2)).^2) + sin(gammaAppClimb));
+thrust_ratio_app_climb = 2*(0.5*rho_SL*(vAppClimb/3.6)^2*(g*wing_load).^(-1).*((Cd0_livello0+C_D_flap) + k_polare_livello0*(2.*(g*wing_load)*cos(gammaAppClimb)/(rho_SL*(vAppClimb/3.6)^2)).^2) + sin(gammaAppClimb));
 plot(wing_load, thrust_ratio_app_climb, 'b','Color', 'c', 'LineWidth', 2);
 
 legend('Takeoff', 'Stall Speed', 'Climb', 'Cruise', 'Landing Climb', 'Approach Climb');
