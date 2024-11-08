@@ -20,5 +20,5 @@ cargo_vol = 2.64*1.24*15; % [m^3]
 bagagli_vol = passeggeri*0.113; % [m^3]
 % 7 container LD3/46W
 peso_container = 1135; % [kg]
-numero_container = 6;
+numero_container = 7;
 W_cargo = peso_container * numero_container; % [kg]
