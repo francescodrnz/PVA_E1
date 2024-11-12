@@ -15,7 +15,7 @@ else
 end
 
 % coda (convenzionale)
-W_tail = (5.03*(Sorizz_Sref*S_ref+Svert_Sref*S_ref)*sqm2sqft)*lb2kg; % [kg]
+W_tail = (5.03*(Sorizz_Sref+Svert_Sref)*S_ref_ft)*lb2kg; % [kg]
 
 % fusoliera
 W_fus = 1.35*((lunghezza_fus*m2ft)*(diametro_esterno_fus*m2ft))^1.28*lb2kg; % [kg]
@@ -39,7 +39,7 @@ W_fuelsys = 2.71*(b_ref*m2ft/cosd(sweep25_des)*N_serbatoi)^0.956*lb2kg; % [kg]
 % hydraulic system
 S_ref_hydr = S_ref_ft*(1+1.44*(Sorizz_Sref+Svert_Sref)); % [ft^2] superficie per sistema idraulico
 if S_ref_hydr <= 3000
-    W_hydraulic = 45+1.318*S_ref_hydr*lb2kg; % [kg]
+    W_hydraulic = (45+1.318*S_ref_hydr)*lb2kg; % [kg]
 else
     W_hydraulic = (18.7*S_ref_hydr^0.712-1620)*lb2kg; % [kg]
 end

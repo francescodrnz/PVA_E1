@@ -1,4 +1,4 @@
-%clearvars;close all;clc;requisiti;dati;MTOW; % necessario se si runna da qui anziché da main
+clearvars;close all;clc;dati;requisiti;MTOW; % necessario se si runna da qui anziché da main
 
 %Calcolo max range
 

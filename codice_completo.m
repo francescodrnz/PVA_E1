@@ -41,7 +41,7 @@ for i_W_S = 1:length(W_S_vect)
                         sweep25_des = sweep25_vect(i_sweep25);
                         M_des = M_vect(i_M);
                         lambda_des = taper_ratio_vect(i_taper);
-                        
+
                         % ciclo di convergenza sul peso
                         delta_WTO = 1000; % [kg] inizializzazione per entrare nel while
                         WTO_curr = W_inizializzazione;
@@ -53,8 +53,8 @@ for i_W_S = 1:length(W_S_vect)
                             standard_mean_chord_ala = b_ref/AR_des; % [m]
                             V_cruise = M_des*a_cruise; % [m/s]
                             CL_des = 2*W_S_des*g/(rho_cruise*V_cruise^2); % [] CL di crociera
-                            
-                            
+
+
                             % script delle varie parti
                             matching_chart_script;
                             T_curr = thrust_ratio_des * WTO_curr; % [kg] output del matching chart
@@ -62,12 +62,12 @@ for i_W_S = 1:length(W_S_vect)
                             pesi_script;
                             % PRESTAZIONI
                             E_curr = CL_des/CD_curr; % CD_curr da aerodinamica cd0+cdi+cdw
-                            script_prestazioni; 
-                            
+                            script_prestazioni;
+
                             % aggiornamento WTO
                             WTO_precedente = WTO_curr;
                             WTO_curr = W_payload + W_fuel + OEW_curr;
-                            
+
                             delta_WTO = WTO_curr - WTO_precedente;
                             iterazioni = iterazioni + 1;
                         end
@@ -75,6 +75,7 @@ for i_W_S = 1:length(W_S_vect)
                         % Memorizzazione dei risultati dopo la convergenza
                         indice_contatore = indice_contatore + 1;
                         W_S_des_memo(indice_contatore) = W_S_des;
+                        W_S_max_memo(indice_contatore) = wing_load_max;
                         AR_des_memo(indice_contatore) = AR_des;
                         t_c_des_memo(indice_contatore) = t_c_des;
                         sweep25_des_memo(indice_contatore) = sweep25_des;
@@ -85,7 +86,24 @@ for i_W_S = 1:length(W_S_vect)
                         E_curr_memo(indice_contatore) = E_curr;
                         T_curr_memo(indice_contatore) = T_curr;
                         S_ref_memo(indice_contatore) = S_ref;
-                        
+                        OEW_memo(indice_contatore) = OEW_curr;
+                        W_wing_memo(indice_contatore) = W_wing;
+                        W_fus_memo(indice_contatore) = W_fus;
+                        W_tail_memo(indice_contatore) = W_tail;
+                        W_LG_memo(indice_contatore) = W_LG;
+                        W_propuls_memo(indice_contatore) = W_propulsione;
+                        W_fuelsys_memo(indice_contatore) = W_fuelsys;
+                        W_hydr_memo(indice_contatore) = W_hydraulic;
+                        W_elec_memo(indice_contatore) = W_elec;
+                        W_antiice_memo(indice_contatore) = W_antiice;
+                        W_instr_memo(indice_contatore) = W_instr;
+                        W_avionics_memo(indice_contatore) = W_avionics;
+                        W_engine_sys_memo(indice_contatore) = W_engine_sys;
+                        W_furn_memo(indice_contatore) = W_furn;
+                        W_services_memo(indice_contatore) = W_services;
+                        W_crew_memo(indice_contatore) = W_crew;
+                        W_fuel_memo(indice_contatore) = W_fuel;
+
                     end
                 end
             end
@@ -96,13 +114,25 @@ end
 % visualizzazione configurazioni
 % con matrice:
 % Creazione della tabella
-T = array2table([W_S_des_memo(1:indice_contatore), AR_des_memo(1:indice_contatore), ...
-                 t_c_des_memo(1:indice_contatore), sweep25_des_memo(1:indice_contatore), ...
-                 M_des_memo(1:indice_contatore), lambda_des_memo(1:indice_contatore), ...
-                 WTO_memo(1:indice_contatore), CL_des_memo(1:indice_contatore), ...
-                 E_curr_memo(1:indice_contatore), T_curr_memo(1:indice_contatore), ...
-                 S_ref_memo(1:indice_contatore)], ...
-    'VariableNames', {'W/S', 'AR', 't/c', 'sweep25', 'M', 'lambda', 'WTO', 'CL crociera', 'E', 'T', 'S'});
+T = array2table([W_S_des_memo(1:indice_contatore), W_S_max_memo(1:indice_contatore), AR_des_memo(1:indice_contatore), ...
+    t_c_des_memo(1:indice_contatore), sweep25_des_memo(1:indice_contatore), ...
+    M_des_memo(1:indice_contatore), lambda_des_memo(1:indice_contatore), ...
+    WTO_memo(1:indice_contatore), CL_des_memo(1:indice_contatore), ...
+    E_curr_memo(1:indice_contatore), T_curr_memo(1:indice_contatore), ...
+    S_ref_memo(1:indice_contatore), OEW_memo(1:indice_contatore), ...
+    W_wing_memo(1:indice_contatore), W_fus_memo(1:indice_contatore), ...
+    W_tail_memo(1:indice_contatore), W_LG_memo(1:indice_contatore), ...
+    W_propuls_memo(1:indice_contatore), W_fuelsys_memo(1:indice_contatore), ...
+    W_hydr_memo(1:indice_contatore), W_elec_memo(1:indice_contatore), ...
+    W_antiice_memo(1:indice_contatore), W_instr_memo(1:indice_contatore), ...
+    W_avionics_memo(1:indice_contatore), W_engine_sys_memo(1:indice_contatore), ...
+    W_furn_memo(1:indice_contatore), W_services_memo(1:indice_contatore), ...
+    W_crew_memo(1:indice_contatore), W_fuel_memo(1:indice_contatore), W_fuel_memo(1:indice_contatore)/0.8], ...
+    'VariableNames', {'W/S', 'W/S max' 'AR', 't/c', 'sweep25', 'M', 'lambda', 'WTO', 'CL_crociera', ...
+                      'E', 'T', 'S', 'OEW', 'W_wing', 'W_fus', 'W_tail', 'W_LG', ...
+                      'W_propuls', 'W_fuelsys', 'W_hydr', 'W_elec', 'W_antiice', ...
+                      'W_instr', 'W_avionics', 'W_engine_sys', 'W_furn', ...
+                      'W_services', 'W_crew', 'W_fuel', 'V_fuel'});
 toc
 tic
 % Salvataggio della tabella in un file .csv

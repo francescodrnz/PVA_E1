@@ -16,7 +16,7 @@ wing_load_max = 0.5*rho_SL*(1.136*Vstall*kmph2mps)^2*C_L_max_flapped/g; % [km/m^
 
 % Climb
 C_D_flap = 0.9 * (1/4.1935)^1.38 * Sflap/S_ref * sind(35)^2;
-C_D_LG = 4.05e-03*(m_TO*kg2lb)^0.785/(S_ref*sqm2sqft);
+C_D_LG = 2.92e-03*(WTO_curr*kg2lb)^0.785/(S_ref*sqm2sqft);
 % first segment
 gamma1 = atan(0/100);
 thrust_ratio1 = 2*(0.5*rho_SL*(1.2*Vstall*kmph2mps)^2/(W_S_des*g)*((Cd0+C_D_flap+C_D_LG) + k_polare*(2*(W_S_des*g)*cos(gamma1)/(rho_SL*(1.2*Vstall*kmph2mps)^2))^2) + sin(gamma1));

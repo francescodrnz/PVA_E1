@@ -30,7 +30,7 @@ xline(wing_load_max, 'LineWidth', 2);
 
 % Climb
 C_D_flap = 0.9 * (1/4.1935)^1.38 * Sflap/S * sind(35)^2;
-C_D_LG = 4.09e-03*(m_TO*kg2lb)^0.785*(S*sqm2sqft).^(-1);
+C_D_LG = 2.92e-03*(m_TO*kg2lb)^0.785*(S*sqm2sqft).^(-1);
 % first segment
 gamma1 = deg2rad(0);
 thrust_ratio1 = 2*(0.5*rho_SL*(1.2*Vstall/3.6)^2*(g*wing_load).^(-1).*((Cd0_livello0+C_D_flap+C_D_LG) + k_polare_livello0*(2*(g*wing_load)*cos(gamma1)/(rho_SL*(1.2*Vstall/3.6)^2)).^2) + sin(gamma1));
@@ -47,7 +47,7 @@ plot(wing_load, thrust_ratio_climb, 'b','Color', 'r', 'LineWidth', 2);
 % Cruise
 gammaCruise = 0;
 thrust_ratio_cruise = 2*(0.5*rho_cruise*(v_cruise/3.6)^2*(g*wing_load).^(-1).*((Cd0_livello0) + k_polare_livello0*(2.*(g*wing_load)*cos(gammaCruise)/(rho_cruise*(v_cruise/3.6)^2)).^2) + sin(gammaCruise));
-thrust_ratio_cruise = thrust_ratio_cruise/(rho_SL/rho_cruise); % riferisco il matching chart al SL
+thrust_ratio_cruise = thrust_ratio_cruise/(rho_cruise/rho_SL); % riferisco il matching chart al SL
 plot(wing_load, thrust_ratio_cruise, 'b','Color', 'g', 'LineWidth', 2);
 
 % Landing climb
