@@ -16,9 +16,11 @@ L_t = 2.5*diametro_esterno_fus; % [m]
 
 lunghezza_fus = L_n+L_t+lunghezza_file; % [m]
 
-cargo_vol = 2.64*1.24*15; % [m^3]
+cargo_vol = 15.2064 + 20.592;% + 7.2047; % [m^3]
 bagagli_vol = passeggeri*0.113; % [m^3]
-% 7 container LD3/46W
+% container LD3/46W
+container_vol = ((2.45*0.66) + ...
+    (2.45+1.56)*(1.17-0.66)/2)*1.53; % [m^3]
 peso_container = 1135; % [kg]
-numero_container = 7;
+numero_container = floor((cargo_vol - bagagli_vol)/container_vol);
 W_cargo = peso_container * numero_container; % [kg]
