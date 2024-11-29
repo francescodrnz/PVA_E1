@@ -1,4 +1,3 @@
-clearvars;close all;clc;dati;requisiti;
 larghezza_sedile = 0.52; % [m]
 sedili_fila = 6;
 larghezza_corridoio = 0.5; % [m]
