@@ -15,7 +15,7 @@ else
 end
 
 % coda (convenzionale)
-W_tail = (5.03*(Sorizz_Sref+Svert_Sref)*S_ref_ft)*lb2kg; % [kg]
+W_tail = (5.03*(S_orizz+S_vert)*sqm2sqft)*lb2kg; % [kg]
 
 % fusoliera
 W_fus = 1.35*((lunghezza_fus*m2ft)*(diametro_esterno_fus*m2ft))^1.28*lb2kg; % [kg]
@@ -29,15 +29,15 @@ W_LG_contr = W_LG_param*(0.13-6.56e-8*WTO_curr_lb); % [lb]
 W_LG = (W_LG_strutt + W_LG_freni + W_LG_pneum + W_LG_contr) * lb2kg; % [kg]
 
 % propulsione
-W_nac = 0.25*2*(D_nac*m2ft)*(L_nac*m2ft)*(T_curr_lb/2)^0.36*lb2kg; % [kg] nacelle
-W_engine = thrust_ratio_des*WTO_curr/5.5; % [kg] motori
+W_nac = 0.25*N_prop*(D_nac*m2ft)*(L_nac*m2ft)*(T_curr_lb/2)^0.36*lb2kg; % [kg] nacelle
+W_engine = thrust_ratio_des*WTO_curr_lb/5.5; % [kg] motori
 W_propulsione = W_nac + W_engine;
 
 % fuel system
 W_fuelsys = 2.71*(b_ref*m2ft/cosd(sweep25_des)*N_serbatoi)^0.956*lb2kg; % [kg]
 
 % hydraulic system
-S_ref_hydr = S_ref_ft*(1+1.44*(Sorizz_Sref+Svert_Sref)); % [ft^2] superficie per sistema idraulico
+S_ref_hydr = S_ref_ft + 1.44*(S_orizz+S_vert)*sqm2sqft; % [ft^2] superficie per sistema idraulico
 if S_ref_hydr <= 3000
     W_hydraulic = (45+1.318*S_ref_hydr)*lb2kg; % [kg]
 else
@@ -54,7 +54,7 @@ W_pneumatic = 26.2*passeggeri^0.944*lb2kg; % [kg]
 W_antiice = 0.120*S_ref_ft*lb2kg; % [kg]
 
 % instruments: thrust + fuel + other
-W_instr = ((0.00145*T_curr_lb/2 + 30)*2 + ...
+W_instr = ((0.00145*T_curr_lb/2 + 30)*N_prop + ...
     0.00714*max_fuel_volume*l2gal+34 + ...
     1.872*passeggeri+128)*lb2kg; % [kg]
 
@@ -62,7 +62,7 @@ W_instr = ((0.00145*T_curr_lb/2 + 30)*2 + ...
 W_avionics = (2.8*passeggeri + 2320)*lb2kg; % [kg]
 
 % engine system
-W_engine_sys = 133*2*lb2kg; % [kg]
+W_engine_sys = 133*N_prop*lb2kg; % [kg]
 
 % furnishings
 W_furn = (118.4*passeggeri-4190)*lb2kg; % [kg]

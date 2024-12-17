@@ -1,0 +1,42 @@
+% Memorizzazione dei risultati dopo la convergenza
+if W_S_des <= wing_load_max && b_ref <= 36
+    indice_contatore = indice_contatore + 1;
+    W_S_des_memo(indice_contatore) = W_S_des;
+    W_S_max_memo(indice_contatore) = wing_load_max;
+    AR_des_memo(indice_contatore) = AR_des;
+    t_c_des_memo(indice_contatore) = t_c_des;
+    sweep25_des_memo(indice_contatore) = sweep25_des;
+    M_des_memo(indice_contatore) = M_des;
+    lambda_des_memo(indice_contatore) = lambda_des;
+    WTO_memo(indice_contatore) = WTO_curr;
+    S_ref_memo(indice_contatore) = S_ref;
+    b_ref_memo(indice_contatore) = b_ref;
+    croot_memo(indice_contatore) = c_root;
+    S_vert_memo(indice_contatore) = S_vert;
+    S_orizz_memo(indice_contatore) = S_orizz;
+    CL_des_memo(indice_contatore) = CL_des;
+    E_curr_memo(indice_contatore) = E_curr;
+    T_curr_memo(indice_contatore) = T_curr;
+    OEW_memo(indice_contatore) = OEW_curr;
+    W_wing_memo(indice_contatore) = W_wing;
+    W_fus_memo(indice_contatore) = W_fus;
+    W_tail_memo(indice_contatore) = W_tail;
+    W_LG_memo(indice_contatore) = W_LG;
+    W_propuls_memo(indice_contatore) = W_propulsione;
+    W_fuelsys_memo(indice_contatore) = W_fuelsys;
+    W_hydr_memo(indice_contatore) = W_hydraulic;
+    W_elec_memo(indice_contatore) = W_elec;
+    W_antiice_memo(indice_contatore) = W_antiice;
+    W_instr_memo(indice_contatore) = W_instr;
+    W_avionics_memo(indice_contatore) = W_avionics;
+    W_engine_sys_memo(indice_contatore) = W_engine_sys;
+    W_furn_memo(indice_contatore) = W_furn;
+    W_services_memo(indice_contatore) = W_services;
+    W_crew_memo(indice_contatore) = W_crew;
+    W_fuel_memo(indice_contatore) = W_fuel;
+    W_payload_memo(indice_contatore) = W_payload;
+    ADP_memo(indice_contatore) = ADP;
+    flight_cost_memo(indice_contatore) = flight_cost;
+    maintenance_cost_memo(indice_contatore) = maintenance_cost;
+    CO2_memo(indice_contatore) = CO2_emissions;
+end

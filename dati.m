@@ -10,14 +10,20 @@ km2nm = 1 / nm2km;
 mps2kmph = 3.6;
 kmph2mps = 1 / mps2kmph;
 l2gal = 3.785411784;
+kt2mps = nm2km*kmph2mps;
+hr2sec = 3600;
+sec2hr = 1 / hr2sec;
+hp2W = 745.7;
+W2hp = 1 / hp2W;
+inflazione = 1.64;
 
 % Dati
-rho_SL = 1.225; % [kg/m^3]
-a_SL = 340.3; % [m/s]
+rho_SL = IntStandAir_SI(0, ['rho']); % [kg/m^3]
+a_SL = IntStandAir_SI(0, ['a']); % [m/s]
 h_cruise = 33000*ft2m; % [m]
-rho_cruise = 0.4127; % [kg/m^3]
-a_cruise = 299.5; % [m/s]
-visc_dinamica_cruise = 1.4571e-5; % [kg/(m*s)]
+rho_cruise = IntStandAir_SI(h_cruise, ['rho']); % [kg/m^3]
+a_cruise = IntStandAir_SI(h_cruise, ['a']); % [m/s]
+visc_dinamica_cruise = IntStandAir_SI(h_cruise, ['mu']); % [kg/(m*s)]
 
 % MTOW
 peso_passeggero = 93; % [kg]
@@ -47,8 +53,27 @@ oswald_livello0 = 0.8; % fattore di Oswald
 k_polare_livello0 = 1/(pi*AR*oswald_livello0); % calcolo Cd
 Vstall = 115*nm2km; % [km/h]
 g = 9.81; % [m/s^2]
-Cd0_livello0 = 0.017; %valore che ho usato per fare il matching chart preliminare
+Cd0_livello0 = 0.017; % valore che ho usato per fare il matching chart preliminare
 
 % pesi
+N_prop = 2; % numero propulsori
 ultimate_load_fact = 3.75;
 N_serbatoi = 6;
+
+% stabilita
+S_orizz_livello0 = 37; % [m^2]
+AR_orizz = 5;
+t_c_orizz = 0.1;
+sweep25_orizz = 29; % [°]
+S_vert_livello0 = 30; % [m^2]
+AR_vert = 1.8;
+t_c_vert = 0.12;
+sweep25_vert = 34; % [°]
+
+% costi
+jet_fuel_cost = 686.33; % [$/(kg*10^3)]
+man_hour_cost = 55*inflazione; % [$/h]
+K_engine = 0.57;
+OPR = 32;
+BPR = 50;
+N_comp = 12;
