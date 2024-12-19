@@ -1,7 +1,6 @@
 clearvars;close all;clc;requisiti;dati;fusoliera;
 
-% ciclo principale
-% definisco vettori delle variabili di design
+% variabili di design
 W_S_vect = [550 600 650 700]; % [kg/m^2]
 AR_vect = [7 8 9 10 11]; % []
 t_c_vect = [0.10 0.12 0.15]; % []
@@ -12,10 +11,7 @@ taper_ratio_vect = [0.23 0.27 0.31]; % []
 % inizializzazione valori del ciclo
 Cd0 = Cd0_livello0;
 k_polare = k_polare_livello0;
-V_H = V_H_livello0;
-V_V = V_V_livello0;
-S_orizz = S_orizz_livello0;
-S_vert = S_vert_livello0;
+v_cruise = v_cruise_livello0;
 
 % inizializzazione ciclo
 MTOW;
@@ -54,14 +50,14 @@ for i_W_S = 1:length(W_S_vect)
                         while abs(delta_WTO) > tolleranza && iterazioni < iterazioni_max
                             % definisco variabili derivate che si aggiornano
                             S_ref = WTO_curr / W_S_des; % [m^2]
+                            S_orizz = 0.25*S_ref;
+                            S_vert = 0.18*S_ref;
                             b_ref = sqrt(AR_des*S_ref);  % [m]
                             c_root = S_ref/((b_ref-diametro_esterno_fus)/2*(1+lambda_des)); % [m]
                             MAC = 2/3 * c_root * (1+lambda_des+lambda_des^2) / (1+lambda_des); % [m]
-                            V_cruise = M_des*a_cruise; % [m/s]
-                            CL_des = 2*W_S_des*g/(rho_cruise*V_cruise^2); % [] CL di crociera
+                            v_cruise = M_des*a_cruise; % [m/s]
+                            CL_des = 2*W_S_des*g/(rho_cruise*v_cruise^2); % [] CL di crociera
 
-
-                            % script delle varie parti
                             matching_chart_script;
                             T_curr = thrust_ratio_des * WTO_curr; % [kg] output del matching chart
 
@@ -69,11 +65,8 @@ for i_W_S = 1:length(W_S_vect)
 
                             pesi_script;
 
-                            % PRESTAZIONI
                             E_curr = CL_des/CD_curr; % efficienza in crociera
                             script_prestazioni;
-
-                            stabilita;
 
                             % aggiornamento WTO
                             WTO_precedente = WTO_curr;
@@ -84,8 +77,8 @@ for i_W_S = 1:length(W_S_vect)
                         end
                         costi;
                         if iterazioni == iterazioni_max
-                            fprintf('Mancata convergenza: W_S=%.1f, Hp=%.1f, phi_cl=%.1f, phi_cr=%.1f, phi_de=%.1f\n',...
-                                W_S_des, Hp_des, phi_ice_cl, phi_ice_cr, phi_ice_de);
+                            fprintf('Mancata convergenza: W_S=%.1f, AR=%.1f, t_c=%.1f, sweep=%.1f, M=%.2f, lambda=%.2f\n',...
+                                W_S_des, AR_des, t_c_des, sweep25_des, M_des, lambda_des);
                         end
                         memorizzazione;
 
@@ -106,7 +99,7 @@ for i_W_S = 1:length(W_S_vect)
     end
 end
 close(f);
-msg = sprintf('Tutte le configurazioni sono state elaborate con successo!\nTempo totale trascorso: %.2f secondi.', elapsed_time);
+msg = sprintf('Tutte le configurazioni sono state elaborate con successo!\nTempo totale trascorso: %.2f secondi.', toc(start_time));
 msgbox(msg, 'Calcolo completato');
 
 

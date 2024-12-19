@@ -1,5 +1,4 @@
 % Decollo
-TOP = TOP * lb2kg / sqft2sqm ; % conversione in [kg/m^2]
 % Calcolo C_L_max
 C_L_max_3D_clean = 0.9*C_L_max_2D*cosd(sweep25_des);
 
@@ -34,8 +33,8 @@ thrust_ratio_climb = max([thrust_ratio1, thrust_ratio2, thrust_ratio3]);
 
 % Cruise
 gammaCruise = 0;
-thrust_ratio_cruise = 2*(0.5*rho_cruise*(V_cruise*kmph2mps)^2/(W_S_des*g) * ...
-    (Cd0 + k_polare * (2*(W_S_des*g)/(rho_cruise*(V_cruise*kmph2mps)^2))^2));
+thrust_ratio_cruise = 2*(0.5*rho_cruise*v_cruise^2/(W_S_des*g) * ...
+    (Cd0 + k_polare * (2*(W_S_des*g)/(rho_cruise*v_cruise^2))^2));
 thrust_ratio_cruise = thrust_ratio_cruise/(rho_SL/rho_cruise); % riferisco il matching chart al SL
 
 % Landing climb

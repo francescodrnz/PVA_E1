@@ -15,6 +15,10 @@ if W_S_des <= wing_load_max && b_ref <= 36
     S_vert_memo(indice_contatore) = S_vert;
     S_orizz_memo(indice_contatore) = S_orizz;
     CL_des_memo(indice_contatore) = CL_des;
+    CD_curr_memo(indice_contatore) = CD_curr;
+    Cd0_memo(indice_contatore) = Cd0;
+    Cdi_memo(indice_contatore) = Cdi;
+    Cdw_memo(indice_contatore) = Cdw;
     E_curr_memo(indice_contatore) = E_curr;
     T_curr_memo(indice_contatore) = T_curr;
     OEW_memo(indice_contatore) = OEW_curr;
@@ -34,9 +38,11 @@ if W_S_des <= wing_load_max && b_ref <= 36
     W_services_memo(indice_contatore) = W_services;
     W_crew_memo(indice_contatore) = W_crew;
     W_fuel_memo(indice_contatore) = W_fuel;
+    W_block_fuel_memo(indice_contatore) = W_block_fuel;
     W_payload_memo(indice_contatore) = W_payload;
     ADP_memo(indice_contatore) = ADP;
     flight_cost_memo(indice_contatore) = flight_cost;
     maintenance_cost_memo(indice_contatore) = maintenance_cost;
-    CO2_memo(indice_contatore) = CO2_emissions;
+    DOC_memo(indice_contatore) = DOC;
+    PREE_memo(indice_contatore) = PREE;
 end

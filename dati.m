@@ -18,6 +18,7 @@ W2hp = 1 / hp2W;
 inflazione = 1.64;
 
 % Dati
+v_cruise_livello0 = 835; % [km/h]
 rho_SL = IntStandAir_SI(0, ['rho']); % [kg/m^3]
 a_SL = IntStandAir_SI(0, ['a']); % [m/s]
 h_cruise = 33000*ft2m; % [m]
@@ -47,7 +48,7 @@ max_fuel_volume = 24000; % [l]
 
 % matching_chart
 % BFL A320: 6900 ft
-TOP = 165; % [lb/ft^2]
+TOP = 165 * lb2kg / sqft2sqm ; % conversione in [kg/m^2]
 C_L_max_2D = 1.7; % profilo NASA SC(2)-0610
 oswald_livello0 = 0.8; % fattore di Oswald
 k_polare_livello0 = 1/(pi*AR*oswald_livello0); % calcolo Cd
@@ -77,3 +78,4 @@ K_engine = 0.57;
 OPR = 32;
 BPR = 50;
 N_comp = 12;
+FED = 12000; % [Wh/kg]

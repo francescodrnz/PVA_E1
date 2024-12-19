@@ -30,7 +30,7 @@ W_LG = (W_LG_strutt + W_LG_freni + W_LG_pneum + W_LG_contr) * lb2kg; % [kg]
 
 % propulsione
 W_nac = 0.25*N_prop*(D_nac*m2ft)*(L_nac*m2ft)*(T_curr_lb/2)^0.36*lb2kg; % [kg] nacelle
-W_engine = thrust_ratio_des*WTO_curr_lb/5.5; % [kg] motori
+W_engine = thrust_ratio_des*WTO_curr/5.5; % [kg] motori
 W_propulsione = W_nac + W_engine;
 
 % fuel system
