@@ -52,7 +52,7 @@ TOP = 165 * lb2kg / sqft2sqm ; % conversione in [kg/m^2]
 C_L_max_2D = 1.7; % profilo NASA SC(2)-0610
 oswald_livello0 = 0.8; % fattore di Oswald
 k_polare_livello0 = 1/(pi*AR*oswald_livello0); % calcolo Cd
-Vstall = 115*nm2km; % [km/h]
+Vstall = 110*nm2km; % [km/h]
 g = 9.81; % [m/s^2]
 Cd0_livello0 = 0.017; % valore che ho usato per fare il matching chart preliminare
 

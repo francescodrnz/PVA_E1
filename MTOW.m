@@ -1,4 +1,4 @@
-%clearvars;close all;clc;dati;requisiti; % necessario se si runna da qui anziché da main
+%clearvars;close all;clc;dati;requisiti;AR = 9;v_cruise = 835;
 
 % Calcoli
 m_crew_payload = (passeggeri + crew)*peso_passeggero;
@@ -37,10 +37,10 @@ while difference > tolerance && iteration < max_iterations
     m_TO = m_TO_new;
 end
 
-% if iteration == max_iterations
-%     fprintf('Numero massimo di iterazioni raggiunto (%d).\n', max_iterations);
-% else
-%     fprintf('Il valore finale di m_TO è: %.4f\n', m_TO);
-%     fprintf('Il valore finale di m_empty è: %.4f\n', m_empty_fraction);
-%     fprintf('Convergenza in %d iterazioni.\n', iteration);
-% end
+if iteration == max_iterations
+    fprintf('Numero massimo di iterazioni raggiunto (%d).\n', max_iterations);
+else
+    fprintf('Il valore finale di m_TO è: %.4f\n', m_TO);
+    fprintf('Il valore finale di m_empty è: %.4f\n', m_empty_fraction);
+    fprintf('Convergenza in %d iterazioni.\n', iteration);
+end
