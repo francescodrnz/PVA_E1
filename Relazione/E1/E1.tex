@@ -1,0 +1,374 @@
+\Chapter{Esercitazione 1}{Velivolo convenzionale}
+\label{sec:E1}
+
+Nella prima esercitazione si è progettato un nuovo velivolo convenzionale, di tipo trasporto passeggeri a medio raggio, come possibile successore dell'Airbus A320.
+
+\section{Requisito}
+Per definire il requisito del nuovo velivolo si è partiti innanzitutto dall'analisi statistica degli aerei commerciali dello stesso settore di maggior diffusione sul mercato odierno.
+
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabular}{ccccccccccccc}
+Model&Max&Length&Wing&Fuselage&Wing&Aspect&MTOW&Max&Fuel&OEW&Cruise&Range\\
+&Seats&&Span&Length&Area&Ratio&&Payload&&&Speed&\\
+&&[m]&[m]&[m]&$\text{[m}^2\text{]}$&&[t]&[t]&[l]&[t]&[km/h]&[km]\\
+\toprule
+\normalsize\textbf{Airbus}&&&&&&&&&&&& \\
+\midrule
+A220-300 & 160 & 38.71 & 35.1 & 3.5 & 112.3 & 8.89 & 70.9 & 18.7 & 21920 & 37.1 & 823 & 6300 \\
+A318 & 136 & 31.45 & 34.1 & 3.95 & 122.4 & 7.43 & 59-68 & 15 & 24210 & 39.6 & 829 & 5700 \\
+A319ceo & 160 & 33.84 & 34.1 & 3.95 & 122.6 & 7.41 & 75.5 & 17.7 & 24210 & 40.8 & 829 & 6850 \\
+A319neo & 160 & 33.84 & 35.8 & 3.95 & 124 & 8.18 & 78.2 & 17.7 & 24210 & 42.6 & 833 & 6950 \\
+A320ceo & 180 & 37.57 & 34.1 & 3.95 & 122.6 & 7.41 & 78 & 19.9 & 24210 & 42.6 & 829 & 6100 \\
+\textbf{A320neo} & \textbf{195} & \textbf{37.57} & \textbf{35.8} & \textbf{3.95} & \textbf{124} & \textbf{8.18} & \textbf{79} & \textbf{20} & \textbf{24210} & \textbf{44.3} & \textbf{833} & \textbf{6500} \\
+A321ceo & 220 & 44.51 & 34.1 & 3.95 & 122.6 & 7.41 & 89 & 22.8 & 23700 & 48 & 829 & 5900 \\
+A321neo & 244 & 44.51 & 35.8 & 3.95 & 124 & 8.18 & 93.5 & 25.5 & 23500 & 50.1 & 833 & 6500 \\
+A321XLR & 244 & 44.51 & 35.8 & 3.95 & 124 & 8.18 & 101 & 25.5 & 40000 & 50.1 & 833 & 8700 \\
+\toprule
+\normalsize\textbf{Boeing}&&&&&&&&&&&& \\
+\midrule
+B737-700 & 149 & 32.18 & 34.3 & 3.73 & 124.6 & 7.50 & 69.4 & 17 & 26000 & 37.6 & 838 & 6000 \\
+B737-800 & 189 & 38.08 & 34.3 & 3.73 & 124.6 & 7.50 & 78.2 & 20.2 & 26000 & 41.4 & 838 & 5420 \\
+B737-7 & 172 & 35.56 & 35.92 & 3.76 & 127 & 8.14 & 80 & -- & 25800 & -- & 839 & 7000 \\
+B737-8 & 189 & 39.47 & 35.92 & 3.76 & 127 & 8.14 & 82.6 & -- & 25800 & -- & 839 & 6500 \\
+B737-9 & 220 & 42.16 & 35.92 & 3.76 & 127 & 8.14 & 88.3 & -- & 25800 & -- & 839 & 6100 \\
+B737-10 & 230 & 43.79 & 35.92 & 3.76 & 127 & 8.14 & 89.8 & -- & 25800 & -- & 839 & 5700 \\
+\toprule
+\normalsize\textbf{Comac}&&&&&&&&&&&& \\
+\midrule
+C919 & 192 & 38.9 & 35.8 & 3.96 & 129.1 & 7.85 & 75.1 & 18.9 & 24900 & 45.7 & 838 & 4140 \\
+C919ER & 192 & 38.9 & 35.8 & 3.96 & 129.1 & 7.85 & 78.9 & 18.9 & 24900 & 45.7 & 838 & 5576 \\
+\bottomrule
+\end{tabular}
+\caption{Dati di aerei dello stesso segmento.}
+\end{table}
+
+\noindent A partire dalla ricerca di mercato, si sono stilati una serie di requisiti per il nuovo velivolo.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{c|c}
+Numero di passeggeri & 180 \\
+Numero di piloti & 2 \\
+Assistenti di volo & 4 \\
+Velocità di crociera & 835 km/h \\
+Range & 4500 km \\
+Range di diversione & 200 nm \\
+Numero di motori & 2 \\
+Specific Fuel Consumption & 0.5 kg/kg/h \\
+\end{tabular}
+\caption{Requisiti del nuovo velivolo.}
+\end{table}
+
+Il numero di assistenti di volo è stato determinato a partire dal numero dei passeggeri, con la normativa EASA ORO.CC.100(b)(3) (un assistente ogni 50 passeggeri); lo Specific Fuel Consumption è leggermente migliorato rispetto all'Airbus A320neo, ipotizzando un avanzamento tecnologico che permette di migliorare l'efficienza dei propulsori.
+\newpage
+\section{Metodologia}
+\subsection{Stima preliminare della massa massima al decollo}
+Il primo parametro che si è stimato, fondamentale per il resto del progetto, è la massa massima al decollo. È possibile dividerla in quattro componenti: crew, payload, carburante e massa a vuoto. 
+\[m_{TO} = m_{crew}+m_{payload}+m_{fuel}+m_{empty}\]
+È possibile riarrangiare la precedente equazione in modo da esplicitare la frazione di carburante e la frazione di massa a vuoto
+\[m_{TO} = \dfrac{m_{crew}+m_{payload}}{1-\dfrac{m_{fuel}}{m_{TO}}-\dfrac{m_{empty}}{m_{TO}}}\]
+Si sono quindi calcolate le diverse componenti della massa.
+
+\subsubsection{Massa crew e payload}
+In questa fase iniziale di progetto si è assunto che tutto il payload sia fatto dai passeggeri e dai loro bagagli, non considerando quindi eventuali merci aggiuntive.
+
+Si è quindi calcolata la massa considerando la stima statistica elaborata da Roskam, secondo cui il peso di un singolo passeggero è 79.4 kg e il suo bagaglio, per un volo di corto-medio raggio, 13.6 kg, per un totale di \textbf{93.0 kg}. Si è assunto lo stesso peso per il personale di bordo.
+
+In definitiva, la massa totale per le 186 persone a bordo (180 passeggeri + 6 crew) è pari a \textbf{17298 kg}.
+
+\subsubsection{Frazione di massa a vuoto}
+È stata utilizzata la stima di Raymer, secondo cui
+\[ \dfrac{m_{empty}}{m_{TO}} = A*m_{TO}^C\]
+Dove \textit{A} e \textit{C} sono parametri costanti, dipendenti dal tipo di velivolo. Per un aereo da trasporto a getto valgono rispettivamente 0.97 e -0.06.
+
+Si nota che questa frazione dipende dalla stessa massa al decollo; sarà quindi necessario effettuare un calcolo iterativo.
+
+\subsubsection{Frazione di carburante}
+La quantità di carburante necessaria può essere stimata a partire dalla missione tipo del velivolo. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\linewidth]{E1//Immagini/missione.png}
+    \caption{Missione tipica di un aereo commerciale.}
+\end{figure}
+
+È quindi possibile dividere la missione in più fasi, e per ogni fase stimare il rapporto di peso tra la fine e l'inizio della fase stessa. 
+
+In particolare è possibile ricavare questa stima da dati statistici per tutte le fasi tranne tre, ovvero la crociera, la diversione (che si tratta a tutti gli effetti di una seconda crociera) e il loiter. Per queste tre fasi è necessario ricorrere alle equazioni di autonomia (chilometrica e oraria) ricavabili dalla meccanica del volo:
+\begin{align}
+\text{Autonomia chilometrica: }&\dfrac{W_{i+1}}{W_i} = e^{-\dfrac{c\Delta x}{VE}}
+\label{eq:autonomia} \\
+\text{Autonomia oraria: }&\dfrac{W_{i+1}}{W_i} = e^{-\dfrac{c\Delta t}{E}} 
+\end{align}
+dove c è lo \textit{Specific Fuel Consumption}, V la velocità ed E l'efficienza aerodinamica. In particolare per lo SFC del loiter si è usato il valore di 0.4 kg/kg/h, inferiore rispetto allo 0.5 kg/kg/h della crociera. Inoltre, il range considerato in questo step è di 4500 km, migliorando di 500 km quello dell'A320neo a pieno carico.
+
+Queste formule sono ricavate facendo una semplificazione: quella di assetto costante, quindi $C_L$ costante; ne consegue che durante la crociera l'aereo prende quota grazie alla riduzione di peso dovuta al consumo di carburante, per una condizione di cosiddetto \textit{cruise-climb}.
+
+È stato quindi necessario ricavare il valore dell'efficienza: si è utilizzata la formula, di nuovo ricavata da Raymer, secondo cui
+\[\left(\dfrac{L}{D}\right)_{max} = k_E \sqrt{AR_w}\]
+dove $k_E$ è un coefficiente dipendente dal tipo di aeroplano, in questo caso pari a 15.5, ed $AR_w$ l'aspect ratio della superficie bagnata:
+\[AR_w = \dfrac{AR}{\dfrac{S_{wet}}{S_{ref}}}\]
+dove AR è l'aspect ratio dell'ala, in questa fase preliminare imposta a 9 (in linea con aerei già esistenti) e il rapporto di superfici al denominatore è ricavato da aerei simili e posto pari a 6.4.
+
+Si è quindi ricavata un'efficienza massima pari a 18.4, realistica per un'aereo molto efficiente. Questa è pari all'efficienza nella fase di loiter, mentre per la fase di crociera va ridotta di un fattore 0.866.
+
+Si sono infine calcolati i rapporti di peso delle tre fasi:
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+$\left(\dfrac{W_f}{W_i}\right)_{cruise} = 0.8443$ ; & $\left(\dfrac{W_f}{W_i}\right)_{diversion} = 0.974$ ; & $\left(\dfrac{W_f}{W_i}\right)_{loiter} = 0.989$ .
+\end{tabular}
+\end{table}
+
+Come anticipato, il rapporto di peso delle altre fasi si ricava da dati statistici:
+\begin{table}[H]
+\centering
+\begin{tabular}{ccc}
+$\left(\dfrac{W_f}{W_i}\right)_{take off} = 0.970$ ; & $\left(\dfrac{W_f}{W_i}\right)_{climb} = 0.985$ ; & $\left(\dfrac{W_f}{W_i}\right)_{descent} = 0.995$ ;
+\end{tabular}
+\end{table}
+\begin{table}[H]
+\centering
+\begin{tabular}{cc}
+$\left(\dfrac{W_f}{W_i}\right)_{diversion\,climb} = 1$ ; & $\left(\dfrac{W_f}{W_i}\right)_{diversion\,descent} = 1$ .
+\end{tabular}
+\end{table}
+
+Avendo infine ricavato il rapporto di pesi per tutte le fasi, è possibile calcolare il rapporto di peso tra la fine e l'inizio della missione:
+
+\begin{equation}
+    \left(\dfrac{W_f}{W_i}\right)_{mission} = \dfrac{W_{final}}{W_{TO}} = \prod_{i=1}^{n}\left(\dfrac{W_{i+1}}{W_i}\right) = 0.7734
+    \label{eq:w_final}
+\end{equation}
+
+Il complemento ad uno di questo valore è la frazione di carburante dell'aereo. A questo valore va aggiunto il 5\% di riserva:
+\begin{equation}
+    \frac{m_{fuel}}{m_{TO}} = 1.05\left(1-\dfrac{m_{final}}{m_{TO}}\right) = \textbf{0.238}
+    \label{eq:frazione_carburante}
+\end{equation}
+
+\subsubsection{Peso al decollo}
+Ricavati tutti gli elementi, è stato infine calcolato il peso al decollo tramite un calcolo iterativo su MATLAB. Il codice converge dopo 6 iterazioni, a partire da una stima iniziale di 60 tonnellate e con una tolleranza sulla differenza relativa di $10^{-4}$, su un valore di \textbf{65657 kg}. È un valore sostanzialmente inferiore di quello dell'A320neo di riferimento, giustificato dal minor numero di passeggeri e dalla mancanza di trasporto merci.
+
+\subsubsection{Analisi di trade-off}
+A partire da questo risultato, sono state effettuate analisi di trade-off al variare di alcuni parametri.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c}
+    \toprule
+    Parametro & Range di valori \\
+    \midrule
+        Range & 3500 - 5500 km \\
+        Payload &  160 - 200 passeggeri\\
+        Specific Fuel Consumption & 0.4 - 0.6 kg/kg/h \\
+        Aspect Ratio & 8 - 10 \\
+         \bottomrule
+    \end{tabular}
+    \caption{Parametri per l'analisi di trade-off}
+\end{table}
+
+I valori ottenuti sono illustrati nei plot seguenti.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{E1/Immagini/tradeoff_range.png}
+        \caption{Massa al decollo al variare del range}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{E1/Immagini/tradeoff_payload.png}
+        \caption{Massa al decollo al variare del payload}
+    \end{subfigure}
+    \medskip
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{E1/Immagini/tradeoff_sfc.png}
+        \caption{Massa al decollo al variare dello SFC}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.48\textwidth}
+        \includegraphics[width=\textwidth]{E1/Immagini/tradeoff_AR.png}
+        \caption{Massa al decollo al variare dell'aspect ratio}
+    \end{subfigure}
+    \medskip
+    \caption{Risultato delle analisi di trade-off}
+\end{figure}
+
+Come previsto la massa aumenta con l'aumentare del range, del payload e del consumo, mentre diminuisce all'aumentare dell'aspect ratio in quanto questo parametro è direttamente collegato all'efficienza aerodinamica.
+
+\subsection{Diagramma Payload-Range preliminare}
+Basandosi sui dati ricavati dal calcolo delle masse, si è ricavato il diagramma payload-range per l'aeroplano. Esso è definito da quattro punti:
+\begin{itemize}
+    \item \textbf{Punto A}: corrisponde al payload massimo e senza carburante a bordo;
+    \item \textbf{Punto B}: corrisponde al \textit{punto armonico}, ovvero il range massimo a payload massimo. È il punto di progetto dell'aeroplano, quindi con range e payload definiti da requisito;
+    \item \textbf{Punto C}: corrisponde al range massimo raggiungibile con pieno carico di carburante, sacrificando del payload per rientrare nel peso massimo al decollo;
+    \item \textbf{Punto D}: corrisponde al range massimo teorico raggiungibile dall'aeroplano vuoto, ovvero senza payload e con carburante massimo.
+\end{itemize}
+
+\noindent Il primo punto si ricava banalmente, il range è di 0 km ed il payload quello massimo dei passeggeri.
+
+\noindent Il secondo punto è ugualmente semplice da ricavare, in quanto corrisponde al payload massimo ed il range di requisito.
+
+\medskip
+
+\noindent Per calcolare il terzo punto si sono dovute fare delle assunzioni. Innanzitutto la capacità dei serbatoi, fissata a \textbf{25000 l} in base alla capacità di aerei della stessa categoria; inoltre è stato necessario assumere la densità del carburante: si è utilizzato il valore di \textbf{0.785 kg/l}, coerente con la letteratura per il carburante \textit{Jet-A} e lo stesso valore utilizzato da Airbus per i propri calcoli del range.
+
+In questo modo è stato possibile ricavare la massa del pieno carico di carburante, pari a 19625 kg, e la frazione di carburante con massa massima al decollo, pari a 0.260. Si è quindi potuto calcolare il rapporto della massa a fine missione semplicemente invertendo l'equazione \ref{eq:frazione_carburante}:
+\[\frac{m_{final}}{m_{TO}} = 1-\dfrac{1}{1.05}\dfrac{m_{fuel}}{m_{TO}}\]
+
+Si è quindi calcolato il range della crociera a partire dall'equazione dell'autonomia chilometrica (\ref{eq:autonomia}), considerando che la frazione di massa finale è pari al prodotto delle frazioni di massa in ogni fase della missione (come da equazione \ref{eq:w_final}) e che tutte le altre frazioni restano uguali al punto armonico:
+\[
+\text{Range}_C = -\ln\left(\dfrac{\dfrac{m_{final}}{m_{TO}}}{\dfrac{W_2}{W_{TO}} \cdot \dfrac{W_3}{W_2} \cdot \dfrac{W_5}{W_4} \cdot \dfrac{W_8}{W_7} \cdot \dfrac{W_{10}}{W_9}}\right) \cdot \dfrac{v_{cruise} \cdot E_{cruise}}{SFC_{cruise}} = 6575\,km
+\]
+
+\noindent Il payload corrisponde invece a:
+\[
+m_{payload_C} = m_{TO} - (m_{empty} + m_{fuel_{max}} + m_{crew}) = 12739 kg
+\]
+pari a 137 passeggeri.
+
+\medskip
+
+
+\noindent Infine, per il calcolo del range dell'ultimo punto si è calcolata la massa al decollo, pari a
+\[
+m_{TO_D} = m_{empty} + m_{fuel_{max}} + m_{crew} = 57102 kg
+\]
+dove è stata considerata una crew di 2, ovvero solo i piloti, in quanto non essendoci passeggeri non c'è necessità di personale di bordo.
+
+Successivamente il calcolo è uguale a quello per il punto C: si è calcolata la frazione di carburante (pari a 0.344) ed il range della crociera alla stessa maniera: il valore che si ricava è di $9356\,km$, con payload ovviamente pari a 0.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.76\linewidth]{E1//Immagini/payload-range.png}
+    \caption{Diagramma payload-range dell'aeroplano.}
+\end{figure}
+
+\subsubsection{Famiglia di aerei}
+Si è ipotizzato di voler modificare l'aeroplano in modo da creare una famiglia, sulla falsa riga di quella dell'Airbus A320 con A319 e A321, quindi semplicemente modificando la fusoliera in modo da accogliere diversi numeri di passeggeri. In particolare, si è ipotizzata una configurazione a 150 passeggeri ed un'altra a 210 passeggeri. È stata inoltre considerata una configurazione a 210 passeggeri e range esteso, ipotizzando che grazie alla fusoliera più grande ci sia spazio per dei serbatoi aggiuntivi, in particolare fino a 35000 litri di carburante. 
+
+In maniera del tutto analoga per il caso a 180 passeggeri - con l'unica differenza nel numero di assistenti di bordo in quanto da normativa ne bastano 3 per il primo caso e ne servono 5 per il secondo - si sono calcolate le masse ed i range per l'intera famiglia.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{E1//Immagini/payload-range_family.png}
+    \caption{Diagramma payload-range della famiglia di aerei.}
+\end{figure}
+
+Si notano ovvie differenze di range, dovute innanzitutto alla differenza di payload, ma anche alla differenza di peso a vuoto.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{c|c|c|c|c|c}
+    \toprule
+         Passeggeri & $range_C$ [km] & $range_D$ [km] & $m_{TO}$ [kg] & $m_{empty}$ [kg] & $m_{empty}/m_{TO}$ \\
+         \midrule
+         150 & 8524 & 10825 & 55754 & 28072 & 0.504 \\
+         180 & 6575 & 9356 & 65657 & 32735 & 0.499 \\
+         210 & 5239 & 8210 & 75418 & 37291 & 0.495 \\
+         210 (ER) & 8997 & 11377 & 75418 & 37291 & 0.495 \\
+         \bottomrule
+    \end{tabular}
+    \caption{Valori di range e masse per la famiglia di aerei.}
+\end{table}
+
+\subsection{Matching Chart}
+A partire dai risultati preliminari è stato creato il \textit{matching chart}. Si tratta di un grafico in cui sono riportate le curve della spinta necessaria (rapportata al peso), in diverse fasi di volo, in funzione del carico alare. Se ne ricava la spinta minima da installare sul veivolo in modo da soddisfare la normativa.
+
+\subsubsection{Carico alare massimo}
+Il primo parametro da determinare è il carico alare massimo, che si ricava dalla formula della portanza alla velocità minima, ovvero quella di stallo:
+\[
+L = W = \dfrac{1}{2}\rho V^2 S C_L \implies \left(\dfrac{W}{S}\right)_{max} = \dfrac{1}{2}\rho V_{stall}^2 C_{L_{max}}
+\]
+La velocità di stallo è imposta a 115 nodi, in linea con gli aerei della stessa categoria, ed aumentata di un fattore 1.2 per simulare le condizioni di volo a bassa velocità.
+
+Per il coefficiente di portanza massimo è stato necessario scegliere un profilo alare: il \textbf{NASA SC(2)-0610}, ovvero un profilo supercritico adatto al volo transonico. Tramite il tool online \textit{airfoiltools.com} ne è stato ricavato il coefficiente di portanza massimo, pari a 1.7. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.95\linewidth]{E1//Immagini/profilo alare.png}
+    \caption{Profilo NASA SC(2)-0610}
+\end{figure}
+Dal coefficiente di portanza del profilo si è passati a quello dell'ala:
+\[C_{L_{max}}^{3D} = 0.9\,C_{L_{max}}^{2D}\cos{\Lambda_{25}}\]
+dove $\Lambda_{25}$ è l'angolo di freccia al quarto di corda, in questa fase preliminare fissato a 25 gradi.
+
+Questo valore del $C_L$ va aumentato del contributo dato dai dispositivi di ipersostentazione, in questo caso slat al bordo d'attacco e Fowler flap al bordo di fuga che producono un incremento $\Delta C_L^{2D} = 1.55$. Per calcolare il contributo dato all'ala si usa la seguente formula:
+\[\Delta C_L^{3D} = 0.92\,\Delta C_L^{2D}\,\dfrac{S_{flapped}}{S}\cos{\Lambda_{25}}\]
+Il valore $S_{flapped}$ rappresenta l'intera superficie alare su cui sono installati gli ipersostentatori; il rapporto con la superficie alare è stato calcolato pari a 0.85 da misure dell'ala dell'Airbus A320.
+\newline
+\noindent Il coefficiente di portanza massimo così calcolato è pari a 2.49.
+
+In definitiva, si ricava un carico alare massimo di $715.5 \,kg/m^2$.
+\subsubsection{Decollo}
+Per calcolare la spinta richiesta al decollo si è usato l'approccio semplificato elaborato da Raymer:
+\[\left(\dfrac{T}{W}\right)_{take-off} = \dfrac{W/S}{TOP\,\sigma\,C_L^{take-off}}\]
+dove: $\sigma$ è il rapporto tra la densità dell'aria alla quota dell'aeroporto e a livello del mare, in questo caso imposto a 1; come $C_L^{take-off}$ si è usato il coefficiente di portanza massimo, già ricavato per il calcolo del carico alare massimo; \textit{TOP} è il \textit{Take Off Parameter}, un parametro calcolato semi-empiricamente da Raymer e ricavato dal seguente grafico:
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{E1//Immagini/Take Off Parameter.png}
+    \caption{Grafico del Take Off Parameter}
+\end{figure}
+Si entra nel grafico con la distanza di decollo, per cui è stata usata la \textit{Balanced Field Length} dell'A320 pari a 6900 ft e, intercettando la corretta curva relativa a due motori a getto, si legge il TOP pari a $165 \,lb/ft^2$, convertito nel sistema internazionale per effettuare i calcoli.
+
+\subsubsection{Salita}
+Da normativa la fase di salita è divisa in tre segmenti, e il veivolo deve soddisfare i seguenti requisiti con un motore inoperativo:
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{c|c|c|c}
+       & Primo segmento & Secondo segmento & Terzo segmento \\
+    \toprule
+        Comincia & fine pista & carrello retratto & configurazione finale \\
+    \midrule
+        Gradiente minimo $\gamma$ & 0.0\% & 2.4\% & 1.2\% \\
+    \midrule
+       Configurazione ipersostentatori  & decollo & decollo & retratti \\
+    \midrule
+       Carrello  & in retrazione & retratto & retratto \\
+    \midrule
+       Velocità & $V_2$ & $V_2$ & $1.25\,V_2$ \\
+    \end{tabular}
+\end{table}
+
+Gli ipersostentatori aumentano il coefficiente di resistenza:
+\[C_{D,flap} = 0.9\left(\dfrac{c_{flap}}{c}\right)^{1.38}\left(\dfrac{S_{w,flap}}{S}\right)\sin^2{\delta_{flap}}\]
+dove i rapporti tra le corde e le superfici sono stati ricavati dai dati dell'ala dell'A320 e $\delta_{flap}$ rappresenta l'angolo di deflessione dei flap, in fase di decollo pari a $35\si{\degree}$.
+
+Anche il carrello d'atterraggio aumenta il coefficiente di resistenza:
+\[C_{D,LG} = \num{2.92e-3}\dfrac{W_{TO}^{0.785}}{S}\]
+dove il valore del peso al decollo è quello ricavato dal calcolo preliminare, e il valore della superficie alare è ricavato da quello del carico alare.
+
+La velocità $V_2$ è quella caratteristica del decollo, in questa fase posta pari a 1.2 volte la velocità di stallo.
+
+\noindent Infine, l'equazione per il rapporto di spinta è ricavata dalla meccanica del volo:
+\[\dfrac{T}{W} = k_{OEI}\left(\frac{1}{2}\rho_{SL}\dfrac{V^2}{W/S}\left(C_D+\text{K}\left(\dfrac{W/S}{\rho_{SL}V^2}\cos{\gamma}\right)^2\right)+\sin{\gamma}\right)\]
+dove: $ k_{OEI}$ è il parametro di \textit{One Engine Inoperative}, nel caso di aereo bimotore pari a 2; la densità dell'aria è approssimata a quella a livello del mare, anche se aumentando di quota diminuisce; K$\, = \frac{1}{\pi\,AR\,e}$ è il parametro per il calcolo della resistenza indotta K$C_L^2$, con il fattore di Oswald imposto pari a 0.8 in questa fase preliminare.
+
+
+\subsection{Analisi di sensibilità}
+A partire dai risultati preliminari, è stata impostata un'analisi di sensibilità in modo da ricavare diverse configurazioni. In particolare, sono stati scelti alcuni parametri aerodinamici come variabili di design, e fatti variare entro un range ragionevole:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{|c|c|c|}
+    \hline
+       Variabile  & Simbolo & Valori \\
+    \hline
+        Carico Alare & \textit{W/S} & $[550\, 600\, 650\, 700]\,\, kg/m^2$ \\
+    \hline
+        Aspect Ratio & AR & $[7\, 8\, 9\, 10\, 11]$ \\
+    \hline
+       Rapporto Spessore Alare - Corda  & \textit{t/c} & $[0.10\, 0.12\, 0.15]$ \\
+    \hline
+       Mach di Crociera  & M & $[0.76\, 0.80\, 0.82]$ \\
+    \hline
+       Angolo di Freccia al quarto di corda & $\Lambda$ & $[20\, 25\, 30\, 35]\,\,\si{\degree} $ \\
+    \hline
+       Rapporto di rastremazione & $\lambda$ & $[0.23\, 0.27\, 0.31]$ \\
+    \hline
+    \end{tabular}
+    \caption{Variabili di design}
+\end{table}

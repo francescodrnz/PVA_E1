@@ -1,0 +1,72 @@
+\documentclass{report}
+
+\usepackage[utf8]{inputenc} 
+\usepackage[italian]{babel} 
+\usepackage{graphicx} 
+\usepackage{titlesec}
+\usepackage{relsize}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{wrapfig}
+\usepackage{siunitx}
+\usepackage{textcomp}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepackage{bm}
+\usepackage{float}
+\geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=25mm,
+ bottom=30mm,
+ right=20mm
+ }
+\hypersetup{
+  colorlinks=true,
+  linkcolor=black,
+  urlcolor=blue,
+  filecolor=magenta,
+  citecolor=red,
+  pdfborder={0 0 0},
+  hypertexnames=false
+}
+\newcommand\Chapter[2]{
+  \chapter[#1: {\itshape#2}]{#1\\\medskip\smaller\itshape#2}
+}
+\titleformat{\chapter}{\normalfont\huge}{\thechapter.}{10pt}{\huge}
+\sisetup{
+text-series-to-math = true ,
+propagate-math-font = true
+}
+
+
+\begin{document}
+
+\begin{figure}
+	\centering
+	\includegraphics[width=1\linewidth]{polito_logo_2021_blu.jpg}
+	\label{fig:logo-polito}
+\end{figure}
+
+\title{Progetto di Veicoli Aerospaziali\\Relazione Esercitazioni}
+\author{Francesco Doronzo\\Matricola 256693}
+\date{A. A. 2024/2025}
+
+\maketitle
+
+\tableofcontents
+\clearpage
+
+\input{E1/E1}
+
+
+\end{document}
