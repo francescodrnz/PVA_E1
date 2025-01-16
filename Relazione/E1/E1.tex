@@ -62,6 +62,8 @@ Specific Fuel Consumption & 0.5 kg/kg/h \\
 \end{table}
 
 Il numero di assistenti di volo è stato determinato a partire dal numero dei passeggeri, con la normativa EASA ORO.CC.100(b)(3) (un assistente ogni 50 passeggeri); lo Specific Fuel Consumption è leggermente migliorato rispetto all'Airbus A320neo, ipotizzando un avanzamento tecnologico che permette di migliorare l'efficienza dei propulsori.
+\vspace{0.5cm}
+\newline Un altro fondamentale requisito vincolante è che l'apertura alare sia compresa tra i 24 e i 36 metri, in modo da far rientrare il velivolo nella classe C della classificazione dei velivoli definita dall'ICAO.
 \newpage
 \section{Metodologia}
 \subsection{Stima preliminare della massa massima al decollo}
@@ -307,12 +309,20 @@ Per calcolare la spinta richiesta al decollo si è usato l'approccio semplificat
 dove: $\sigma$ è il rapporto tra la densità dell'aria alla quota dell'aeroporto e a livello del mare, in questo caso imposto a 1; come $C_L^{take-off}$ si è usato il coefficiente di portanza massimo, già ricavato per il calcolo del carico alare massimo; \textit{TOP} è il \textit{Take Off Parameter}, un parametro calcolato semi-empiricamente da Raymer e ricavato dal seguente grafico:
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{E1//Immagini/Take Off Parameter.png}
+    \includegraphics[width=0.65\linewidth]{E1//Immagini/Take Off Parameter.png}
     \caption{Grafico del Take Off Parameter}
 \end{figure}
-Si entra nel grafico con la distanza di decollo, per cui è stata usata la \textit{Balanced Field Length} dell'A320 pari a 6900 ft e, intercettando la corretta curva relativa a due motori a getto, si legge il TOP pari a $165 \,lb/ft^2$, convertito nel sistema internazionale per effettuare i calcoli.
+Si entra nel grafico con la distanza di decollo, per cui è stata usata la \textit{Balanced Field Length} dell'A320 pari a 6900 ft e, intercettando la corretta curva relativa a due motori a getto, si legge il TOP pari a $165 \,\,lb/ft^2$, convertito nel sistema internazionale per effettuare i calcoli.
 
 \subsubsection{Salita}
+L'equazione per il rapporto di spinta è ricavata dalla meccanica del volo:
+\begin{equation}
+    \dfrac{T}{W} = k_{OEI}\left(\frac{1}{2}\rho_{SL}\dfrac{V^2}{W/S}\left(C_D+\text{K}\left(\dfrac{W/S}{\rho_{SL}V^2}\cos{\gamma}\right)^2\right)+\sin{\gamma}\right)
+    \label{eq:spinta_salita}
+\end{equation}
+dove: $ k_{OEI}$ è il parametro di \textit{One Engine Inoperative}, nel caso di aereo bimotore pari a 2; la densità dell'aria è approssimata a quella a livello del mare, anche se aumentando di quota diminuisce; K$\, = \frac{1}{\pi\,AR\,e}$ è il parametro per il calcolo della resistenza indotta $C_{D_i} = \text{K}C_L^2$, con il fattore di Oswald imposto pari a 0.8 in questa fase preliminare. \newline Il $C_{D_0}$ è stato imposto pari a 0.017 a partire da dati statistici per velivoli della stessa categoria.
+
+\vspace{0.5cm}
 Da normativa la fase di salita è divisa in tre segmenti, e il veivolo deve soddisfare i seguenti requisiti con un motore inoperativo:
 \begin{table}[H]
     \centering
@@ -331,21 +341,48 @@ Da normativa la fase di salita è divisa in tre segmenti, e il veivolo deve sodd
        Velocità & $V_2$ & $V_2$ & $1.25\,V_2$ \\
     \end{tabular}
 \end{table}
+\noindent La velocità $V_2$ è quella caratteristica del decollo, in questa fase posta pari a 1.2 volte la velocità di stallo.
 
-Gli ipersostentatori aumentano il coefficiente di resistenza:
+\noindent Gli ipersostentatori aumentano il coefficiente di resistenza:
 \[C_{D,flap} = 0.9\left(\dfrac{c_{flap}}{c}\right)^{1.38}\left(\dfrac{S_{w,flap}}{S}\right)\sin^2{\delta_{flap}}\]
 dove i rapporti tra le corde e le superfici sono stati ricavati dai dati dell'ala dell'A320 e $\delta_{flap}$ rappresenta l'angolo di deflessione dei flap, in fase di decollo pari a $35\si{\degree}$.
 
 Anche il carrello d'atterraggio aumenta il coefficiente di resistenza:
 \[C_{D,LG} = \num{2.92e-3}\dfrac{W_{TO}^{0.785}}{S}\]
 dove il valore del peso al decollo è quello ricavato dal calcolo preliminare, e il valore della superficie alare è ricavato da quello del carico alare.
+\vspace{0.5cm}
+Per rappresentare sul matching chart la spinta richiesta per la salita, è stata considerata la condizione più gravosa tra i tre segmenti, che corrisponde al secondo segmento in quanto è richiesto un gradiente maggiore.
 
-La velocità $V_2$ è quella caratteristica del decollo, in questa fase posta pari a 1.2 volte la velocità di stallo.
+\subsubsection{Crociera}
+Anche in questo caso l'equazione per la spinta richiesta è ricavata dalla meccanica del volo:
+\[\dfrac{T}{W} = \dfrac{\dfrac{1}{2}\rho_{cruise}V^2}{W/S}\left(C_{D_0}+\text{K}\left(\dfrac{W/S}{\rho_{cruise}V^2}\right)^2\right)\]
+dove la velocità e la quota di crociera sono, in questa fase, imposte da requisito rispettivamente a 835 km/h e a 33000 piedi, che con il modello dell'aria standard corrisponde ad una densità di 0.4097 kg/m$^3$.
 
-\noindent Infine, l'equazione per il rapporto di spinta è ricavata dalla meccanica del volo:
-\[\dfrac{T}{W} = k_{OEI}\left(\frac{1}{2}\rho_{SL}\dfrac{V^2}{W/S}\left(C_D+\text{K}\left(\dfrac{W/S}{\rho_{SL}V^2}\cos{\gamma}\right)^2\right)+\sin{\gamma}\right)\]
-dove: $ k_{OEI}$ è il parametro di \textit{One Engine Inoperative}, nel caso di aereo bimotore pari a 2; la densità dell'aria è approssimata a quella a livello del mare, anche se aumentando di quota diminuisce; K$\, = \frac{1}{\pi\,AR\,e}$ è il parametro per il calcolo della resistenza indotta K$C_L^2$, con il fattore di Oswald imposto pari a 0.8 in questa fase preliminare.
+Si è infine riferita la spinta richiesta al livello del mare per poterla paragonare con le altre fasi di volo:
+\[\left(\dfrac{T}{W}\right)_{SL} = \dfrac{\left(\dfrac{T}{W}\right)_{cruise}}{\dfrac{\rho_{cruise}}{\rho_{SL}}}\]
 
+\subsubsection{Approach Climb}
+È la condizione per cui si verifica un guasto ad un motore durante la fase di approccio (carrello retratto e flap a $20\si{\degree}$), ad una velocità pari a 1.41 volte la velocità di stallo. Il gradiente di salita richiesto è del 2.1\%. \newline L'equazione per ricavare il rapporto di spinta è esattamente la stessa per la fase di salita (equazione \ref{eq:spinta_salita}). 
+
+\subsubsection{Landing Climb}
+È la condizione per cui si verifica un guasto ad un motore durante la fase di atterraggio (carrello esteso e flap a $35\si{\degree}$), ad una velocità pari a 1.23 volte la velocità di stallo. Il gradiente di salita richiesto è del 3.2\%. \newline L'equazione per ricavare il rapporto di spinta è esattamente la stessa per la fase di salita (equazione \ref{eq:spinta_salita}). 
+
+\subsubsection{Matching Chart}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{E1//Immagini/Matching Chart.png}
+    \caption{Matching Chart dell'aeroplano.}
+\end{figure}
+Ricavata la spinta minima richiesta per ogni fase di volo, si può definire la spinta minima da installare sul velivolo, come la massima tra le spinte richieste in ogni fase. In generale è preferibile installare la spinta minore possibile per ridurre il peso del sistema propulsivo ed il consumo di carburante.
+
+\subsection{Fusoliera}
+La prima parte del velivolo da disegnare, in quanto uguale per tutte le diverse configurazioni aerodinamiche e propulsive, è la fusoliera. La sua funzione primaria è accogliere il payload (passeggeri, bagagli e cargo); da requisito deve poter ospitare 180 passeggeri e relativi bagagli, 4 assistenti di volo e 2 piloti. 
+\subsubsection{Diametro esterno}
+Si è scelto, in questa fase di design preliminare, di mantenere una sezione circolare per tutta la lunghezza della fusoliera, nonostante nella realtà ciò è vero solo per i velivoli \textit{wide body}. \newline Si è ipotizzata una larghezza del singolo sedile pari a 0.54 metri, standard per sedili di classe economica. Con sei sedili per fila e la larghezza del corridoio pari a 0.50 metri, nel range di valori soliti per i velivoli \textit{narrow body}, si ricava il diametro interno pari a 3.74 metri; si posizionano i sedili in modo tale che la loro larghezza massima corrisponda al diametro massimo della sezione. \newline Si è inoltre considerato uno spessore ulteriore per la struttura stessa della fusoliera e per la pannellatura interna, che porta il diametro esterno della fusoliera a 4.10 metri.
+\subsubsection{Lunghezza}
+Il numero di passeggeri permette di stimare la lunghezza della cabina, ad esclusione della sezione di coda e di prua: si è assunto un \textit{pitch} tra i sedili pari a 0.72 metri, e calcolato il numero di file semplicemente dividendo il numero di passeggeri per il numero di sedili a fila, ovvero sei, ricavando così 30 file e quindi una lunghezza di 21.60 metri. 
+
+In realtà facendo così si sovrastima leggermente la lunghezza della cabina, in quanto alcune file rientrano nella parte di coda e di prua, ma ciò permette di considerare anche lo spazio in più necessario in cabina per elementi come i sedili degli assistenti di volo e le toilette.\newline La lunghezza delle sezioni di poppa e di prua è stata stimata grazie a formule statistiche: la parte di poppa pari a 2.5 volte il diametro esterno, quella di prua pari a 1.5 volte il diametro esterno: le loro lunghezze sono rispettivamente 6.15 e 10.25 metri. \newline La lunghezza totale della fusoliera è quindi di 38 metri.
 
 \subsection{Analisi di sensibilità}
 A partire dai risultati preliminari, è stata impostata un'analisi di sensibilità in modo da ricavare diverse configurazioni. In particolare, sono stati scelti alcuni parametri aerodinamici come variabili di design, e fatti variare entro un range ragionevole:
@@ -355,7 +392,8 @@ A partire dai risultati preliminari, è stata impostata un'analisi di sensibilit
     \renewcommand{\arraystretch}{1.2}
     \begin{tabular}{|c|c|c|}
     \hline
-       Variabile  & Simbolo & Valori \\
+        \rowcolor{grey}
+        Variabile  & Simbolo & Valori \\
     \hline
         Carico Alare & \textit{W/S} & $[550\, 600\, 650\, 700]\,\, kg/m^2$ \\
     \hline
@@ -367,8 +405,15 @@ A partire dai risultati preliminari, è stata impostata un'analisi di sensibilit
     \hline
        Angolo di Freccia al quarto di corda & $\Lambda$ & $[20\, 25\, 30\, 35]\,\,\si{\degree} $ \\
     \hline
-       Rapporto di rastremazione & $\lambda$ & $[0.23\, 0.27\, 0.31]$ \\
+       Rapporto di Rastremazione & $\lambda$ & $[0.23\, 0.27\, 0.31]$ \\
     \hline
     \end{tabular}
     \caption{Variabili di design}
 \end{table}
+
+Sono stati quindi calcolati i parametri di peso, aerodinamici e di prestazione per ogni combinazione delle variabili di design. Per fare ciò si è impostato su MATLAB un ciclo di convergenza sul peso massimo al decollo, in quanto è un parametro che influenza e viene influenzato da tutti gli altri. Si è imposta una tolleranza sulla differenza relativa di 25 kg e si è partiti dal valore iniziale calcolato in via preliminare, ovvero 65657 kg.
+\vspace{0.5cm}
+\newline Il primo step in ogni fase del ciclo è quello di calcolare mediante il matching chart il valore della spinta da installare per quella configurazione, funzione del carico alare. I passaggi successivi sono il calcolo dei parametri aerodinamici, del \textit{mass breakdown}, delle prestazioni in missione ed infine, una volta giunto a convergenza il ciclo, i costi associati alla particolare configurazione.
+
+\subsubsection{Aerodinamica}
+L'obiettivo di questa sezione del calcolo è quello di trovare il coefficiente di resistenza del velivolo. Esso è definito come 

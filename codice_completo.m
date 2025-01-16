@@ -1,12 +1,12 @@
 clearvars;close all;clc;requisiti;dati;fusoliera;
 
 % variabili di design
-W_S_vect = [550 600 650 700]; % [kg/m^2]
-AR_vect = [7 8 9 10 11]; % []
-t_c_vect = [0.10 0.12 0.15]; % []
-M_vect = [0.76 0.80 0.82]; % []
-sweep25_vect = [20 25 30 35]; % [°]
-taper_ratio_vect = [0.23 0.27 0.31]; % []
+W_S_vect = 600;%[550 600 650 700]; % [kg/m^2]
+AR_vect = 9;%[7 8 9 10 11]; % []
+t_c_vect = 0.1;%[0.10 0.12 0.15]; % []
+M_vect = 0.76;%[0.76 0.80 0.82]; % []
+sweep25_vect = 25;%[20 25 30 35]; % [°]
+taper_ratio_vect = 0.23;%[0.23 0.27 0.31]; % []
 
 % inizializzazione valori del ciclo
 Cd0 = Cd0_livello0;

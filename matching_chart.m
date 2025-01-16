@@ -44,7 +44,7 @@ thrust_ratio_climb = max(max(thrust_ratio1, thrust_ratio2), thrust_ratio3);
 % Cruise
 thrust_ratio_cruise = 0.5*rho_cruise*(v_cruise/3.6)^2*(g*wing_load).^(-1).*...
     (Cd0_livello0 + k_polare_livello0*(2.*(g*wing_load)/(rho_cruise*(v_cruise/3.6)^2)).^2);
-thrust_ratio_cruise = thrust_ratio_cruise/((rho_cruise/rho_SL)^0.75); % riferisco il matching chart al SL
+thrust_ratio_cruise = thrust_ratio_cruise/((rho_cruise/rho_SL)); % riferisco il matching chart al SL
 
 % Landing climb
 vldg_climb = 1.23*Vstall;
@@ -104,7 +104,6 @@ y = [1, interp1(wing_load(condizione_cruise), thrust_ratio_cruise(condizione_cru
 fill(x, y, [0.5 0.7 0.5], 'FaceAlpha', 0.6);
 
 
-legend('W/S max', 'Takeoff', 'Climb', 'Landing Climb', 'Approach Climb', 'Cruise', 'Regione accettabile');
-title('Matching Chart')
+legend('W/S max', 'Takeoff', 'Climb', 'Landing Climb', 'Approach Climb', 'Cruise', 'Regione accettabile', 'FontSize', 14);
 xlabel('Wing Loading [kg/m^2]')
 ylabel('Thrust Ratio [kg/kg]')

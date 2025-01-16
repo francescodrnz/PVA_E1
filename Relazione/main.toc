@@ -1,0 +1,26 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Esercitazione 1: {\itshape Velivolo convenzionale}}{2}{chapter.3}%
+\contentsline {section}{\numberline {1.1}Requisito}{2}{section.4}%
+\contentsline {section}{\numberline {1.2}Metodologia}{4}{section.7}%
+\contentsline {subsection}{\numberline {1.2.1}Stima preliminare della massa massima al decollo}{4}{subsection.8}%
+\contentsline {subsubsection}{Massa crew e payload}{4}{subsubsection*.9}%
+\contentsline {subsubsection}{Frazione di massa a vuoto}{4}{subsubsection*.10}%
+\contentsline {subsubsection}{Frazione di carburante}{4}{subsubsection*.11}%
+\contentsline {subsubsection}{Peso al decollo}{5}{subsubsection*.20}%
+\contentsline {subsubsection}{Analisi di trade-off}{6}{subsubsection*.21}%
+\contentsline {subsection}{\numberline {1.2.2}Diagramma Payload-Range preliminare}{7}{subsection.24}%
+\contentsline {subsubsection}{Famiglia di aerei}{8}{subsubsection*.26}%
+\contentsline {subsection}{\numberline {1.2.3}Matching Chart}{9}{subsection.29}%
+\contentsline {subsubsection}{Carico alare massimo}{9}{subsubsection*.30}%
+\contentsline {subsubsection}{Decollo}{10}{subsubsection*.32}%
+\contentsline {subsubsection}{Salita}{11}{subsubsection*.34}%
+\contentsline {subsubsection}{Crociera}{12}{subsubsection*.37}%
+\contentsline {subsubsection}{Approach Climb}{12}{subsubsection*.38}%
+\contentsline {subsubsection}{Landing Climb}{12}{subsubsection*.39}%
+\contentsline {subsubsection}{Matching Chart}{13}{subsubsection*.40}%
+\contentsline {subsection}{\numberline {1.2.4}Fusoliera}{13}{subsection.42}%
+\contentsline {subsubsection}{Diametro esterno}{13}{subsubsection*.43}%
+\contentsline {subsubsection}{Lunghezza}{13}{subsubsection*.44}%
+\contentsline {subsection}{\numberline {1.2.5}Analisi di sensibilità}{14}{subsection.45}%
+\contentsline {subsubsection}{Aerodinamica}{14}{subsubsection*.47}%

@@ -1,4 +1,4 @@
-larghezza_sedile = 0.52; % [m]
+larghezza_sedile = 0.54; % [m]
 sedili_fila = 6;
 larghezza_corridoio = 0.5; % [m]
 
@@ -21,5 +21,5 @@ bagagli_vol = passeggeri*0.113; % [m^3]
 container_vol = ((2.45*0.66) + ...
     (2.45+1.56)*(1.17-0.66)/2)*1.53; % [m^3]
 peso_container = 1135; % [kg]
-numero_container = floor((cargo_vol - bagagli_vol)/container_vol) - 2;
+numero_container = floor((cargo_vol - bagagli_vol)/container_vol);
 W_cargo = peso_container * numero_container; % [kg]
