@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.7)  16 JAN 2025 16:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.7)  17 JAN 2025 16:26
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/franc/Documents/Politecnico/PVA 2025/E1/script/Relazione/main.tex"
-(c:/Users/franc/Documents/Politecnico/PVA 2025/E1/script/Relazione/main.tex
+**"c:/Users/franc/Documents/Politecnico/PVA 2025/E1/script/Relazione/relazione PVA.tex"
+(c:/Users/franc/Documents/Politecnico/PVA 2025/E1/script/Relazione/relazione PVA.tex
 LaTeX2e <2024-06-01>
 L3 programming layer <2024-05-08>
 (C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
@@ -708,35 +708,75 @@ Package geometry Warning: Over-specification in `h'-direction.
 Package geometry Warning: Over-specification in `v'-direction.
     `height' (731.23582pt) is ignored.
 
-Package hyperref Info: Option `colorlinks' set `true' on input line 43.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 43.
-(C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+(C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/latex/tocloft\tocloft.sty
+Package: tocloft 2017/08/31 v2.3i parameterised ToC, etc., typesetting
+Package tocloft Info: The document has chapter divisions on input line 51.
+\cftparskip=\skip60
+\cftbeforetoctitleskip=\skip61
+\cftaftertoctitleskip=\skip62
+\cftbeforepartskip=\skip63
+\cftpartnumwidth=\skip64
+\cftpartindent=\skip65
+\cftbeforechapskip=\skip66
+\cftchapindent=\skip67
+\cftchapnumwidth=\skip68
+\cftbeforesecskip=\skip69
+\cftsecindent=\skip70
+\cftsecnumwidth=\skip71
+\cftbeforesubsecskip=\skip72
+\cftsubsecindent=\skip73
+\cftsubsecnumwidth=\skip74
+\cftbeforesubsubsecskip=\skip75
+\cftsubsubsecindent=\skip76
+\cftsubsubsecnumwidth=\skip77
+\cftbeforeparaskip=\skip78
+\cftparaindent=\skip79
+\cftparanumwidth=\skip80
+\cftbeforesubparaskip=\skip81
+\cftsubparaindent=\skip82
+\cftsubparanumwidth=\skip83
+\cftbeforeloftitleskip=\skip84
+\cftafterloftitleskip=\skip85
+\cftbeforefigskip=\skip86
+\cftfigindent=\skip87
+\cftfignumwidth=\skip88
+\c@lofdepth=\count366
+\c@lotdepth=\count367
+\cftbeforelottitleskip=\skip89
+\cftafterlottitleskip=\skip90
+\cftbeforetabskip=\skip91
+\cfttabindent=\skip92
+\cfttabnumwidth=\skip93
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 56.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 56.
+ (C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count366
+\l__color_backend_stack_int=\count368
 \l__pdf_internal_box=\box84
-) (main.aux)
-\openout1 = `main.aux'.
+) (relazione PVA.aux)
+\openout1 = `"relazione PVA.aux"'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 54.
-LaTeX Font Info:    ... okay on input line 54.
-LaTeX Info: Redefining \it@ocap on input line 54.
-LaTeX Info: Redefining \it@ccap on input line 54.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Info: Redefining \it@ocap on input line 67.
+LaTeX Info: Redefining \it@ccap on input line 67.
 
 
 File italian.ldf warning: 
@@ -744,20 +784,20 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting
-italian.ldf    on input line 54.
+italian.ldf    on input line 67.
 
 (C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count367
+\scratchcounter=\count369
 \scratchdimen=\dimen344
 \scratchbox=\box85
-\nofMPsegments=\count368
-\nofMParguments=\count369
+\nofMPsegments=\count370
+\nofMParguments=\count371
 \everyMPshowfont=\toks55
-\MPscratchCnt=\count370
+\MPscratchCnt=\count372
 \MPscratchDim=\dimen345
-\MPnumerator=\count371
-\makeMPintoPDFobject=\count372
+\MPnumerator=\count373
+\makeMPintoPDFobject=\count374
 \everyMPtoPDFconversion=\toks56
 ) (C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -799,41 +839,39 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package translations Info: no dictionary file `translations-basic-dictionary-italian.trsl' found. on input line 54.
+Package translations Info: no dictionary file `translations-basic-dictionary-italian.trsl' found. on input line 67.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count373
-Package hyperref Info: Link coloring ON on input line 54.
-(main.out) (main.out)
+\c@lstlisting=\count375
+Package hyperref Info: Link coloring ON on input line 67.
+(relazione PVA.out) (relazione PVA.out)
 \@outlinefile=\write4
-\openout4 = `main.out'.
+\openout4 = `"relazione PVA.out"'.
 
 
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
- on input line 54.
+ on input line 67.
 
-<polito_logo_2021_blu.jpg, id=38, 3522.15875pt x 2491.3075pt>
+<polito_logo_2021_blu.jpg, id=166, 3522.15875pt x 2491.3075pt>
 File: polito_logo_2021_blu.jpg Graphic file (type jpg)
 <use polito_logo_2021_blu.jpg>
-Package pdftex.def Info: polito_logo_2021_blu.jpg  used on input line 58.
+Package pdftex.def Info: polito_logo_2021_blu.jpg  used on input line 71.
 (pdftex.def)             Requested size: 483.69687pt x 342.12817pt.
 
 
 [1
 
-{C:/Users/franc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./polito_logo_2021_blu.jpg>] (main.toc)
+{C:/Users/franc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map} <./polito_logo_2021_blu.jpg>] (relazione PVA.toc)
 \tf@toc=\write5
-\openout5 = `main.toc'.
+\openout5 = `"relazione PVA.toc"'.
 
 
 
-[1
-
-] (E1/E1.tex
+[1] (E1/E1.tex
 Capitolo 1.
 
 Overfull \hbox (4.62445pt too wide) in paragraph at lines 12--44
@@ -848,7 +886,7 @@ Overfull \hbox (4.62445pt too wide) in paragraph at lines 12--44
 ]
 
 [3]
-<E1//Immagini/missione.png, id=78, 454.0965pt x 150.5625pt>
+<E1//Immagini/missione.png, id=241, 454.0965pt x 150.5625pt>
 File: E1//Immagini/missione.png Graphic file (type png)
 <use E1//Immagini/missione.png>
 Package pdftex.def Info: E1//Immagini/missione.png  used on input line 94.
@@ -858,22 +896,22 @@ Package pdftex.def Info: E1//Immagini/missione.png  used on input line 94.
 [4 <./E1//Immagini/missione.png>]
 
 [5]
-<E1/Immagini/tradeoff_range.png, id=108, 754.31813pt x 697.10437pt>
+<E1/Immagini/tradeoff_range.png, id=265, 754.31813pt x 697.10437pt>
 File: E1/Immagini/tradeoff_range.png Graphic file (type png)
 <use E1/Immagini/tradeoff_range.png>
 Package pdftex.def Info: E1/Immagini/tradeoff_range.png  used on input line 179.
 (pdftex.def)             Requested size: 232.17242pt x 214.55775pt.
-<E1/Immagini/tradeoff_payload.png, id=109, 758.835pt x 697.8572pt>
+<E1/Immagini/tradeoff_payload.png, id=266, 758.835pt x 697.8572pt>
 File: E1/Immagini/tradeoff_payload.png Graphic file (type png)
 <use E1/Immagini/tradeoff_payload.png>
 Package pdftex.def Info: E1/Immagini/tradeoff_payload.png  used on input line 184.
 (pdftex.def)             Requested size: 232.17242pt x 213.51166pt.
-<E1/Immagini/tradeoff_sfc.png, id=110, 758.835pt x 698.61pt>
+<E1/Immagini/tradeoff_sfc.png, id=267, 758.835pt x 698.61pt>
 File: E1/Immagini/tradeoff_sfc.png Graphic file (type png)
 <use E1/Immagini/tradeoff_sfc.png>
 Package pdftex.def Info: E1/Immagini/tradeoff_sfc.png  used on input line 189.
 (pdftex.def)             Requested size: 232.17242pt x 213.74197pt.
-<E1/Immagini/tradeoff_AR.png, id=111, 782.925pt x 715.17188pt>
+<E1/Immagini/tradeoff_AR.png, id=268, 782.925pt x 715.17188pt>
 File: E1/Immagini/tradeoff_AR.png Graphic file (type png)
 <use E1/Immagini/tradeoff_AR.png>
 Package pdftex.def Info: E1/Immagini/tradeoff_AR.png  used on input line 194.
@@ -881,7 +919,7 @@ Package pdftex.def Info: E1/Immagini/tradeoff_AR.png  used on input line 194.
 
 
 [6 <./E1/Immagini/tradeoff_range.png (PNG copy)> <./E1/Immagini/tradeoff_payload.png (PNG copy)> <./E1/Immagini/tradeoff_sfc.png (PNG copy)> <./E1/Immagini/tradeoff_AR.png (PNG copy)>]
-<E1//Immagini/payload-range.png, id=124, 900.36375pt x 627.09282pt>
+<E1//Immagini/payload-range.png, id=280, 900.36375pt x 627.09282pt>
 File: E1//Immagini/payload-range.png Graphic file (type png)
 <use E1//Immagini/payload-range.png>
 Package pdftex.def Info: E1//Immagini/payload-range.png  used on input line 247.
@@ -889,7 +927,7 @@ Package pdftex.def Info: E1//Immagini/payload-range.png  used on input line 247.
 
 
 [7]
-<E1//Immagini/payload-range_family.png, id=131, 926.71219pt x 672.26157pt>
+<E1//Immagini/payload-range_family.png, id=287, 926.71219pt x 672.26157pt>
 File: E1//Immagini/payload-range_family.png Graphic file (type png)
 <use E1//Immagini/payload-range_family.png>
 Package pdftex.def Info: E1//Immagini/payload-range_family.png  used on input line 258.
@@ -897,7 +935,7 @@ Package pdftex.def Info: E1//Immagini/payload-range_family.png  used on input li
 
 
 [8 <./E1//Immagini/payload-range.png (PNG copy)>]
-<E1//Immagini/profilo alare.png, id=138, 1039.4835pt x 154.176pt>
+<E1//Immagini/profilo alare.png, id=293, 1039.4835pt x 154.176pt>
 File: E1//Immagini/profilo alare.png Graphic file (type png)
 <use E1//Immagini/profilo alare.png>
 Package pdftex.def Info: E1//Immagini/profilo alare.png  used on input line 292.
@@ -905,7 +943,7 @@ Package pdftex.def Info: E1//Immagini/profilo alare.png  used on input line 292.
 
 
 [9 <./E1//Immagini/payload-range_family.png (PNG copy)>]
-<E1//Immagini/Take Off Parameter.png, id=146, 388.45125pt x 344.03531pt>
+<E1//Immagini/Take Off Parameter.png, id=300, 388.45125pt x 344.03531pt>
 File: E1//Immagini/Take Off Parameter.png Graphic file (type png)
 <use E1//Immagini/Take Off Parameter.png>
 Package pdftex.def Info: E1//Immagini/Take Off Parameter.png  used on input line 312.
@@ -915,7 +953,7 @@ Package pdftex.def Info: E1//Immagini/Take Off Parameter.png  used on input line
 [10 <./E1//Immagini/profilo alare.png>]
 
 [11 <./E1//Immagini/Take Off Parameter.png>]
-<E1//Immagini/Matching Chart.png, id=166, 938.5464pt x 442.2924pt>
+<E1//Immagini/Matching Chart.png, id=318, 938.5464pt x 442.2924pt>
 File: E1//Immagini/Matching Chart.png Graphic file (type png)
 <use E1//Immagini/Matching Chart.png>
 Package pdftex.def Info: E1//Immagini/Matching Chart.png  used on input line 373.
@@ -924,28 +962,40 @@ Package pdftex.def Info: E1//Immagini/Matching Chart.png  used on input line 373
 
 [12]
 
-[13 <./E1//Immagini/Matching Chart.png (PNG copy)>])
+[13 <./E1//Immagini/Matching Chart.png (PNG copy)>]
 
-[14] (main.aux)
+[14]
+
+[15]
+
+[16]
+
+[17]
+
+[18]
+
+[19])
+
+[20] (relazione PVA.aux)
  ***********
 LaTeX2e <2024-06-01>
 L3 programming layer <2024-05-08>
  ***********
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3B416219DD2B70CC2FCA0F3B36EC428B;1406.
+Package rerunfilecheck Info: File `"relazione PVA".out' has not changed.
+(rerunfilecheck)             Checksum: F957E38D789DF96243065109E3D2A7DD;5535.
  ) 
 Here is how much of TeX's memory you used:
- 40160 strings out of 473937
- 948253 string characters out of 5727371
+ 40514 strings out of 473937
+ 954142 string characters out of 5727371
  1966893 words of memory out of 5000000
- 62329 multiletter control sequences out of 15000+600000
- 570348 words of font info for 77 fonts, out of 8000000 for 9000
+ 62651 multiletter control sequences out of 15000+600000
+ 570954 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,14n,101p,923b,937s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\franc\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on main.pdf (15 pages, 3049313 bytes).
+ 99i,18n,101p,932b,1003s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\franc\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "relazione PVA.pdf" (21 pages, 3125336 bytes).
 PDF statistics:
- 291 PDF objects out of 1000 (max. 8388607)
- 63 named destinations out of 1000 (max. 500000)
- 132 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 482 PDF objects out of 1000 (max. 8388607)
+ 91 named destinations out of 1000 (max. 500000)
+ 388 words of extra memory for PDF output out of 10000 (max. 10000000)
 

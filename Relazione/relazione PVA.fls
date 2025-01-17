@@ -1,7 +1,7 @@
 PWD c:\Users\franc\Documents\Politecnico\PVA 2025\E1\script\Relazione
 INPUT C:\Users\franc\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\franc\Documents\Politecnico\PVA 2025\E1\script\Relazione\main.tex
-OUTPUT main.log
+INPUT c:\Users\franc\Documents\Politecnico\PVA 2025\E1\script\Relazione\relazione PVA.tex
+OUTPUT relazione PVA.log
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\base\report.cls
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\base\size10.clo
@@ -340,12 +340,14 @@ INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\tools\bm.sty
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\tools\bm.sty
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\float\float.sty
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\tocloft\tocloft.sty
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
-INPUT .\main.aux
-INPUT .\main.aux
-INPUT main.aux
-OUTPUT main.aux
+INPUT .\relazione PVA.aux
+INPUT .\relazione PVA.aux
+INPUT relazione PVA.aux
+OUTPUT relazione PVA.aux
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\context\base\mkii\supp-pdf.mkii
@@ -354,14 +356,14 @@ INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\epstopdf-pkg\epstop
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\00miktex\epstopdf-sys.cfg
-INPUT .\main.out
-INPUT .\main.out
-INPUT main.out
-INPUT main.out
-OUTPUT main.pdf
-INPUT .\main.out
-INPUT .\main.out
-OUTPUT main.out
+INPUT .\relazione PVA.out
+INPUT .\relazione PVA.out
+INPUT relazione PVA.out
+INPUT relazione PVA.out
+OUTPUT relazione PVA.pdf
+INPUT .\relazione PVA.out
+INPUT .\relazione PVA.out
+OUTPUT relazione PVA.out
 INPUT .\polito_logo_2021_blu.jpg
 INPUT .\polito_logo_2021_blu.jpg
 INPUT .\polito_logo_2021_blu.jpg
@@ -393,9 +395,10 @@ INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cme
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy6.tfm
 INPUT C:\Users\franc\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT .\main.toc
-INPUT .\main.toc
-INPUT main.toc
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT .\relazione PVA.toc
+INPUT .\relazione PVA.toc
+INPUT relazione PVA.toc
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbxti10.tfm
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
@@ -408,12 +411,13 @@ INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cme
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbsy10.tfm
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy7.tfm
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmbsy5.tfm
-OUTPUT main.toc
+OUTPUT relazione PVA.toc
 INPUT .\E1\E1.tex
 INPUT .\E1\E1.tex
 INPUT .\E1\E1.tex
 INPUT .\E1\E1.tex
 INPUT E1\E1.tex
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti12.tfm
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
@@ -490,15 +494,19 @@ INPUT .\E1\\Immagini\Matching Chart.png
 INPUT .\E1\\Immagini\Matching Chart.png
 INPUT .\E1\\Immagini\Matching Chart.png
 INPUT .\E1\\Immagini\Matching Chart.png
-INPUT main.aux
-INPUT .\main.out
-INPUT .\main.out
+INPUT relazione PVA.aux
+INPUT .\relazione PVA.out
+INPUT .\relazione PVA.out
 INPUT C:\Users\franc\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\franc\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx5.pfb
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx5.pfb
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx7.pfb
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx7.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx8.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbxti10.pfb

@@ -1,0 +1,42 @@
+\babel@toc {italian}{}\relax 
+\babel@toc {italian}{}\relax 
+\contentsline {chapter}{\numberline {1}Esercitazione 1: {\itshape Velivolo convenzionale}}{2}{chapter.2}%
+\contentsline {section}{\numberline {1.1}Requisito}{2}{section.3}%
+\contentsline {section}{\numberline {1.2}Metodologia}{4}{section.6}%
+\contentsline {subsection}{\numberline {1.2.1}Stima preliminare della massa massima al decollo}{4}{subsection.7}%
+\contentsline {subsubsection}{Massa equipaggio e payload}{4}{subsubsection*.8}%
+\contentsline {subsubsection}{Frazione di massa a vuoto}{4}{subsubsection*.9}%
+\contentsline {subsubsection}{Frazione di carburante}{4}{subsubsection*.10}%
+\contentsline {subsubsection}{Peso al decollo}{5}{subsubsection*.19}%
+\contentsline {subsubsection}{Analisi di trade-off}{6}{subsubsection*.20}%
+\contentsline {subsection}{\numberline {1.2.2}Diagramma Payload-Range preliminare}{7}{subsection.23}%
+\contentsline {subsubsection}{Famiglia di aerei}{8}{subsubsection*.25}%
+\contentsline {subsection}{\numberline {1.2.3}Matching Chart}{9}{subsection.28}%
+\contentsline {subsubsection}{Carico alare massimo}{9}{subsubsection*.29}%
+\contentsline {subsubsection}{Decollo}{10}{subsubsection*.31}%
+\contentsline {subsubsection}{Salita}{11}{subsubsection*.33}%
+\contentsline {subsubsection}{Crociera}{12}{subsubsection*.36}%
+\contentsline {subsubsection}{Approach Climb}{12}{subsubsection*.37}%
+\contentsline {subsubsection}{Landing Climb}{12}{subsubsection*.38}%
+\contentsline {subsubsection}{Matching Chart}{13}{subsubsection*.39}%
+\contentsline {subsection}{\numberline {1.2.4}Fusoliera}{13}{subsection.41}%
+\contentsline {subsubsection}{Diametro esterno}{13}{subsubsection*.42}%
+\contentsline {subsubsection}{Lunghezza}{13}{subsubsection*.43}%
+\contentsline {subsection}{\numberline {1.2.5}Analisi di sensibilità}{14}{subsection.44}%
+\contentsline {subsubsection}{Aerodinamica}{14}{subsubsection*.46}%
+\contentsline {paragraph}{$\mathbf {C_{D_0}}$}{14}{paragraph*.47}%
+\contentsline {paragraph}{$\mathbf {C_{D_i}}$}{16}{paragraph*.55}%
+\contentsline {paragraph}{$\mathbf {C_{D_W}}$}{17}{paragraph*.56}%
+\contentsline {subsubsection}{Stima dei Pesi}{17}{subsubsection*.57}%
+\contentsline {paragraph}{Ala}{17}{paragraph*.58}%
+\contentsline {paragraph}{Coda}{18}{paragraph*.59}%
+\contentsline {paragraph}{Fusoliera}{18}{paragraph*.60}%
+\contentsline {paragraph}{Carrello di atterraggio}{18}{paragraph*.61}%
+\contentsline {paragraph}{Propulsione}{18}{paragraph*.62}%
+\contentsline {paragraph}{Sistemi}{18}{paragraph*.63}%
+\contentsline {paragraph}{Arredi e Servizi}{19}{paragraph*.64}%
+\contentsline {paragraph}{Equipaggio}{19}{paragraph*.65}%
+\contentsline {paragraph}{OEW totale}{19}{paragraph*.66}%
+\contentsline {paragraph}{Payload}{19}{paragraph*.67}%
+\contentsline {subsubsection}{Prestazioni in Missione}{19}{subsubsection*.68}%
+\contentsline {subsection}{\numberline {1.2.6}Costi}{20}{subsection.69}%

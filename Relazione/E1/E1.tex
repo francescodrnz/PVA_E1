@@ -56,7 +56,7 @@ Velocità di crociera & 835 km/h \\
 Range & 4500 km \\
 Range di diversione & 200 nm \\
 Numero di motori & 2 \\
-Specific Fuel Consumption & 0.5 kg/kg/h \\
+Specific Fuel Consumption & 0.5 $kg/(kg\cdot h)$ \\
 \end{tabular}
 \caption{Requisiti del nuovo velivolo.}
 \end{table}
@@ -67,13 +67,13 @@ Il numero di assistenti di volo è stato determinato a partire dal numero dei pa
 \newpage
 \section{Metodologia}
 \subsection{Stima preliminare della massa massima al decollo}
-Il primo parametro che si è stimato, fondamentale per il resto del progetto, è la massa massima al decollo. È possibile dividerla in quattro componenti: crew, payload, carburante e massa a vuoto. 
+Il primo parametro che si è stimato, fondamentale per il resto del progetto, è la massa massima al decollo. È possibile dividerla in quattro componenti: equipaggio, payload, carburante e massa a vuoto. 
 \[m_{TO} = m_{crew}+m_{payload}+m_{fuel}+m_{empty}\]
 È possibile riarrangiare la precedente equazione in modo da esplicitare la frazione di carburante e la frazione di massa a vuoto
 \[m_{TO} = \dfrac{m_{crew}+m_{payload}}{1-\dfrac{m_{fuel}}{m_{TO}}-\dfrac{m_{empty}}{m_{TO}}}\]
 Si sono quindi calcolate le diverse componenti della massa.
 
-\subsubsection{Massa crew e payload}
+\subsubsection{Massa equipaggio e payload}
 In questa fase iniziale di progetto si è assunto che tutto il payload sia fatto dai passeggeri e dai loro bagagli, non considerando quindi eventuali merci aggiuntive.
 
 Si è quindi calcolata la massa considerando la stima statistica elaborata da Roskam, secondo cui il peso di un singolo passeggero è 79.4 kg e il suo bagaglio, per un volo di corto-medio raggio, 13.6 kg, per un totale di \textbf{93.0 kg}. Si è assunto lo stesso peso per il personale di bordo.
@@ -103,7 +103,7 @@ In particolare è possibile ricavare questa stima da dati statistici per tutte l
 \label{eq:autonomia} \\
 \text{Autonomia oraria: }&\dfrac{W_{i+1}}{W_i} = e^{-\dfrac{c\Delta t}{E}} 
 \end{align}
-dove c è lo \textit{Specific Fuel Consumption}, V la velocità ed E l'efficienza aerodinamica. In particolare per lo SFC del loiter si è usato il valore di 0.4 kg/kg/h, inferiore rispetto allo 0.5 kg/kg/h della crociera. Inoltre, il range considerato in questo step è di 4500 km, migliorando di 500 km quello dell'A320neo a pieno carico.
+dove c è lo \textit{Specific Fuel Consumption}, V la velocità ed E l'efficienza aerodinamica. In particolare per lo SFC del loiter si è usato il valore di 0.4 $kg/(kg\cdot h)$, inferiore rispetto allo 0.5 $kg/(kg\cdot h)$ della crociera. Inoltre, il range considerato in questo step è di 4500 km, migliorando di 500 km quello dell'A320neo a pieno carico.
 
 Queste formule sono ricavate facendo una semplificazione: quella di assetto costante, quindi $C_L$ costante; ne consegue che durante la crociera l'aereo prende quota grazie alla riduzione di peso dovuta al consumo di carburante, per una condizione di cosiddetto \textit{cruise-climb}.
 
@@ -164,7 +164,7 @@ A partire da questo risultato, sono state effettuate analisi di trade-off al var
     \midrule
         Range & 3500 - 5500 km \\
         Payload &  160 - 200 passeggeri\\
-        Specific Fuel Consumption & 0.4 - 0.6 kg/kg/h \\
+        Specific Fuel Consumption & 0.4 - 0.6 $kg/(kg\cdot h)$ \\
         Aspect Ratio & 8 - 10 \\
          \bottomrule
     \end{tabular}
@@ -403,7 +403,7 @@ A partire dai risultati preliminari, è stata impostata un'analisi di sensibilit
     \hline
        Mach di Crociera  & M & $[0.76\, 0.80\, 0.82]$ \\
     \hline
-       Angolo di Freccia al quarto di corda & $\Lambda$ & $[20\, 25\, 30\, 35]\,\,\si{\degree} $ \\
+       Angolo di Freccia al quarto di corda & $\Lambda_{25}$ & $[20\, 25\, 30\, 35]\,\,\si{\degree} $ \\
     \hline
        Rapporto di Rastremazione & $\lambda$ & $[0.23\, 0.27\, 0.31]$ \\
     \hline
@@ -413,7 +413,307 @@ A partire dai risultati preliminari, è stata impostata un'analisi di sensibilit
 
 Sono stati quindi calcolati i parametri di peso, aerodinamici e di prestazione per ogni combinazione delle variabili di design. Per fare ciò si è impostato su MATLAB un ciclo di convergenza sul peso massimo al decollo, in quanto è un parametro che influenza e viene influenzato da tutti gli altri. Si è imposta una tolleranza sulla differenza relativa di 25 kg e si è partiti dal valore iniziale calcolato in via preliminare, ovvero 65657 kg.
 \vspace{0.5cm}
-\newline Il primo step in ogni fase del ciclo è quello di calcolare mediante il matching chart il valore della spinta da installare per quella configurazione, funzione del carico alare. I passaggi successivi sono il calcolo dei parametri aerodinamici, del \textit{mass breakdown}, delle prestazioni in missione ed infine, una volta giunto a convergenza il ciclo, i costi associati alla particolare configurazione.
+\newline Il primo step in ogni fase del ciclo è quello di calcolare mediante il matching chart il valore della spinta da installare per quella configurazione, funzione del carico alare. I passaggi successivi sono il calcolo dei parametri aerodinamici, la stima dei pesi, delle prestazioni in missione ed infine, una volta giunto a convergenza il ciclo, i costi associati alla particolare configurazione.
 
 \subsubsection{Aerodinamica}
-L'obiettivo di questa sezione del calcolo è quello di trovare il coefficiente di resistenza del velivolo. Esso è definito come 
+L'obiettivo di questa sezione del calcolo è quello di trovare il coefficiente di resistenza del velivolo. I tre principali contributi alla resistenza sono la resistenza a portanza nulla $C_{D_0}$, a cui contribuisce l'intero velivolo, la resistenza indotta $C_{D_i}$ e la resistenza d'onda $C_{D_W}$, generate dal funzionamento dell'ala:\[C_D=C_{D_0}+ C_{D_i} + C_{D_W}\]
+
+\paragraph{\texorpdfstring{$\mathbf{C_{D_0}}$}{CD0}}
+    
+    È calcolato come somma dei contributi del $C_{D_0}$ di ala, fusoliera, impennaggi di coda e gondole motore. È stato calcolato secondo la formula derivata da Raymer:
+    \[C_{D_0} = \dfrac{\sum_i c_{F_i}\cdot FF_i\cdot Q_i\cdot S_{W_i}}{S}\]
+    Dove: $c_F$ è il coefficiente di attrito equivalente, $FF$ il fattore di forma, $Q$ il fattore di interferenza e $S_W$ la superficie bagnata, mentre $S$ è la superficie alare. Essa è calcolata ad ogni iterazione del ciclo come rapporto tra il peso al decollo e il carico alare; l'apertura alare $b$ è calcolata come radice quadrata del prodotto tra $Aspect Ratio$ e superficie alare.
+
+    Il coefficiente d'attrito equivalente per un flusso turbolento è pari a:
+    \[ c_{F_{TURB}} = \frac{0.455}{\left[ \log_{10}(Re) \right]^{2.58} \left[ 1 + 0.144 \cdot M^2 \right]^{0.65}} \]
+    dove $M$ è il Mach di crociera, variabile di design, e $Re$ il numero di Reynolds calcolato nelle condizioni di crociera: velocità pari al Mach di crociera per velocità del suono alla quota di crociera (pari a $316.01\,m/s$) e viscosità dinamica calcolata tramite le relazioni dell'$International\,\,Standard\,\,Air$, pari a \num{1.591e-5} $kg/(m\cdot s)$; la lunghezza caratteristica $L$ è differente per ogni componente.
+    
+    A seguire i parametri per il calcolo del $C_{D_0}$ di ogni componente:
+        \begin{itemize}
+            \item \textbf{Ala}:
+            \begin{table}[H]
+                \centering
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabular}{c|c}
+                    L & $MAC = \dfrac{2}{3}c_{root}\dfrac{1+\lambda+\lambda^2}{1+\lambda}$  ;  $c_{root} = \dfrac{S}{\dfrac{b-d_{fus}}{2}\left(1+\lambda\right)}$ \\
+                    \midrule \\
+                    FF & $\left[ 1 + \dfrac{0.6}{(x/c)_m} \cdot \left( \dfrac{t}{c} \right) + 100 \cdot \left( \dfrac{t}{c} \right)^4 \right] \cdot \left[ 1.34 \cdot M_{cruise}^{0.18} \cdot (\cos \Lambda_{25})^{0.28} \right]$ ; $(x/c)_m \approx 0.5$ \\
+                    \midrule \\
+                    Q & 1.0 \\
+                    \midrule \\
+                    $S_W$ & $S\left[1.997+0.52\left(\dfrac{t}{c}\right)\right]$
+                \end{tabular}
+             \end{table}
+            \item \textbf{Fusoliera}:
+            \begin{table}[H]
+                \centering
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabular}{c|c}
+                    L & $l_{fus} = 38.0 \,m$ \\
+                    \midrule \\
+                    FF & $\left(1+\dfrac{60}{\left(l_{fus}/d_{fus}\right)^3}+\dfrac{\left(l_{fus}/d_{fus}\right)}{400}\right)$ \\
+                    \midrule \\
+                    Q & 1.0 \\
+                    \midrule \\
+                    $S_W$ & $\pi\left(\dfrac{d_{fus}^2}{2}+d_{fus}\left(l_{fus}-\dfrac{d_{fus}}{2}-l_T\right)\right)+\left(d_{fus}+\pi\right)*\dfrac{l_t}{2}$
+                \end{tabular}
+            \end{table}
+            dove la superficie della fusoliera è stata divisa in: una semisfera in prua, un cilindro centrale e una superficie trapezoidale per la sezione di coda.
+
+            \item \textbf{Equilibratore}:
+            \begin{table}[H]
+                \centering
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabular}{c|c}
+                    L & $b_{orizz} = \sqrt{AR_{orizz}S_{orizz}}$ \\
+                    \midrule \\
+                    FF & $\left[ 1 + \dfrac{0.6}{(x/c)_m} \cdot \left( \dfrac{t}{c} \right)_{orizz} + 100 \cdot \left( \dfrac{t}{c} \right)_{orizz}^4 \right] \cdot \left[ 1.34 \cdot M^{0.18}_{cruise} \cdot (\cos \Lambda_{25_{orizz}})^{0.28} \right]$ ; $(x/c)_m \approx 0.5$ \\
+                    \midrule \\
+                    Q & 1.05 \\
+                    \midrule \\
+                    $S_W$ & $S\left[1.997+0.52\left(\dfrac{t}{c}\right)_{orizz}\right]$
+                \end{tabular}
+             \end{table}
+             Per i parametri geometrici dell'equilibratore si è fatto riferimento a dati statistici per velivoli della stessa categoria:
+             \begin{table}[H]
+                \centering
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabular}{c|c}
+                    $S_{orizz}$ & $0.25\, S_{wing}$\\
+                    $AR_{orizz}$ & 5.0 \\
+                    $\Lambda_{25_{orizz}}$ & $29\si{\degree}$ \\
+                    $\left(\dfrac{t}{c}\right)_{orizz}$ & 0.10
+                \end{tabular}
+            \end{table} 
+
+            \item \textbf{Timone}:
+            \begin{table}[H]
+                \centering
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabular}{c|c}
+                    L & $b_{vert} = \sqrt{AR_{vert}S_{vert}}$ \\
+                    \midrule \\
+                    FF & $\left[ 1 + \dfrac{0.6}{(x/c)_m} \cdot \left( \dfrac{t}{c} \right)_{vert} + 100 \cdot \left( \dfrac{t}{c} \right)_{vert}^4 \right] \cdot \left[ 1.34 \cdot M^{0.18}_{cruise} \cdot (\cos \Lambda_{25_{vert}})^{0.28} \right]$ ; $(x/c)_m \approx 0.5$ \\
+                    \midrule \\
+                    Q & 1.05 \\
+                    \midrule \\
+                    $S_W$ & $S\left[1.997+0.52\left(\dfrac{t}{c}\right)_{vert}\right]$
+                \end{tabular}
+             \end{table}
+             Anche i parametri geometrici del timone sono stati ricavati da dati statistici per velivoli della stessa categoria:
+             \begin{table}[H]
+                \centering
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabular}{c|c}
+                    $S_{vert}$ & $0.18 \,S_{wing}$\\
+                    $AR_{vert}$ & 1.8 \\
+                    $\Lambda_{25_{vert}}$ & $34\si{\degree}$ \\
+                    $\left(\dfrac{t}{c}\right)_{vert}$ & 0.12
+                \end{tabular}
+            \end{table} 
+
+            \item \textbf{Gondole motore}:
+            \begin{table}[H]
+                \centering
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabular}{c|c}
+                    L & $l_{nac} = 0.07 \sqrt{T/2}$  \\
+                    \midrule \\
+                    FF & $1+\dfrac{60}{f_{nac}^3}+\dfrac{f_{nac}}{400}$ ; $f_{nac} = \dfrac{l_{nac}}{\sqrt{(4/\pi)A_{nac}}}$ \\
+                    \midrule \\
+                    Q & 1.0 \\
+                    \midrule \\
+                    $S_W$ & $\pi d_{nac}l_{nac}$ ; $d_{nac} = 0.04 \sqrt{T/2}$
+                \end{tabular}
+            \end{table}
+            dove la lunghezza ed il diametro della nacella è stata ricavata da una formula empirica, in cui la spinta è espressa in libbre ed il risultato è in piedi, opportunamente convertiti. Il fattore di forma è stato considerato simile a quello della fusoliera.
+        \end{itemize}
+        \vspace{0.6cm}
+
+        \paragraph{\texorpdfstring{$\mathbf{C_{D_i}}$}{CDi}}
+    
+    È calcolato come: \[C_{D_i} = K C_L^2\]
+    dove K è il parametro adimensionale: \[K = \dfrac{1}{\pi AR\, e}\]
+    A sua volta, il Fattore di Oswald $e$ è ricavato da una formula statistica interpolativa, dipendente dal rapporto di rastremazione: \[e = \dfrac{\cos(\Lambda_{25})}{1 + AR \cdot f_\lambda}\] 
+    dove $f_\lambda$ è calcolato come: \[f_\lambda = 0.0524 \lambda^4 - 0.15 \lambda^3 + 0.1659 \lambda^2 - 0.0706 \lambda + 0.0119\]
+    Infine, il coefficiente di portanza è calcolato direttamente dall'equazione della portanza in condizioni di crociera: \[C_L = \dfrac{2\,\,W/S}{\rho_{cruise} V_{cruise}^2}\]
+
+    \paragraph{\texorpdfstring{$\mathbf{C_{D_W}}$}{CDW}}
+    La resistenza d'onda è direttamente legata all'angolo di freccia, che riduce il Mach del flusso incidente l'ala ed aumenta il Mach critico, a cui si iniziano a verificare fenomeni supersonici sul profilo. Esso è calcolato come: \begin{align*} 
+        M_{dd} = \dfrac{0.90}{\cos \Lambda_{25}} &- \dfrac{(t/c)}{\cos^2 \Lambda_{25}} - \dfrac{0.10 \,C_L}{\cos^3 \Lambda_{25}} \\ \\
+        M_{crit} = M_{dd} &- \left( \dfrac{0.1}{80} \right)^{1/3} 
+    \end{align*}
+
+    Se il Mach di crociera è minore del Mach critico, la resistenza d'onda è pari a zero; altrimenti, essa è calcolata come: \[C_{D_W} = 20 \cdot \left(M_{cruise} - M_{crit}\right)^4\]
+
+Una volta ricavato il coefficiente di resistenza, è possibile calcolare l'efficienza aerodinamica in crociera, un parametro importante per la valutazione delle prestazioni del velivolo: \[E = \dfrac{L}{W} = \dfrac{C_L}{C_D}\]
+
+\vspace{0.6cm}
+
+\subsubsection{Stima dei Pesi}
+
+La stima dei pesi rappresenta una parte fondamentale nella progettazione preliminare del velivolo, in quanto consente di definire i valori di massa richiesti per soddisfare i requisiti operativi e strutturali. In questa sezione, si dettagliano i principali componenti della massa operativa a vuoto (OEW, \textit{Operating Empty Weight}) e le relative dipendenze dai parametri di progetto. Tutte le formule sono ricavate empiricamente, sulla base di dati statistici di velivoli già esistenti, da Raymer; di conseguenza, tutti i parametri sono espressi, nelle equazioni, nel sistema imperiale.
+\paragraph{Ala}
+
+Il peso dell'ala dipende da diversi parametri geometrici e strutturali, sintetizzati nell'indice geometrico dell'ala ($I_w$):
+
+\begin{equation*}
+I_w = \frac{n_{ult} \cdot AR^{1.5} \cdot \sqrt{\dfrac{W_{\text{zf}}}{W_{\text{TO}}}} \cdot (1 + 2\lambda) \cdot W/S \cdot S^{1.5} \cdot 10^{-6}}{\left(t/c\right) \cdot \cos^2 \Lambda_{25} \cdot (1 + \lambda)}
+\end{equation*}
+
+Dove:
+\begin{itemize}
+    \item $n_{\text{ult}}$: \textit{ultimate load factor}, fissato a 3.75;
+    \item $W_{\text{zf}}$: peso a zero carburante $W_{\text{zf}} = W_{\text{TO}} \cdot (1 - f_{\text{fuel}})$, con la frazione di carburante $f_{\text{fuel}} = \dfrac{W_{\text{fuel}}}{W_{\text{TO}}}$ calcolata inizialmente nel calcolo preliminare del peso del velivolo, poi ricalcolata ad ogni step del ciclo di convergenza;
+    \item $W_{\text{TO}}$: peso massimo al decollo.
+\end{itemize}
+
+In base al valore di $S$, il peso dell'ala viene calcolato come:
+
+\begin{equation*}
+W_{\text{wing}} = \begin{cases} 
+    (0.93 \cdot I_w + 6.44 \cdot S + 390) & \text{se } S \geq 900 \ \text{ft}^2, \\
+    (4.24 \cdot I_w + 0.57 \cdot S) & \text{altrimenti}.
+\end{cases}
+\end{equation*}
+
+\paragraph{Coda}
+
+Il peso della coda convenzionale, incluse sia le superfici orizzontali e che quella verticale, è calcolato come:
+
+\begin{equation*}
+W_{\text{tail}} = 5.03 \cdot (S_{\text{orizz}} + S_{\text{vert}})
+\end{equation*}
+
+\paragraph{Fusoliera}
+
+Il peso della fusoliera dipende dalle sue dimensioni:
+
+\begin{equation*}
+W_{\text{fus}} = 1.35 \cdot \left( L_{\text{fus}} \cdot D_{\text{fus}} \right)^{1.28}
+\end{equation*}
+
+Dove:
+\begin{itemize}
+    \item $L_{\text{fus}}$: lunghezza della fusoliera;
+    \item $D_{\text{fus}}$: diametro esterno della fusoliera.
+\end{itemize}
+
+\paragraph{Carrello di atterraggio}
+
+Il peso del carrello di atterraggio è calcolato considerando quattro contributi principali, tutti funzione del peso massimo al decollo ($W_{\text{TO}}$):
+
+\begin{equation*}
+W_{\text{LG}} = W_{\text{LG, strutt}} + W_{\text{LG, freni}} + W_{\text{LG, pneumatici}} + W_{\text{LG, controllo}}
+\end{equation*}
+
+I contributi individuali sono determinati come segue:
+\begin{align*}
+        W_{\text{LG, strutt}} &= W_{\text{LG, param}} \cdot \left( 0.45 + 23.1 \cdot 10^{-8} \cdot W_{\text{TO}} \right) \\
+        W_{\text{LG, freni}} &= W_{\text{LG, param}} \cdot \left( 0.268 - 8.12 \cdot 10^{-8} \cdot W_{\text{TO}} \right) \\
+        W_{\text{LG, pneumatici}} &= W_{\text{LG, param}} \cdot \left( 0.152 - 8.38 \cdot 10^{-8} \cdot W_{\text{TO}} \right) \\
+        W_{\text{LG, controllo}} &= W_{\text{LG, param}} \cdot \left( 0.13 - 6.56 \cdot 10^{-8} \cdot W_{\text{TO}} \right) \\
+\end{align*}
+
+Il parametro $W_{\text{LG, param}}$ è definito come:
+
+\begin{equation*}
+W_{\text{LG, param}} = 0.044 \cdot W_{\text{TO}} - 672
+\end{equation*}
+
+\paragraph{Propulsione}
+
+Il peso del sistema propulsivo comprende motori e gondole:
+
+\begin{equation*}
+W_{\text{nac}} = \frac{1}{4} \cdot N_{\text{prop}} \cdot D_{\text{nac}} \cdot L_{\text{nac}} \cdot \left( T_{\text{engine}} \right)^{0.36}
+\end{equation*}
+dove $N_{\text{prop}}$ è il numero di motori, pari a due, e $T_{\text{engine}}$ la spinta del singolo motore, quindi quella totale installata divisa per il numero di motori.
+\begin{equation*}
+W_{\text{engine}} = \frac{\left(T/W\right) \cdot W_{\text{TO}}}{5.5}
+\end{equation*}
+
+\begin{equation*}
+W_{\text{prop}} = W_{\text{nac}} + W_{\text{engine}}
+\end{equation*}
+
+\paragraph{Sistemi}
+
+Il peso dei sistemi include i seguenti contributi:
+
+\begin{itemize}
+    \item \textbf{Sistema carburante:} \begin{equation*} W_{\text{fuelsys}} = 2.71 \cdot \left( \frac{b}{\cos \Lambda_{25}} \cdot N_{\text{serbatoi}} \right)^{0.956} \end{equation*}
+    con il numero di serbatoi imposto pari a sei, ovvero due in ogni semiala, uno centrale in fusoliera ed un \textit{trim tank} nell'equilibratore.
+    \item \textbf{Sistema idraulico:} \begin{equation*} W_{\text{hydraulic}} = \begin{cases} 
+        45 + 1.318 \cdot S_{\text{ref}} & \text{se } S_{\text{ref}} \leq 3000 \ \text{ft}^2, \\
+        18.7 \cdot S_{\text{ref}}^{0.712} - 1620 & \text{altrimenti}.
+    \end{cases} \end{equation*}
+    con 
+    \begin{equation*}
+        S_{\text{ref}} = S_{\text{wing}} + 1.44\cdot(S_{\text{orizz}}+S_{\text{vert}})
+    \end{equation*}
+    \item \textbf{Sistema elettrico:} \begin{equation*} W_{\text{elec}} = 16.2 \cdot N_{\text{passeggeri}} + 110 \end{equation*}
+    \item \textbf{Sistema pneumatico:} \begin{equation*} W_{\text{pneumatic}} = 26.2 \cdot N_{\text{passeggeri}}^{0.944} \end{equation*}
+    \item \textbf{Sistema anti-ghiaccio}, senza anti-ghiaccio sulle superfici di coda: \begin{equation*} W_{\text{anti-ice}} = 0.120 \cdot S_{\text{wing}} \end{equation*}
+    \item \textbf{Strumentazione} per la manetta, per il carburante, e altra: \begin{equation*} W_{\text{instr}} = \left( 0.00145 \cdot T_{\text{engine}} + 30 \right) \cdot N_{\text{prop}} + \left( 0.00714 \cdot V_{\text{fuel}} + 34 \right) + (1.872 \cdot N_{\text{passeggeri}} + 128) \end{equation*}
+    \item \textbf{Avionica:} \begin{equation*} W_{\text{avionics}} = 2.8 \cdot N_{\text{pax}} + 2320 \end{equation*}
+    \item \textbf{Sistema motore:} \begin{equation*} W_{\text{engine sys}} = 133 \cdot N_{\text{prop}} \end{equation*}
+\end{itemize}
+
+\paragraph{Arredi e Servizi}
+
+Il peso degli arredi e dei servizi per i passeggeri è calcolato come:
+
+\begin{equation*}
+W_{\text{furn}} = 118.4 \cdot N_{\text{passeggeri}} - 4190
+\end{equation*}
+
+Il peso dei servizi include contributi come catering e assistenza ai passeggeri:
+
+\begin{equation*}
+W_{\text{services}} = 2.529 \cdot N_{\text{passeggeri}} \cdot \left(\frac{\text{Range}}{M_{\text{cruise}}}\right)^{0.225}
+\end{equation*}
+
+\paragraph{Equipaggio}
+
+Il peso dell'equipaggio è calcolato considerando i due piloti ed i quattro assistenti di volo:
+
+\begin{equation*}
+W_{\text{crew}} = 2 \cdot 225 + 4 \cdot 155
+\end{equation*}
+
+\paragraph{OEW totale}
+
+Il peso operativo a vuoto è infine calcolato sommando tutti i contributi:
+
+\begin{equation*} 
+    \begin{split} 
+        \text{OEW} = &\, W_{\text{wing}} + W_{\text{tail}} + W_{\text{fus}} + W_{\text{LG}} + W_{\text{prop}} + W_{\text{fuelsys}} + \\
+         &\, W_{\text{hydraulic}} + W_{\text{elec}} + W_{\text{pneumatic}} + W_{\text{anti-ice}} + W_{\text{instr}} + \\
+         &\, W_{\text{avionics}} + W_{\text{engine sys}} + W_{\text{furn}} + W_{\text{services}} + W_{\text{crew}}
+    \end{split} 
+\end{equation*}
+
+\paragraph{Payload}
+Il carico pagante del velivolo è composto da passeggeri e relativi bagagli, e merci. 
+
+Come anticipato nel calcolo del peso preliminare, il peso di un singolo passeggero è 79.4 kg e il suo bagaglio, per un volo di corto-medio raggio, 13.6 kg; ciò porta ad una massa totale dei passeggeri di $\mathbf{16740 \textbf{ kg}}$.
+
+Calcolando il volume della stiva dell'aereo, si è stimato che possa contenere tre container \textbf{LD3/46(W)}, standard per questa categoria di aerei, il cui peso lordo massimo è di 1135 kg, per un totale del peso delle merci di $\mathbf{3045 \textbf{ kg}}$. 
+
+Il peso totale del payload si attesta quindi a $\mathbf{20145 \textbf{ kg}}$.
+
+\subsubsection{Prestazioni in Missione}
+L'ultimo step del ciclo è ricalcolare le prestazioni in missione, in particolare il consumo di carburante. Per ciò, si riutilizzano le formule di Breguet già usate nel calcolo preliminare, ma stavolta con la "vera" efficienza aerodinamica. si ricalcolano in particolare le differenze di peso (quindi i consumi di carburante) in crociera, loiter e diversione. 
+\begin{align*}
+    \text{Autonomia chilometrica: }&\dfrac{W_{f}}{W_i} = e^{-\dfrac{c\Delta x}{VE}}\\
+    \text{Autonomia oraria: }&\dfrac{W_{f}}{W_i} = e^{-\dfrac{c\Delta t}{E}} 
+\end{align*}
+
+avendo effettuato i calcoli aerodinamici, si utilizza la reale efficienza di crociera della particolare configurazione. Come in precedenza, si suppone l'efficienza in loiter aumentata di un fattore 1/0.866 rispetto a quella in crociera, ed il consumo specifico \textit{c} pari a 0.5 $kg/(kg\cdot h)$ nella fase di crociera e 0.4 $kg/(kg\cdot h)$ in loiter.
+
+Si ricava dunque la \textit{fuel fraction}, moltiplicando il rapporto di peso in ogni fase della missione (aumentata del 5\% per contingenza), e quindi il peso di carburante necessario per la missione, moltiplicando la \textit{fuel fraction} per il peso al decollo.
+
+Un altro fondamentale parametro di prestazione è il \textit{block fuel}, ovvero il carburante consumato per una missione standard, senza diversione.
+
+\subsection{Costi}

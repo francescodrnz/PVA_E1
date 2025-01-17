@@ -16,6 +16,7 @@
 \usepackage{subcaption}
 \usepackage{listings}
 \usepackage{hyperref}
+\setcounter{tocdepth}{4}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{adjustbox}
@@ -32,6 +33,18 @@
  bottom=30mm,
  right=20mm
  }
+ \usepackage{tocloft}
+ \renewcommand{\cftsecfont}{\normalfont} 
+ \renewcommand{\cftsecpagefont}{\normalfont} 
+ \renewcommand{\cftsubsecfont}{\normalfont} 
+ \renewcommand{\cftsubsubsecfont}{\normalfont} 
+ \renewcommand{\cftsecindent}{0pt}  
+ \renewcommand{\cftsubsecindent}{22pt} 
+ \renewcommand{\cftsubsubsecindent}{85pt} 
+ \renewcommand{\cftparaindent}{120pt} 
+ \renewcommand{\cftbeforesecskip}{1pt} 
+ \renewcommand{\cftbeforesubsecskip}{1pt} 
+ \renewcommand{\cftbeforesubsubsecskip}{1pt}
 \hypersetup{
   colorlinks=true,
   linkcolor=black,
