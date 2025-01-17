@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1737127585.66734 "c:/Users/franc/Documents/Politecnico/PVA 2025/E1/script/Relazione/relazione PVA.tex" "relazione PVA.pdf" "relazione PVA" 1737127588.45073 0
+["pdflatex"] 1737132511.55734 "c:/Users/franc/Documents/Politecnico/PVA 2025/E1/script/Relazione/relazione PVA.tex" "relazione PVA.pdf" "relazione PVA" 1737132514.10789 0
   "C:/Users/franc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1737110879 80909 eab91d9745dd2edfd62a31d53cd5fe15 ""
   "C:/Users/franc/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/tcrm1000.pk" 1717769528 11548 81fece7ca5c2da0043effb379727957b ""
   "C:/Users/franc/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1717769811 24263162 72d8f45ffe3ec2e13a5100ac6e453b9c ""
@@ -262,17 +262,17 @@
   "E1//Immagini/payload-range.png" 1736594078 46523 753bfbf4f93aad986d028444240caddc ""
   "E1//Immagini/payload-range_family.png" 1736594078 68212 cf93e5a3c418c9920e29ecca0f7a7092 ""
   "E1//Immagini/profilo alare.png" 1736594078 25530 b306455ae07c3d05d2e11a72069a7cb2 ""
-  "E1/E1.tex" 1737127582 46813 ee5b5048abf7f83faae3cebb758496e0 ""
+  "E1/E1.tex" 1737132507 51975 f2140ed592c8db6489df2f72ee675ae1 ""
   "E1/Immagini/tradeoff_AR.png" 1736594078 52517 6134e5a1cac34c3a7526f40b5e468e85 ""
   "E1/Immagini/tradeoff_payload.png" 1736594078 44853 cd2eba4e8d9f93693cadf9cfeeaa60d6 ""
   "E1/Immagini/tradeoff_range.png" 1736594078 40846 1d677181b594ab1eb2205588211b827d ""
   "E1/Immagini/tradeoff_sfc.png" 1736594078 44589 4b7bacfdf7a213839348d25f88d82240 ""
   "c:/Users/franc/Documents/Politecnico/PVA 2025/E1/script/Relazione/relazione PVA.tex" 1737111166 1924 2b63876bc7e94007f550cbbb34a8c332 ""
   "polito_logo_2021_blu.jpg" 1736594078 2103073 817339b224b3e04dce5011efc56f10f3 ""
-  "relazione PVA.aux" 1737127588 7283 0aabb9b8b549891c21cedb8dc3498c9c "pdflatex"
-  "relazione PVA.out" 1737127588 5535 f957e38d789df96243065109e3d2a7dd "pdflatex"
+  "relazione PVA.aux" 1737132513 7393 2351899c5ef1ab0ebdf62675fae61578 "pdflatex"
+  "relazione PVA.out" 1737132513 5634 8bb3c2d064f7e542c576726f7f103cbf "pdflatex"
   "relazione PVA.tex" 1737111166 1924 2b63876bc7e94007f550cbbb34a8c332 ""
-  "relazione PVA.toc" 1737127588 2901 2898920eec00a7b2715762067ba19a6d "pdflatex"
+  "relazione PVA.toc" 1737132513 2970 6c703e107bddeee5dd44e3559345ad27 "pdflatex"
   (generated)
   "relazione PVA.aux"
   "relazione PVA.log"

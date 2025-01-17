@@ -40,3 +40,4 @@
 \contentsline {paragraph}{Payload}{19}{paragraph*.67}%
 \contentsline {subsubsection}{Prestazioni in Missione}{19}{subsubsection*.68}%
 \contentsline {subsection}{\numberline {1.2.6}Costi}{20}{subsection.69}%
+\contentsline {section}{\numberline {1.3}Risultati}{21}{section.70}%

@@ -76,6 +76,6 @@ jet_fuel_cost = 686.33; % [$/(kg*10^3)]
 man_hour_cost = 55*inflazione; % [$/h]
 K_engine = 0.57;
 OPR = 32;
-BPR = 50;
+BPR = 12;
 N_comp = 12;
 FED = 12000; % [Wh/kg]

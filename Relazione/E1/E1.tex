@@ -717,3 +717,60 @@ Si ricava dunque la \textit{fuel fraction}, moltiplicando il rapporto di peso in
 Un altro fondamentale parametro di prestazione è il \textit{block fuel}, ovvero il carburante consumato per una missione standard, senza diversione.
 
 \subsection{Costi}
+Una volta giunto a convergenza il calcolo del peso al decollo, si calcolano i costi associati alla particolare configurazione, altri parametri importanti per valutare la bontà di una configurazione. 
+
+Per valutare l'efficienza del velivolo è stato calcolato il PREE (Payload-Range Efficiency). È un parametro che tiene conto sia dell'efficienza energetica che della capacità di trasporto del velivolo, ed è definito come:
+\[
+PREE = \dfrac{W_{payload} \cdot \text{Range}}{FED \cdot W_{block\,fuel}}
+\]
+dove $FED$ (Fuel Energy Density) è il contenuto energetico per unità di massa del carburante, pari a 12000 $Wh/kg$.
+\vspace{0.5cm}
+\newline Il parametro principale per valutare l'efficienza economica del velivolo sono i \textit{Total Operating Cost}, divisi in una parte indipendente dal design del velivolo ovvero i \textit{Indirect Operating Cost} ed una parte direttamente dipendente dalla bontà del design, i \textit{Direct Operating Cost}. Essi rappresentano il costo in dollari per chilometro per passeggero, ed ovviamente è preferibile avere un valore basso:
+\[DOC = \dfrac{TC}{N_{\text{passeggeri}}\cdot V_B}\]
+dove $TC$ è il costo totale orario, $N_{\text{passeggeri}}$ il numero di passeggeri e $V_B$ la velocità commerciale, a sua volta definita come il rapporto tra il range e il \textit{block time}, ovvero il tempo di esecuzione di una missione standard (tempo in volo + tempo di operazioni a terra). In questa fase preliminare del design, è approssimato a \[B_t = \dfrac{Range}{V_{\text{cruise}}}+0.25\,h\]
+
+
+A sua volta, il costo totale orario è composto da tre contributi principali: i costi di volo, i costi di manutenzione ed i costi di proprietà. Essendo costi orari, sono tutti rapportati al block time.
+\vspace{0.5cm}
+\newline Il primo contributo è il \textbf{costo di volo}, che comprende il costo dell'equipaggio, del carburante e delle tasse. Il costo orario dell'equipaggio è stato calcolato considerando uno stipendio di 315 \$/h per ciascun pilota e 77 \$/h per ogni assistente di volo, valori velidi al 1986 ed aggiornati secondo l'inflazione. Il costo del carburante è calcolato come il prodotto tra il costo del combustibile e il consumo orario; quest'ultimo è ottenuto dividendo la massa di block fuel per il block time.
+
+Per quanto riguarda le tasse, sono state considerate tre componenti: la tassa di atterraggio, proporzionale alla massa al decollo (7 \$/tonnellata); la tassa di navigazione, calcolata in funzione del range e della massa al decollo (in tonnellate) secondo la formula:
+\[
+\text{Tassa di Navigazione} = 0.4 \cdot \text{Range} \cdot \sqrt{\dfrac{WTO}{50}}
+\]
+ed infine la tassa di terra, proporzionale al payload (93 \$/tonnellata). Anche questi valori sono stati aggiornati secondo l'inflazione.
+\vspace{0.5cm}
+\newline Il secondo contributo principale è il \textbf{costo di manutenzione}, diviso tra struttura e motori. È possibile suddividere ancora queste componenti in costo della manodopera e costo dei materiali:
+\[\text{Costo di Manutenzione} = A_{LABOUR}+A_{MATERIAL}+N_{prop}\cdot (E_{LABOUR} + E_{MATERIAL})\cdot \left(\dfrac{Flight_t+1.3}{B_t}\right)\]
+dove $A$ indica i costi associati alla struttura (\textit{Airframe}) ed $E$ quelli associati ai motori (\textit{Engine}).
+
+Il costo orario della manodopera è calcolato come:
+\[
+A_{labour} = \left(0.09 \cdot W_{airframe} + 6.7 - \dfrac{350}{W_{airframe} + 75}\right)\cdot\dfrac{0.8 + 0.68 \cdot Flight_{t}}{Block_{t}} \cdot cost_{man\,hour}
+\]
+dove $W_{airframe}$ è la massa della struttura in tonnellate (ottenuta sottraendo la massa dei motori dalla massa a vuoto), $Flight_{t}$ e $Block_{t}$ sono rispettivamente il tempo di volo e il block time in ore, e $c_{man\,hour}$ è il costo orario della manodopera.
+
+Il costo orario dei materiali è invece calcolato come:
+\[
+A_{material} = \dfrac{4.2 + 2.2 \cdot Flight_{t}}{Block_{t}} \cdot (ADP - N_{prop} \cdot BEP)
+\]
+dove $ADP$ (\textit{Aircraft Delivery Price}) è il prezzo di consegna del velivolo, funzione della velocità di crociera, della massa a vuoto e del numero di motori; $BEP$ (Base Engine Price) è invece il prezzo base del motore, calcolato statisticamente in funzione della spinta.
+
+Per i motori, il costo della manodopera è calcolato come:
+\[
+E_{labour} = 0.21 \cdot cost_{man\,hour} \cdot C_1 \cdot C_3 \cdot (1 + T \cdot 10^{-3})^{0.4}
+\]
+dove $C_1$ è un coefficiente funzione del rapporto di bypass, posto pari a 12 (valore realistico per i motori turbofan più efficienti esistenti), $C_3$ dipende dal numero di stadi del compressore, ipotizzati dodici, e $T$ è la spinta installata in tonnellate.
+
+Il costo dei materiali è invece:
+\[
+E_{material} = 2.56 \cdot (1 + T \cdot 10^{-3})^{0.8} \cdot C_1 \cdot (C_2 + C_3)
+\]
+dove $C_2$ è un coefficiente funzione del rapporto di compressione totale del motore, posto pari a 32.
+
+Il costo totale orario è quindi la somma di tutti questi contributi.
+
+Infine, è stato valutato l'impatto ambientale del velivolo sotto forma di emissioni di CO\textsubscript{2}, considerando che per ogni kg di carburante bruciato vengono prodotti 3.16 kg di CO\textsubscript{2}.
+
+\section{Risultati}
+boooooooooooooooooooo
