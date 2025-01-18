@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.7)  17 JAN 2025 17:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.6.7)  18 JAN 2025 18:15
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -409,6 +409,8 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count331
 \@lastruleclass=\count332
 \@thisrulewidth=\dimen260
+) (C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/latex/graphics\lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
 ) (C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/latex/tools\tabularx.sty
 Package: tabularx 2023/07/08 v2.11c `tabularx' package (DPC)
 \TX@col@width=\dimen261
@@ -608,10 +610,10 @@ Package: pgffor 2023-01-15 v3.1.10 (3.1.10)
 \pgffor@skip=\dimen320
 \pgffor@stack=\toks44
 \pgffor@toks=\toks45
-)) (C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+))
+(C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2023-01-15 v3.1.10 (3.1.10)
-
-(C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+ (C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \pgf@plot@mark@count=\count349
 \pgfplotmarksize=\dimen321
@@ -748,8 +750,8 @@ Package tocloft Info: The document has chapter divisions on input line 51.
 \cfttabindent=\skip92
 \cfttabnumwidth=\skip93
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 56.
-Package hyperref Info: Option `hypertexnames' set `false' on input line 56.
+Package hyperref Info: Option `colorlinks' set `true' on input line 57.
+Package hyperref Info: Option `hypertexnames' set `false' on input line 57.
  (C:\Users\franc\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count368
@@ -856,7 +858,7 @@ Package hyperref Info: Link coloring ON on input line 67.
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
  on input line 67.
 
-<polito_logo_2021_blu.jpg, id=170, 3522.15875pt x 2491.3075pt>
+<polito_logo_2021_blu.jpg, id=174, 3522.15875pt x 2491.3075pt>
 File: polito_logo_2021_blu.jpg Graphic file (type jpg)
 <use polito_logo_2021_blu.jpg>
 Package pdftex.def Info: polito_logo_2021_blu.jpg  used on input line 71.
@@ -886,85 +888,84 @@ Overfull \hbox (4.62445pt too wide) in paragraph at lines 12--44
 ]
 
 [3]
-<E1//Immagini/missione.png, id=246, 454.0965pt x 150.5625pt>
+<E1//Immagini/missione.png, id=251, 454.0965pt x 150.5625pt>
 File: E1//Immagini/missione.png Graphic file (type png)
 <use E1//Immagini/missione.png>
-Package pdftex.def Info: E1//Immagini/missione.png  used on input line 94.
+Package pdftex.def Info: E1//Immagini/missione.png  used on input line 95.
 (pdftex.def)             Requested size: 338.58632pt x 112.26222pt.
 
 
 [4 <./E1//Immagini/missione.png>]
 
 [5]
-<E1/Immagini/tradeoff_range.png, id=270, 754.31813pt x 697.10437pt>
+<E1/Immagini/tradeoff_range.png, id=275, 754.31813pt x 697.10437pt>
 File: E1/Immagini/tradeoff_range.png Graphic file (type png)
 <use E1/Immagini/tradeoff_range.png>
-Package pdftex.def Info: E1/Immagini/tradeoff_range.png  used on input line 179.
+Package pdftex.def Info: E1/Immagini/tradeoff_range.png  used on input line 180.
 (pdftex.def)             Requested size: 232.17242pt x 214.55775pt.
-<E1/Immagini/tradeoff_payload.png, id=271, 758.835pt x 697.8572pt>
+<E1/Immagini/tradeoff_payload.png, id=276, 758.835pt x 697.8572pt>
 File: E1/Immagini/tradeoff_payload.png Graphic file (type png)
 <use E1/Immagini/tradeoff_payload.png>
-Package pdftex.def Info: E1/Immagini/tradeoff_payload.png  used on input line 184.
+Package pdftex.def Info: E1/Immagini/tradeoff_payload.png  used on input line 185.
 (pdftex.def)             Requested size: 232.17242pt x 213.51166pt.
-<E1/Immagini/tradeoff_sfc.png, id=272, 758.835pt x 698.61pt>
+<E1/Immagini/tradeoff_sfc.png, id=277, 758.835pt x 698.61pt>
 File: E1/Immagini/tradeoff_sfc.png Graphic file (type png)
 <use E1/Immagini/tradeoff_sfc.png>
-Package pdftex.def Info: E1/Immagini/tradeoff_sfc.png  used on input line 189.
+Package pdftex.def Info: E1/Immagini/tradeoff_sfc.png  used on input line 190.
 (pdftex.def)             Requested size: 232.17242pt x 213.74197pt.
-<E1/Immagini/tradeoff_AR.png, id=273, 782.925pt x 715.17188pt>
+<E1/Immagini/tradeoff_AR.png, id=278, 782.925pt x 715.17188pt>
 File: E1/Immagini/tradeoff_AR.png Graphic file (type png)
 <use E1/Immagini/tradeoff_AR.png>
-Package pdftex.def Info: E1/Immagini/tradeoff_AR.png  used on input line 194.
+Package pdftex.def Info: E1/Immagini/tradeoff_AR.png  used on input line 195.
 (pdftex.def)             Requested size: 232.17242pt x 212.07605pt.
 
 
-[6 <./E1/Immagini/tradeoff_range.png (PNG copy)> <./E1/Immagini/tradeoff_payload.png (PNG copy)> <./E1/Immagini/tradeoff_sfc.png (PNG copy)> <./E1/Immagini/tradeoff_AR.png (PNG copy)>]
-<E1//Immagini/payload-range.png, id=285, 900.36375pt x 627.09282pt>
+[6]
+
+[7 <./E1/Immagini/tradeoff_range.png (PNG copy)> <./E1/Immagini/tradeoff_payload.png (PNG copy)> <./E1/Immagini/tradeoff_sfc.png (PNG copy)> <./E1/Immagini/tradeoff_AR.png (PNG copy)>]
+<E1//Immagini/payload-range.png, id=295, 900.36375pt x 627.09282pt>
 File: E1//Immagini/payload-range.png Graphic file (type png)
 <use E1//Immagini/payload-range.png>
-Package pdftex.def Info: E1//Immagini/payload-range.png  used on input line 247.
+Package pdftex.def Info: E1//Immagini/payload-range.png  used on input line 249.
 (pdftex.def)             Requested size: 367.60695pt x 256.03802pt.
 
 
-[7]
-<E1//Immagini/payload-range_family.png, id=292, 926.71219pt x 672.26157pt>
+[8]
+<E1//Immagini/payload-range_family.png, id=301, 926.71219pt x 672.26157pt>
 File: E1//Immagini/payload-range_family.png Graphic file (type png)
 <use E1//Immagini/payload-range_family.png>
-Package pdftex.def Info: E1//Immagini/payload-range_family.png  used on input line 258.
+Package pdftex.def Info: E1//Immagini/payload-range_family.png  used on input line 260.
 (pdftex.def)             Requested size: 459.51054pt x 333.33981pt.
 
 
-[8 <./E1//Immagini/payload-range.png (PNG copy)>]
-<E1//Immagini/profilo alare.png, id=298, 1039.4835pt x 154.176pt>
+[9 <./E1//Immagini/payload-range.png (PNG copy)>]
+
+[10 <./E1//Immagini/payload-range_family.png (PNG copy)>]
+<E1//Immagini/profilo alare.png, id=313, 1039.4835pt x 154.176pt>
 File: E1//Immagini/profilo alare.png Graphic file (type png)
 <use E1//Immagini/profilo alare.png>
-Package pdftex.def Info: E1//Immagini/profilo alare.png  used on input line 292.
+Package pdftex.def Info: E1//Immagini/profilo alare.png  used on input line 295.
 (pdftex.def)             Requested size: 459.51054pt x 68.15523pt.
-
-
-[9 <./E1//Immagini/payload-range_family.png (PNG copy)>]
-<E1//Immagini/Take Off Parameter.png, id=305, 388.45125pt x 344.03531pt>
+<E1//Immagini/Take Off Parameter.png, id=314, 388.45125pt x 344.03531pt>
 File: E1//Immagini/Take Off Parameter.png Graphic file (type png)
 <use E1//Immagini/Take Off Parameter.png>
-Package pdftex.def Info: E1//Immagini/Take Off Parameter.png  used on input line 312.
+Package pdftex.def Info: E1//Immagini/Take Off Parameter.png  used on input line 315.
 (pdftex.def)             Requested size: 314.40001pt x 278.45709pt.
 
 
-[10 <./E1//Immagini/profilo alare.png>]
+[11 <./E1//Immagini/profilo alare.png>]
 
-[11 <./E1//Immagini/Take Off Parameter.png>]
-<E1//Immagini/Matching Chart.png, id=323, 938.5464pt x 442.2924pt>
+[12 <./E1//Immagini/Take Off Parameter.png>]
+<E1//Immagini/Matching Chart.png, id=333, 938.5464pt x 442.2924pt>
 File: E1//Immagini/Matching Chart.png Graphic file (type png)
 <use E1//Immagini/Matching Chart.png>
-Package pdftex.def Info: E1//Immagini/Matching Chart.png  used on input line 373.
+Package pdftex.def Info: E1//Immagini/Matching Chart.png  used on input line 376.
 (pdftex.def)             Requested size: 483.69687pt x 227.94173pt.
 
 
-[12]
+[13]
 
-[13 <./E1//Immagini/Matching Chart.png (PNG copy)>]
-
-[14]
+[14 <./E1//Immagini/Matching Chart.png (PNG copy)>]
 
 [15]
 
@@ -976,28 +977,89 @@ Package pdftex.def Info: E1//Immagini/Matching Chart.png  used on input line 373
 
 [19]
 
-[20])
+[20]
 
-[21] (relazione PVA.aux)
+[21]
+
+[22]
+
+[23]
+Overfull \hbox (33.96526pt too wide) in paragraph at lines 829--830
+ [][] 
+ []
+
+
+
+[24
+
+]
+<E1//Immagini/costi vs block fuel.png, id=397, 1242.0804pt x 625.3764pt>
+File: E1//Immagini/costi vs block fuel.png Graphic file (type png)
+<use E1//Immagini/costi vs block fuel.png>
+Package pdftex.def Info: E1//Immagini/costi vs block fuel.png  used on input line 840.
+(pdftex.def)             Requested size: 483.69687pt x 243.53319pt.
+<E1//Immagini/costi vs mtow.png, id=398, 1244.9712pt x 625.3764pt>
+File: E1//Immagini/costi vs mtow.png Graphic file (type png)
+<use E1//Immagini/costi vs mtow.png>
+Package pdftex.def Info: E1//Immagini/costi vs mtow.png  used on input line 847.
+(pdftex.def)             Requested size: 483.69687pt x 242.97018pt.
+
+
+[25
+
+ <./E1//Immagini/costi vs block fuel.png (PNG copy)> <./E1//Immagini/costi vs mtow.png (PNG copy)>]
+<E1/Immagini/block fuel = f(WTO, W_S).png, id=405, 1234.3716pt x 626.8218pt>
+File: E1/Immagini/block fuel = f(WTO, W_S).png Graphic file (type png)
+<use E1/Immagini/block fuel = f(WTO, W_S).png>
+Package pdftex.def Info: E1/Immagini/block fuel = f(WTO, W_S).png  used on input line 855.
+(pdftex.def)             Requested size: 483.69687pt x 245.62637pt.
+<E1/Immagini/block fuel = f(WTO, AR).png, id=406, 1234.3716pt x 626.8218pt>
+File: E1/Immagini/block fuel = f(WTO, AR).png Graphic file (type png)
+<use E1/Immagini/block fuel = f(WTO, AR).png>
+Package pdftex.def Info: E1/Immagini/block fuel = f(WTO, AR).png  used on input line 855.
+(pdftex.def)             Requested size: 483.69687pt x 245.62637pt.
+<E1/Immagini/block fuel = f(WTO, freccia).png, id=407, 1234.3716pt x 626.8218pt>
+File: E1/Immagini/block fuel = f(WTO, freccia).png Graphic file (type png)
+<use E1/Immagini/block fuel = f(WTO, freccia).png>
+Package pdftex.def Info: E1/Immagini/block fuel = f(WTO, freccia).png  used on input line 855.
+(pdftex.def)             Requested size: 483.69687pt x 245.62637pt.
+<E1/Immagini/block fuel = f(WTO, t_c).png, id=408, 1234.3716pt x 626.8218pt>
+File: E1/Immagini/block fuel = f(WTO, t_c).png Graphic file (type png)
+<use E1/Immagini/block fuel = f(WTO, t_c).png>
+Package pdftex.def Info: E1/Immagini/block fuel = f(WTO, t_c).png  used on input line 855.
+(pdftex.def)             Requested size: 483.69687pt x 245.62637pt.
+
+
+[26 <./E1/Immagini/block fuel = f(WTO, W_S).png (PNG copy)> <./E1/Immagini/block fuel = f(WTO, AR).png (PNG copy)>]
+<E1/Immagini/block fuel = f(WTO, M).png, id=415, 1234.3716pt x 626.8218pt>
+File: E1/Immagini/block fuel = f(WTO, M).png Graphic file (type png)
+<use E1/Immagini/block fuel = f(WTO, M).png>
+Package pdftex.def Info: E1/Immagini/block fuel = f(WTO, M).png  used on input line 855.
+(pdftex.def)             Requested size: 483.69687pt x 245.62637pt.
+
+
+[27 <./E1/Immagini/block fuel = f(WTO, freccia).png (PNG copy)> <./E1/Immagini/block fuel = f(WTO, t_c).png (PNG copy)>])
+
+[28 <./E1/Immagini/block fuel = f(WTO, M).png (PNG copy)>] (relazione PVA.aux)
  ***********
 LaTeX2e <2024-06-01>
 L3 programming layer <2024-05-08>
  ***********
 Package rerunfilecheck Info: File `"relazione PVA".out' has not changed.
-(rerunfilecheck)             Checksum: 8BB3C2D064F7E542C576726F7F103CBF;5634.
+(rerunfilecheck)             Checksum: E802FE26888785D058DAB6465360E430;5724.
  ) 
 Here is how much of TeX's memory you used:
- 40517 strings out of 473937
- 954171 string characters out of 5727371
- 1966893 words of memory out of 5000000
- 62652 multiletter control sequences out of 15000+600000
+ 40611 strings out of 473937
+ 957264 string characters out of 5727371
+ 2093893 words of memory out of 5000000
+ 62727 multiletter control sequences out of 15000+600000
  570954 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,18n,101p,932b,1003s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <C:\Users\franc\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on "relazione PVA.pdf" (22 pages, 3134182 bytes).
+ 99i,18n,101p,1137b,982s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ <C:\Users\franc\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1000.pk><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx8.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmib10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/franc/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on "relazione PVA.pdf" (29 pages, 4435490 bytes).
 PDF statistics:
- 492 PDF objects out of 1000 (max. 8388607)
- 93 named destinations out of 1000 (max. 500000)
- 396 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 560 PDF objects out of 1000 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
+ 439 words of extra memory for PDF output out of 10000 (max. 10000000)
 

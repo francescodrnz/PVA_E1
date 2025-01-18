@@ -154,6 +154,8 @@ INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uni
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\generic\uniquecounter\uniquecounter.sty
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\booktabs\booktabs.sty
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\graphics\lscape.sty
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\tools\tabularx.sty
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\tex\latex\adjustbox\adjustbox.sty
@@ -494,11 +496,64 @@ INPUT .\E1\\Immagini\Matching Chart.png
 INPUT .\E1\\Immagini\Matching Chart.png
 INPUT .\E1\\Immagini\Matching Chart.png
 INPUT .\E1\\Immagini\Matching Chart.png
+INPUT .\E1\\Immagini\costi vs block fuel.png
+INPUT .\E1\\Immagini\costi vs block fuel.png
+INPUT .\E1\\Immagini\costi vs block fuel.png
+INPUT .\E1\\Immagini\costi vs block fuel.png
+INPUT .\E1\\Immagini\costi vs block fuel.png
+INPUT .\E1\\Immagini\costi vs block fuel.png
+INPUT .\E1\\Immagini\costi vs block fuel.png
+INPUT .\E1\\Immagini\costi vs mtow.png
+INPUT .\E1\\Immagini\costi vs mtow.png
+INPUT .\E1\\Immagini\costi vs mtow.png
+INPUT .\E1\\Immagini\costi vs mtow.png
+INPUT .\E1\\Immagini\costi vs mtow.png
+INPUT .\E1\\Immagini\costi vs mtow.png
+INPUT .\E1\\Immagini\costi vs mtow.png
+INPUT .\E1\Immagini\block fuel = f(WTO, W_S).png
+INPUT .\E1\Immagini\block fuel = f(WTO, W_S).png
+INPUT .\E1\Immagini\block fuel = f(WTO, W_S).png
+INPUT .\E1\Immagini\block fuel = f(WTO, W_S).png
+INPUT .\E1\Immagini\block fuel = f(WTO, W_S).png
+INPUT .\E1\Immagini\block fuel = f(WTO, W_S).png
+INPUT .\E1\Immagini\block fuel = f(WTO, W_S).png
+INPUT .\E1\Immagini\block fuel = f(WTO, AR).png
+INPUT .\E1\Immagini\block fuel = f(WTO, AR).png
+INPUT .\E1\Immagini\block fuel = f(WTO, AR).png
+INPUT .\E1\Immagini\block fuel = f(WTO, AR).png
+INPUT .\E1\Immagini\block fuel = f(WTO, AR).png
+INPUT .\E1\Immagini\block fuel = f(WTO, AR).png
+INPUT .\E1\Immagini\block fuel = f(WTO, AR).png
+INPUT .\E1\Immagini\block fuel = f(WTO, freccia).png
+INPUT .\E1\Immagini\block fuel = f(WTO, freccia).png
+INPUT .\E1\Immagini\block fuel = f(WTO, freccia).png
+INPUT .\E1\Immagini\block fuel = f(WTO, freccia).png
+INPUT .\E1\Immagini\block fuel = f(WTO, freccia).png
+INPUT .\E1\Immagini\block fuel = f(WTO, freccia).png
+INPUT .\E1\Immagini\block fuel = f(WTO, freccia).png
+INPUT .\E1\Immagini\block fuel = f(WTO, t_c).png
+INPUT .\E1\Immagini\block fuel = f(WTO, t_c).png
+INPUT .\E1\Immagini\block fuel = f(WTO, t_c).png
+INPUT .\E1\Immagini\block fuel = f(WTO, t_c).png
+INPUT .\E1\Immagini\block fuel = f(WTO, t_c).png
+INPUT .\E1\Immagini\block fuel = f(WTO, t_c).png
+INPUT .\E1\Immagini\block fuel = f(WTO, t_c).png
+INPUT .\E1\Immagini\block fuel = f(WTO, M).png
+INPUT .\E1\Immagini\block fuel = f(WTO, M).png
+INPUT .\E1\Immagini\block fuel = f(WTO, M).png
+INPUT .\E1\Immagini\block fuel = f(WTO, M).png
+INPUT .\E1\Immagini\block fuel = f(WTO, M).png
+INPUT .\E1\Immagini\block fuel = f(WTO, M).png
+INPUT .\E1\Immagini\block fuel = f(WTO, M).png
 INPUT relazione PVA.aux
 INPUT .\relazione PVA.out
 INPUT .\relazione PVA.out
 INPUT C:\Users\franc\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
 INPUT C:\Users\franc\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1000.pk
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbsy10.pfb
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbsy10.pfb
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmbsy7.pfb
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cmextra\cmbsy7.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
@@ -519,6 +574,8 @@ INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\c
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
+INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmmib10.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Users\franc\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb

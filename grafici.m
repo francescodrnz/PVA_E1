@@ -1,16 +1,15 @@
 close all;clc;clearvars;
 data = loadMostRecentCSV();
 W_S_vect = unique(data.W_S);
+cmap = lines(length(W_S_vect)); % colori
 AR_vect = unique(data.AR);
 sweep25_vect = unique(data.sweep25);
 t_c_vect = unique(data.t_c);
 M_vect = unique(data.M);
 
-% spinta installata = f(block fuel)
+%% spinta installata = f(block fuel)
 figure;
 hold on;
-
-cmap = lines(length(W_S_vect)); % colori
 
 for i = 1:length(W_S_vect)
     idx = data.W_S == W_S_vect(i);
@@ -68,6 +67,9 @@ title('Block Fuel vs WTO suddivisa per W/S');
 legend('Location', 'best');
 grid on;
 hold off;
+
+
+
 
 %% block fuel = f(AR)
 
