@@ -7,7 +7,24 @@
 \definecolor{grey}{rgb}{0.75, 0.75, 0.75}
 \usepackage{titlesec}
 \usepackage{relsize}
-\usepackage{geometry}
+\usepackage{fancyhdr} % Per personalizzare intestazioni e piè di pagina
+\usepackage{geometry} % Per margini personalizzati
+
+% Configura i margini
+\geometry{a4paper,
+total={170mm,257mm},
+left=20mm,
+top=25mm,
+bottom=30mm,
+right=20mm}
+
+% Stile personalizzato per il numero di pagina
+\fancypagestyle{landscapefooter}{
+    \fancyhf{} % Pulisci intestazioni e piè di pagina
+    \fancyfoot[C]{\thepage} % Numero di pagina al centro in basso
+    \renewcommand{\headrulewidth}{0pt} % Nessuna linea in alto
+    \renewcommand{\footrulewidth}{0pt} % Nessuna linea in basso
+}
 \usepackage{amsmath}
 \usepackage{xcolor}
 \usepackage{wrapfig}
@@ -18,7 +35,7 @@
 \usepackage{hyperref}
 \setcounter{tocdepth}{4}
 \usepackage{booktabs}
-\usepackage{lscape}
+\usepackage{pdflscape}
 \usepackage{tabularx}
 \usepackage{adjustbox}
 \usepackage{array}
@@ -26,14 +43,6 @@
 \usepackage{pgfplotstable}
 \usepackage{bm}
 \usepackage{float}
-\geometry{
- a4paper,
- total={170mm,257mm},
- left=20mm,
- top=25mm,
- bottom=30mm,
- right=20mm
- }
  \usepackage{tocloft}
  \renewcommand{\cftsecfont}{\normalfont} 
  \renewcommand{\cftsecpagefont}{\normalfont} 
