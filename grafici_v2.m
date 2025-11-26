@@ -189,7 +189,7 @@ for i = 1:length(t_c_vect)
         block_fuel_fit = polyval(coeffs, WTO_fit);
         
         % Disegna la linea di tendenza
-        plot(WTO_fit, block_fuel_fit, 'Color', cmap(i, :), 'LineWidth', 1.5, 'LineStyle', '--', ...
+        logy(WTO_fit, block_fuel_fit, 'Color', cmap(i, :), 'LineWidth', 1.5, 'LineStyle', '--', ...
             'DisplayName', sprintf('Trend t/c = %.2f°', t_c_vect(i)));
     end
 end

@@ -101,7 +101,7 @@ idx_fast_candidates = find(T.M > 0.78);
 
 if ~isempty(idx_fast_candidates)
     candidates = T(idx_fast_candidates, :);
-    [~, best_idx_local] = min(candidates.WTO); 
+    [~, best_idx_local] = min(candidates.W_block_fuel); 
     row_C = candidates(best_idx_local, :);
     
     subplot(1, 3, 3);
