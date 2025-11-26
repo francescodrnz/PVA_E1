@@ -1,7 +1,7 @@
 clearvars; close all; clc;
 
 %% 1. CARICAMENTO DATI
-filename = 'dati_convergenza_2025-01-18_16-51-59.csv'; 
+filename = 'dati_convergenza_2025-11-26_15-50-10.csv'; 
 
 if ~isfile(filename)
     if isfile(['Relazione/E1/', filename])
