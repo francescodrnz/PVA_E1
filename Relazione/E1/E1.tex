@@ -857,3 +857,93 @@ Si nota che i valori più bassi di block fuel e MTOW si hanno per: carico alare 
 
 \begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, W_S).png} \caption{Scatter plot di block fuel e MTOW raggruppati per carico alare} \end{figure} \begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, AR).png} \caption{Scatter plot di block fuel e MTOW raggruppati per aspect ratio} \end{figure} \begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, freccia).png} \caption{Scatter plot di block fuel e MTOW raggruppati per angolo di freccia} \end{figure} \begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, t_c).png} \caption{Scatter plot di block fuel e MTOW raggruppati per spessore del profilo} \end{figure} \begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, M).png} \caption{Scatter plot di block fuel e MTOW raggruppati per Mach di crociera} \end{figure}
 
+\noindent Analizzando nel dettaglio gli scatter plot, emergono dei trend chiari che guidano la scelta della configurazione ottimale:
+
+\begin{itemize}
+    \item \textbf{Mach di Crociera:} Il valore di 0.76 risulta consistentemente il migliore in termini di MTOW e Block Fuel. Aumentare la velocità a 0.80 o 0.82 comporta un incremento esponenziale della resistenza d'onda o, per compensarla, necessita di angoli di freccia elevati che appesantiscono la struttura, portando in ogni caso a un velivolo più pesante e costoso.
+    \item \textbf{Spessore alare ($t/c$):} Le configurazioni con profilo sottile ($10\%$) risultano vincenti. Nonostante la penalizzazione strutturale (un'ala sottile ha un momento d'inerzia minore e quindi pesa di più a parità di carico), il beneficio aerodinamico in termini di riduzione della resistenza di forma e d'onda è predominante.
+    \item \textbf{Angolo di freccia:} Le configurazioni con freccia moderata ($20^\circ$) risultano migliori di quelle con freccia elevata ($25^\circ$ o $30^\circ$). Per il Mach di progetto (0.76), una freccia di $20^\circ$ è sufficiente a ritardare i fenomeni di compressibilità; aumentarla ulteriormente non porta benefici aerodinamici tali da giustificare l'aumento di peso strutturale dell'ala.
+    \item \textbf{Carico Alare ($W/S$):} Si osserva un trade-off interessante tra 600 e 650 $kg/m^2$. Sebbene il carico alare più alto (650) porti a un MTOW leggermente inferiore (grazie alla superficie alare ridotta e quindi all'ala più leggera), esso comporta un consumo di carburante (\textit{Block Fuel}) e un Costo Operativo Diretto (DOC) superiori. Questo è dovuto all'aumento della resistenza indotta ($C_{Di} \propto C_L^2$) che penalizza l'efficienza in crociera.
+\end{itemize}
+
+\subsection{Scelta della Configurazione Finale}
+Sulla base dell'analisi dei costi e delle prestazioni, è stata selezionata la configurazione che minimizza il \textbf{Direct Operating Cost (DOC)} e il consumo di carburante, garantendo al contempo un peso al decollo contenuto.
+La scelta è ricaduta sulla seguente combinazione di parametri:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{lc}
+    \toprule
+    \textbf{Parametro} & \textbf{Valore Scelto} \\
+    \midrule
+    Carico Alare ($W/S$) & $600 \, kg/m^2$ \\
+    Aspect Ratio ($AR$) & 9 \\
+    Mach di Crociera ($M$) & 0.76 \\
+    Spessore relativo ($t/c$) & 0.10 \\
+    Angolo di freccia ($\Lambda_{25}$) & $20^\circ$ \\
+    Rapporto di rastremazione ($\lambda$) & 0.23 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Parametri della configurazione scelta}
+\end{table}
+
+Come anticipato, la scelta di mantenere un carico alare di $600\,kg/m^2$ invece di spingersi verso il limite superiore di 650 o 700 è dettata dalla volontà di privilegiare l'efficienza aerodinamica operativa (minori consumi) rispetto al puro risparmio di peso strutturale statico. Inoltre, un carico alare inferiore garantisce migliori margini di manovra e prestazioni in salita e in atterraggio.
+
+\newpage
+\subsection{Descrizione del Velivolo}
+Il velivolo risultante è un bimotore a fusoliera stretta (\textit{narrow-body}) destinato al trasporto di 180 passeggeri su rotte a medio raggio.
+L'architettura è convenzionale: ala bassa a sbalzo, impennaggi in coda classici e motori turbofan installati su piloni sotto le ali.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{E1/Immagini/domi/250120_Aereo 1_pianta_CORRETTA.jpg}
+    \caption{Vista in pianta del velivolo configurato}
+    \label{fig:pianta_aereo1}
+\end{figure}
+
+L'ala ha una pianta trapezoidale con una freccia moderata di $20^\circ$ e un'apertura di 35.6 metri, che le permette di rientrare (seppur al limite) nei box aeroportuali di classe C (max 36 m). L'elevato allungamento alare ($AR=9$) garantisce un'ottima efficienza aerodinamica, riducendo la resistenza indotta.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\linewidth]{E1/Immagini/domi/250119_Aereo 1_ala_disegno tecnico.jpg}
+    \caption{Disegno tecnico della semi-ala}
+    \label{fig:ala_tecnico_aereo1}
+\end{figure}
+
+Di seguito si riporta la scheda tecnica riassuntiva con i pesi e le prestazioni finali calcolate dal codice di ottimizzazione:
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabular}{|l|c|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Dati Generali}} \\
+    \hline
+    Massa Massima al Decollo (MTOW) & 84323 kg \\
+    Massa Operativa a Vuoto (OEW) & 43370 kg \\
+    Carburante Missione (Block Fuel) & 16874 kg \\
+    Carico Pagante Max (Payload) & 22415 kg \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Geometria}} \\
+    \hline
+    Superficie Alare ($S$) & $140.5 \, m^2$ \\
+    Apertura Alare ($b$) & $35.56 \, m$ \\
+    Lunghezza Fusoliera & $38.0 \, m$ \\
+    Diametro Fusoliera & $4.10 \, m$ \\
+    Superficie Impennaggio Orizzontale & $35.1 \, m^2$ \\
+    Superficie Impennaggio Verticale & $25.3 \, m^2$ \\
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Propulsione e Prestazioni}} \\
+    \hline
+    Spinta al decollo (Totale) & $248.4 \, kN$ \\
+    Rapporto Spinta/Peso ($T/W$) & 0.30 \\
+    Efficienza in Crociera ($E$) & 15.9 \\
+    Consumo Specifico Crociera ($SFC$) & $0.5 \, kg/kg/h$ \\
+    DOC & $0.0424 \, \$/pax/km$ \\
+    \hline
+    \end{tabular}
+    \caption{Scheda tecnica finale del Velivolo Convenzionale}
+\end{table}
+
+Il velivolo soddisfa pienamente i requisiti di progetto, posizionandosi come una valida alternativa agli attuali aeromobili di riferimento, con un focus particolare sulla riduzione dei costi operativi diretti attraverso un'attenta ottimizzazione dei parametri alari.
