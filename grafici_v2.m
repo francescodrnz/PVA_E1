@@ -4,8 +4,8 @@ W_S_vect = unique(data.W_S);
 AR_vect = unique(data.AR);
 sweep25_vect = unique(data.sweep25);
 t_c_vect = unique(data.t_c);
-cmap = lines(length(t_c_vect)); % colori
 M_vect = unique(data.M);
+lambda_vect = unique(data.lambda);
 
 %% costi = f(block fuel)
 % Normalizzazione delle variabili
@@ -176,21 +176,22 @@ hold off;
 figure;
 hold on;
 
-for i = 1:length(t_c_vect)
-    idx = (data.t_c == t_c_vect(i)); % Trova i dati per t_c specifico
+cmap = lines(length(lambda_vect)); % colori
+for i = 1:length(lambda_vect)
+    idx = (data.lambda == lambda_vect(i)); % Trova i dati per t_c specifico
     if any(idx) % Controlla se ci sono dati validi per questo t_c
         % Scatter plot
         scatter(data.WTO(idx), data.W_block_fuel(idx), 50, cmap(i, :), 'filled', ...
-            'DisplayName', sprintf('t/c = %.2f°', t_c_vect(i)));
-        
+            'DisplayName', sprintf('\\lambda = %.2f', lambda_vect(i)));
+
         % Calcolo della linea di tendenza
         coeffs = polyfit(data.WTO(idx), data.W_block_fuel(idx), 1); % Regressione lineare
         WTO_fit = linspace(min(data.WTO(idx)), max(data.WTO(idx)), 100);
         block_fuel_fit = polyval(coeffs, WTO_fit);
         
         % Disegna la linea di tendenza
-        logy(WTO_fit, block_fuel_fit, 'Color', cmap(i, :), 'LineWidth', 1.5, 'LineStyle', '--', ...
-            'DisplayName', sprintf('Trend t/c = %.2f°', t_c_vect(i)));
+        plot(WTO_fit, block_fuel_fit, 'Color', cmap(i, :), 'LineWidth', 1.5, 'LineStyle', '--', ...
+    'DisplayName', sprintf('Trend \\lambda = %.2f', lambda_vect(i)));
     end
 end
 
@@ -199,7 +200,7 @@ xlabel('Maximum Take-Off Weight [kg]', 'FontSize', 14);
 xlim([8.25e4 11.2e4]);
 ylabel('Block Fuel [kg]', 'FontSize', 14);
 ylim([1.6e4 3.6e4]);
-title('Block Fuel vs MTOW suddivisa per Spessore del Profilo', 'FontSize', 16);
+title('Block Fuel vs MTOW suddivisa per Rapporto di Rastremazione', 'FontSize', 16);
 legend('Location', 'best', 'FontSize', 12);
 grid on;
 set(gca, 'FontSize', 12); % Imposta la dimensione del font per gli assi

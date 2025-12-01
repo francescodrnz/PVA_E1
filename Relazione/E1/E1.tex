@@ -786,7 +786,7 @@ Il costo totale orario è quindi la somma di tutti questi contributi.
 Infine, è stato valutato l'impatto ambientale del velivolo sotto forma di emissioni di CO\textsubscript{2}, considerando che per ogni kg di carburante bruciato vengono prodotti 3.16 kg di CO\textsubscript{2}.
 
 \section{Risultati}
-Delle 2160 possibili configurazioni solo 413 rispettano il vincolo del carico alare massimo calcolato dal \textit{matching chart} e dell'apertura alare massima di 36 metri. 
+Delle 2160 possibili combinazioni delle variabili di design, solo 412 configurazioni rispettano il vincolo del carico alare massimo calcolato dal \textit{matching chart} e dell'apertura alare massima di 36 metri. 
 
 Si sono raccolti i risultati nella seguente \textbf{matrice delle configurazioni}:
 
@@ -878,14 +878,15 @@ Si sono raccolti i risultati nella seguente \textbf{matrice delle configurazioni
         \end{tabular}
         }
         \caption{Matrice delle Configurazioni}
-        Estratto delle configurazioni generate variando i parametri di design. Le righe sono ordinate per block fuel crescente.
+        Estratto delle configurazioni generate variando i parametri di design. Le righe sono ordinate per block fuel crescente. \newline
+        La configurazione scelta è evidenziata in celeste.
         \label{tab:configurazioni}
     \end{table}
     \vspace*{\fill}
 \end{landscape}
   
 
-Per poter scegliere la configurazione migliore si sono tenute in considerazione le più importanti \textbf{figure di merito}, ovvero parametri fisici dell'aereo come massa massima al decollo, spinta installata ed efficienza aerodinamica, e parametri economici come i costi operativi, il PREE e l'ADP.
+\noindent Per poter scegliere la configurazione migliore si sono tenute in considerazione le più importanti \textbf{figure di merito}, ovvero parametri fisici dell'aereo come massa massima al decollo, spinta installata ed efficienza aerodinamica, e parametri economici come i costi operativi, il PREE e l'ADP.
 
 Si è notato che il block fuel è un buon indicatore dei costi. Risulta quindi uno dei parametri più importanti per la scelta della configurazione migliore, e quello su cui inevitabilmente si è concentrata l'analisi dei risultati.
 \begin{figure}[H]
@@ -901,22 +902,31 @@ Un altro parametro direttamente collegato ai costi, apparentemente anche meglio 
     \caption{Parametri di costo in funzione del peso massimo al decollo}
 \end{figure}
 
-\noindent Si è dunque analizzato il legame tra block fuel e peso massimo al decollo, e si è notato che i due parametri sono legati circa linearmente. Si sono quindi creati degli \textit{scatter plot} per analizzare la dipendenza dalle variabili di design.
-
-Si nota che i valori più bassi di block fuel e MTOW si hanno per: carico alare di 600 o 650 kg/m$^2$, aspect ratio di 9, angolo di freccia di $20\si{\degree}$ o $25\si{\degree}$, spessore del profilo del 10\% e Mach di crociera di 0.76.
-
-\begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, W_S).png} \caption{Scatter plot di block fuel e MTOW raggruppati per carico alare} \end{figure} \begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, AR).png} \caption{Scatter plot di block fuel e MTOW raggruppati per aspect ratio} \end{figure} \begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, freccia).png} \caption{Scatter plot di block fuel e MTOW raggruppati per angolo di freccia} \end{figure} \begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, t_c).png} \caption{Scatter plot di block fuel e MTOW raggruppati per spessore del profilo} \end{figure} \begin{figure}[H] \centering \includegraphics[width=\textwidth]{E1/Immagini/block fuel = f(WTO, M).png} \caption{Scatter plot di block fuel e MTOW raggruppati per Mach di crociera} \end{figure}
-
-\noindent Analizzando nel dettaglio gli scatter plot, emergono dei trend chiari che guidano la scelta della configurazione ottimale:
+\noindent In definitiva, le configurazioni con peso al decollo e consumi più bassi sono quelle con costi minori ed efficienza economica maggiore. Si è dunque analizzato il legame tra block fuel e peso massimo al decollo, e si è notato che i due parametri sono legati circa linearmente. Si sono quindi creati degli \textit{scatter plot} per analizzare la dipendenza dalle variabili di design.
+\noindent Emergono dei trend che guidano la scelta della configurazione ottimale:
 
 \begin{itemize}
-    \item \textbf{Mach di Crociera:} Il valore di 0.76 risulta consistentemente il migliore in termini di MTOW e Block Fuel. Aumentare la velocità a 0.80 o 0.82 comporta un incremento esponenziale della resistenza d'onda o, per compensarla, necessita di angoli di freccia elevati che appesantiscono la struttura, portando in ogni caso a un velivolo più pesante e costoso.
-    \item \textbf{Spessore alare ($t/c$):} Le configurazioni con profilo sottile ($10\%$) risultano vincenti. Nonostante la penalizzazione strutturale (un'ala sottile ha un momento d'inerzia minore e quindi pesa di più a parità di carico), il beneficio aerodinamico in termini di riduzione della resistenza di forma e d'onda è predominante.
-    \item \textbf{Angolo di freccia:} Le configurazioni con freccia moderata ($20^\circ$) risultano migliori di quelle con freccia elevata ($25^\circ$ o $30^\circ$). Per il Mach di progetto (0.76), una freccia di $20^\circ$ è sufficiente a ritardare i fenomeni di compressibilità; aumentarla ulteriormente non porta benefici aerodinamici tali da giustificare l'aumento di peso strutturale dell'ala.
-    \item \textbf{Carico Alare ($W/S$):} Si osserva un trade-off interessante tra 600 e 650 $kg/m^2$. Sebbene il carico alare più alto (650) porti a un MTOW leggermente inferiore (grazie alla superficie alare ridotta e quindi all'ala più leggera), esso comporta un consumo di carburante (\textit{Block Fuel}) e un Costo Operativo Diretto (DOC) superiori. Questo è dovuto all'aumento della resistenza indotta ($C_{Di} \propto C_L^2$) che penalizza l'efficienza in crociera.
+    \item \textbf{Mach di crociera:} È la variabile con l'impatto più chiaro: Mach inferiore comporta valori più bassi di block fuel e peso al decollo. Aumentare la velocità a 0.80 o 0.82 comporta un incremento della resistenza d'onda o, per compensarla, necessita di angoli di freccia elevati che appesantiscono la struttura, portando in ogni caso a un velivolo più pesante e che consuma di più.
+    \begin{figure}[H] \centering \includegraphics[width=0.8\textwidth]{E1/Immagini/block fuel = f(WTO, M).png} \caption{Scatter plot di block fuel e MTOW raggruppati per Mach di crociera} \end{figure}
+    \item \textbf{Spessore alare ($t/c$):} Le configurazioni con profilo sottile ($10\%$, seguite a breve distanza da quelle al $12\%$) risultano vincenti. Nonostante le ali più sottili siano svantaggiate strutturalmente (la minor resistenza alla flessione comporta un maggior peso della struttura alare), il beneficio aerodinamico in termini di riduzione della resistenza di forma e d'onda è predominante.
+    \begin{figure}[H] \centering \includegraphics[width=0.8\textwidth]{E1/Immagini/block fuel = f(WTO, t_c).png} \caption{Scatter plot di block fuel e MTOW raggruppati per spessore del profilo} \end{figure} 
+    \item \textbf{Angolo di Freccia ($\Lambda_{25}$):} L'aumento dell'angolo di freccia ha un duplice effetto: da un lato, angoli maggiori ritardano l'insorgere della resistenza d'onda, permettendo efficienze migliori ad alti Mach; dall'altro, una freccia pronunciata incrementa il peso strutturale dell'ala e riduce il $C_{L_{max}}$, penalizzando le prestazioni a bassa velocità. Lo scatter plot mostra che le configurazioni con freccia moderata ($20^\circ - 25^\circ$) tendono a posizionarsi nella regione di minimo consumo e peso, indicando uno svantaggio per gli angoli di freccia estremi.
+    \begin{figure}[H] \centering \includegraphics[width=0.8\textwidth]{E1/Immagini/block fuel = f(WTO, freccia).png} \caption{Scatter plot di block fuel e MTOW raggruppati per angolo di freccia} \end{figure} 
+    \item \textbf{Allungamento Alare ($AR$):} Il grafico mostra che l'aumento dell'allungamento alare porta ad un miglioramento dell'efficienza, sia in termini di consumi che di peso. Il beneficio aerodinamico dovuto all'alto allungamento prevale sull'aumento di peso strutturale; pertanto, le configurazioni con $AR=9$ risultano le più vantaggiose.
+    \begin{figure}[H] \centering \includegraphics[width=0.8\textwidth]{E1/Immagini/block fuel = f(WTO, AR).png} \caption{Scatter plot di block fuel e MTOW raggruppati per aspect ratio} \end{figure} 
+    \item \textbf{Carico Alare ($W/S$):} Il carico alare risulta inversamente proporzionale al peso (maggior carico implica minore superficie alare, quindi minor peso strutturale) e direttamente proporzionale al coefficiente di portanza, quindi alla resistenza ($C_{D_i} \propto C_L^2$). Si osserva che le configurazioni peggiori sono quelle a carico più basso, mentre gli effetti positivi e negativi si bilanciano tra i carichi più alti: nonostante le configurazioni a carico alare più alto ($650\,kg/m^2$) abbiano un MTOW inferiore, le configurazioni con minor consumo di carburante e costi operativi diretti sono quelle con carico pari a $600\,kg/m^2$.
+    \begin{figure}[H] \centering \includegraphics[width=0.8\textwidth]{E1/Immagini/block fuel = f(WTO, W_S).png} \caption{Scatter plot di block fuel e MTOW raggruppati per carico alare} \end{figure}
+    \item \textbf{Rapporto di Rastremazione ($\lambda$):} Questa variabile presenta un comportamento peculiare rispetto alle altre. Come evidenziato dal relativo scatter plot, le curve di tendenza e le nuvole di punti per i diversi valori di $\lambda$ risultano quasi perfettamente sovrapposte, con una leggero vantaggio in termini di peso per le rastremazioni più elevate. Ciò indica che la variazione del rapporto di rastremazione ha un impatto marginale sulle macro-prestazioni del velivolo (MTOW e consumo). Gli effetti contrastanti sul peso strutturale e sull'efficienza aerodinamica (distribuzione di portanza) tendono a bilanciarsi, rendendo la funzione obiettivo poco sensibile a questo parametro.
+    \begin{figure}[H] \centering \includegraphics[width=0.8\textwidth]{E1/Immagini/block fuel = f(WTO, lambda).png} \caption{Scatter plot di block fuel e MTOW raggruppati per rapporto di rastremazione} \end{figure}
 \end{itemize}
 
-\subsection{Scelta della Configurazione Finale}
+Di notevole considerazione è un outlier che si distingue per le ottime prestazioni, ovvero la configurazione con $W/S=650\,kg/m^2$, $AR=10$, $M=0.76$, $\Lambda_{25}=20^\circ$, $t/c=10\%$ e $\lambda=0.23$. È l'unica configurazione con allungamento alare pari a 10 che rientra nel vincolo dell'apertura alare massima di 36 metri; risulta quella con efficienza in crociera maggiore, minimo block fuel, PREE massimo e DOC minimi.
+Riassumendo, si nota che i valori più bassi di block fuel e MTOW si hanno per: carico alare di 600 o 650 kg/m$^2$, aspect ratio di 9, angolo di freccia di $20\si{\degree}$ o $25\si{\degree}$, spessore del profilo del 10\% e Mach di crociera di 0.76, mentre la sensibilità al $\lambda$ è molto bassa.
+
+\subsection{Scelta della Configurazione}
+Sulla base dei risultati ottenuti, la configurazione finale scelta è:
+\[ W/S = 600\,kg/m^2, \quad AR=9, \quad M=0.76, \quad \Lambda_{25}=20^\circ, \quad t/c=0.10 \]
+
 Sulla base dell'analisi dei costi e delle prestazioni, è stata selezionata la configurazione che minimizza il \textbf{Direct Operating Cost (DOC)} e il consumo di carburante, garantendo al contempo un peso al decollo contenuto.
 La scelta è ricaduta sulla seguente combinazione di parametri:
 
