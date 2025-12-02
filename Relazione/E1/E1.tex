@@ -1020,7 +1020,7 @@ Di seguito si alcune viste tridimensionali della geometria alare generata:
     \end{minipage}
 \end{figure}
 
-\subsection{Scheda Riassuntiva}
+\subsection{Tabella Riassuntiva}
 Di seguito si riportano i parametri fondamentali della configurazione scelta.
 
 \begin{table}[H]
@@ -1055,16 +1055,134 @@ Di seguito si riportano i parametri fondamentali della configurazione scelta.
     DOC & $0.0424 \, \$/pax/km$ \\
     \bottomrule
     \end{tabular}
-    \caption{Scheda tecnica finale del Velivolo Convenzionale.}
-    \label{tab:scheda_tecnica}
+    \caption{Scheda tecnica finale del velivolo.}
 \end{table}
 
 \subsection{Diagramma Payload-Range}
-La capacità operativa del velivolo è sintetizzata nel diagramma Payload-Range. Il velivolo è in grado di soddisfare pienamente il requisito di missione: alla distanza di progetto di $4\,500$ km, la capacità di carico residua è di $20\,505$ kg, ampiamente superiore ai $16\,740$ kg necessari per trasportare i 180 passeggeri, permettendo di imbarcare anche una quota significativa di cargo ($3\,765$ kg residui) o di operare su tratte ancora più lunghe a pieno carico passeggeri. Il punto di massimo raggio con payload nullo (ferry range) si estende fino a quasi $6\,800$ km, confermando l'eccellente flessibilità operativa.
-
+La capacità operativa del velivolo è sintetizzata nel diagramma Payload-Range. Il velivolo è in grado di soddisfare pienamente il requisito di missione: alla distanza di progetto di $4\,500$ km, la capacità di carico residua è di $20\,505$ kg, ampiamente superiore ai $16\,740$ kg necessari per trasportare i 180 passeggeri, permettendo di imbarcare anche una quota significativa di cargo ($3\,765$ kg residui) o di operare su tratte ancora più lunghe a pieno carico passeggeri. Il punto di massimo raggio con payload nullo (ferry range) si estende fino a quasi $6\,800$ km, confermando la grande flessibilità operativa.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\linewidth]{E1/Immagini/payload_range_finale.png}
     \caption{Diagramma payload-range per la configurazione scelta.}
+\end{figure}
+
+\subsection{Stabilità Statica e Dimensionamento dei Piani di Coda}
+\subsubsection*{Scelte di design per i piani di coda}
+La configurazione dei piani di coda è con architettura tradizionale, con impennaggi posizionati in coda alla fusoliera. Le superfici sono state preliminarmente dimensionate utilizzando dati statistici, rapportandole rispetto alla superficie alare ($S_{ref}$), per poi essere verificate tramite il calcolo dei volumi di coda.
+
+I parametri geometrici definiti per i piani di coda sono i seguenti:
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{lccc}
+    \toprule
+    \textbf{Parametro} & \textbf{Simbolo} & \textbf{Piano Orizzontale} & \textbf{Piano Verticale} \\
+    \midrule
+    Rapporto di Superficie & $S/S_{ref}$ & $0.25$ & $0.18$ \\
+    Superficie & $S_{ht}, S_{v}$ & $35.12 \, m^2$ & $25.29 \, m^2$ \\
+    Allungamento Alare & $AR$ & 5 & 1.8 \\
+    Angolo di Freccia & $\Lambda_{25}$ & $29^\circ$ & $34^\circ$ \\
+    Spessore Relativo & $t/c$ & 0.10 & 0.12 \\
+    \bottomrule
+    \end{tabular}
+    \caption{Caratteristiche geometriche dei piani di coda.}
+\end{table}
+
+\subsubsection*{Metodologia di Analisi}
+La valutazione della stabilità statica longitudinale e direzionale è stata effettuata utilizzando il metodo dei \textit{volumi di coda}.
+La stabilità statica longitudinale richiede che il velivolo, se disturbato da una condizione di equilibrio, generi un momento di beccheggio che tenda a riportarlo alla condizione iniziale. Affinché ciò avvenga, il baricentro del velivolo $X_{CG}$ deve trovarsi davanti al Punto Neutro $X_{N}$, ovvero il centro aerodinamico dell'intero velivolo. La distanza tra questi due punti, normalizzata rispetto alla corda aerodinamica media (MAC), definisce il \textit{margine di stabilità statico} ($SM$).
+
+Le dimensioni dei piani di coda influenzano il valore del  margine di stabilità. I volumi di coda sono parametri adimensionali che quantificano l'efficacia dei piani di coda:
+\begin{itemize}
+    \item \textbf{Volume di Coda Orizzontale ($V_H$):} Misura l'efficacia del piano orizzontale nel garantire stabilità longitudinale e controllo in beccheggio. Per velivoli da trasporto a getto (\textit{Jet Transport}), i valori tipici sono $V_H \approx 1.1$, con escursioni tipiche tra 0.8 e 1.35.
+    \[ V_H = \frac{S_{ht} \cdot l_t}{S_w \cdot \text{MAC}} \]
+    Dove $S_{ht}$ è la superficie del piano orizzontale e $l_t$ il suo braccio rispetto al baricentro.
+    
+    \item \textbf{Volume di Coda Verticale ($V_V$):} Misura l'efficacia del piano verticale per la stabilità direzionale e il controllo dell'imbardata. I valori tipici sono $V_V \approx 0.09$, con range $0.08 \le V_V \le 0.14$.
+    \[ V_V = \frac{S_v \cdot l_v}{S_w \cdot b} \]
+    Dove $S_v$ è la superficie verticale, $l_v$ la distanza dal baricentro e $b$ l'apertura alare.
+\end{itemize}
+
+\subsubsection*{Metodologia di calcolo}
+\begin{enumerate}
+    \item \textbf{Selezione dei volumi di coda obiettivo:}
+    Sulla base dei dati statistici, sono stati selezionati i seguenti coefficienti volumetrici di progetto:
+    \begin{itemize}
+        \item Volume Coda Orizzontale: $V_{H,des} = 1.0$
+        \item Volume Coda Verticale: $V_{V,des} = 0.11$
+    \end{itemize}
+    Tali valori garantiscono, in prima approssimazione, un margine di stabilità statica longitudinale adeguato e una sufficiente autorità di controllo direzionale.
+
+    \item \textbf{Posizionamento dei Componenti e Stima dei Baricentri:}
+    È stata definita una configurazione geometrica longitudinale fissando il bordo d'attacco della radice alare ($X_{LE_{wing}}$) al 42\% della lunghezza fusoliera $L_{fus}$.
+    I baricentri delle singole componenti sono stati calcolati analiticamente:
+    \begin{itemize}
+        \item \textbf{Fusoliera:} include struttura, sistemi, arredi, carrello e payload. Posizionato statisticamente al $46\%$ di $L_{fus}$.
+        \item \textbf{Coda ($X_{tail}$):} posizionato al $94\%$ di $L_{fus}$ per massimizzare il braccio di leva.
+        \item \textbf{Ala ($X_{wing}$):} calcolato geometricamente in funzione della freccia e della corda:
+        \[ X_{wing} = X_{LE_{wing}} + 0.25 \cdot c_{root} + \left(0.35\frac{b}{2} - \frac{d_{fus}}{2}\right) \tan\left(\Lambda_{25}\right) \]
+        \item \textbf{Carburante ($X_{fuel}$):} assunto coincidente con il baricentro dell'ala.
+        \item \textbf{Motori ($X_{eng}$):} posizionato più avanti rispetto all'ala: $X_{eng} = X_{LE_{wing}} + 0.4 \cdot L_{nacelle}$.
+    \end{itemize}
+
+    \item \textbf{Calcolo del Centro di Gravità (CG):}
+    La posizione del baricentro totale è stata calcolata sommando i momenti statici dei componenti:
+    \[ X_{CG} = \frac{\sum m_i \cdot X_{CG_i}}{\sum m_i} \]
+    Esso è stato valutato in due condizioni:
+    \begin{itemize}
+        \item \textbf{MZFW (Maximum Zero Fuel Weight):} È definito come peso operativo a vuoto più il carico pagante, escludendo quindi il carburante.
+        \item \textbf{MTOW (Maximum Take-Off Weight):} Condizione operativa standard a pieno carico.
+    \end{itemize}
+    La posizione al MTOW è particolarmente critica, in quanto il carburante arretra il baricentro rispetto alla condizione a vuoto, riducendo il margine statico.
+
+    \item \textbf{Verifica dei Volumi di Coda:}
+    Sono state calcolate le superfici necessarie per soddisfare i volumi di progetto ($V_{H,des}, V_{V,des}$) alla condizione di MZFW. Successivamente, si è verificato che le superfici effettive del velivolo garantissero coefficienti volumetrici reali ($V_{H,eff}, V_{V,eff}$) all'interno degli intervalli di accettabilità per la condizione di MTOW:
+    \[ 0.8 \le V_H \le 1.35 \quad \text{e} \quad 0.08 \le V_V \le 0.14 \]
+\end{enumerate}
+
+\subsubsection*{Verifica della Stabilità e Risultati}
+L'applicazione della metodologia descritta ha prodotto i risultati riportati in Tabella \ref{tab:risultati_stabilita}.
+
+\begin{table}[H]
+    \centering
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabular}{lccc}
+    \toprule
+    \textbf{Parametro} & \textbf{Condizione} & \textbf{Valore Calcolato} & \textbf{Riferimento} \\
+    \midrule
+    \textbf{Posizione Baricentro ($X_{CG}$)} & MZFW & $18.11$ m (-17.8\% MAC) & \\
+                                              & MTOW & $18.63$ m (-7.5\% MAC) & \\
+    \midrule
+    \textbf{Braccio di Coda ($L_{tail}$)}     & MZFW & $17.61$ m & \\
+                                              & MTOW & $17.09$ m & \\
+    \midrule
+    \textbf{Superficie Richiesta ($V_H=1$)}   & MZFW & $40.29 \, m^2$ & Attuale: $35.12 \, m^2$ \\
+    \textbf{Superficie Richiesta ($V_V=0.11$)}& MZFW & $31.21 \, m^2$ & Attuale: $25.29 \, m^2$ \\
+    \midrule
+    \textbf{Volume Coda Orizzontale ($V_H$)}  & MTOW & \textbf{0.9705} & Target $0.8 - 1.35$ \\
+    \textbf{Volume Coda Verticale ($V_V$)}    & MTOW & \textbf{0.1068} & Target $0.08 - 0.14$ \\
+    \bottomrule
+    \end{tabular}
+    \caption{Risultati dell'analisi di stabilità e verifica dei volumi di coda.}
+    \label{tab:risultati_stabilita}
+\end{table}
+
+\subsubsection*{Conclusioni sulla Stabilità}
+Dai risultati emerge che il baricentro del velivolo risulta posizionato davanti alla corda aerodinamica media (valori percentuali negativi), indicando una configurazione naturalmente stabile dal punto di vista statico.
+Dai volumi di coda si evince che:
+\begin{itemize}
+    \item \textbf{Stabilità Longitudinale:} Sebbene la superficie richiesta per ottenere un $V_H=1.0$ al MZFW sia leggermente superiore a quella disponibile ($40.29 \, m^2$ vs $35.12 \, m^2$), il volume di coda effettivo calcolato nella condizione operativa di MTOW è $V_H = 0.97$. Questo valore rientra nell'intervallo di validità ($0.8 \le V_H \le 1.35$), confermando che il piano orizzontale dimensionato statisticamente è sufficiente a garantire la stabilità.
+    
+    \item \textbf{Stabilità Direzionale:} Analogamente, il volume di coda verticale al MTOW risulta $V_V = 0.107$. Anche questo valore soddisfa largamente il criterio di progetto ($0.08 \le V_V \le 0.14$), assicurando adeguate caratteristiche di stabilità direzionale.
+\end{itemize}
+
+L'escursione del baricentro tra vuoto e pieno carico (arretramento del 10.3\% della MAC) è contenuta e gestibile, in partricolare grazie al fatto che resti davanti alla corda aerodinamica media; ciò conferma la bontà del layout generale del velivolo.
+
+In conclusione, la configurazione geometrica scelta e il posizionamento dei componenti portano a un velivolo stabile ed equilibrato, senza richiedere modifiche sostanziali alle superfici degli impennaggi definite in fase preliminare.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{E1/Immagini/Escursione Baricentro.png}
+    \caption{Visualizzazione dell'escursione del baricentro rispetto alla MAC e alla posizione della coda.}
 \end{figure}

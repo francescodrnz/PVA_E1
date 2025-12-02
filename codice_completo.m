@@ -106,4 +106,4 @@ msgbox(msg, 'Calcolo completato');
 
 % salvataggio configurazioni
 %salvataggio;
-salvataggio_matrice;
+% salvataggio_matrice;
