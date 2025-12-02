@@ -74,21 +74,21 @@ Il primo parametro che si è stimato, fondamentale per il resto del progetto, è
 \[m_{TO} = \dfrac{m_{crew}+m_{payload}}{1-\dfrac{m_{fuel}}{m_{TO}}-\dfrac{m_{empty}}{m_{TO}}}\]
 Si sono quindi calcolate le diverse componenti della massa.
 
-\subsubsection{Massa equipaggio e payload}
+\subsubsection*{Massa equipaggio e payload}
 In questa fase iniziale di progetto si è assunto che tutto il payload sia fatto dai passeggeri e dai loro bagagli, non considerando quindi eventuali merci aggiuntive.
 
 Si è quindi calcolata la massa considerando la stima statistica elaborata da Roskam, secondo cui il peso di un singolo passeggero è 79.4 kg e il suo bagaglio, per un volo di corto-medio raggio, 13.6 kg, per un totale di \textbf{93.0 kg}. Si è assunto lo stesso peso per il personale di bordo.
 
 In definitiva, la massa totale per le 186 persone a bordo (180 passeggeri + 6 crew) è pari a \textbf{17298 kg}.
 
-\subsubsection{Frazione di massa a vuoto}
+\subsubsection*{Frazione di massa a vuoto}
 È stata utilizzata la stima di Raymer, secondo cui
 \[ \dfrac{m_{empty}}{m_{TO}} = A*m_{TO}^C\]
 Dove \textit{A} e \textit{C} sono parametri costanti, dipendenti dal tipo di velivolo. Per un aereo da trasporto a getto valgono rispettivamente 0.97 e -0.06.
 
 Si nota che questa frazione dipende dalla stessa massa al decollo; sarà quindi necessario effettuare un calcolo iterativo.
 
-\subsubsection{Frazione di carburante}
+\subsubsection*{Frazione di carburante}
 La quantità di carburante necessaria può essere stimata a partire dalla missione tipo del velivolo. 
 \begin{figure}[H]
     \centering
@@ -151,7 +151,7 @@ Il complemento ad uno di questo valore è la frazione di carburante dell'aereo. 
     \label{eq:frazione_carburante}
 \end{equation}
 
-\subsubsection{Peso al decollo}
+\subsubsection*{Peso al decollo}
 Ricavati tutti gli elementi, è stato infine calcolato il peso al decollo tramite un calcolo iterativo su MATLAB. Il codice converge dopo 6 iterazioni, a partire da una stima iniziale di 60 tonnellate e con una tolleranza sulla differenza relativa di $10^{-4}$, su un valore di \textbf{65657 kg}. È un valore sostanzialmente inferiore di quello dell'A320neo di riferimento, giustificato dal minor numero di passeggeri e dalla mancanza di trasporto merci.
 
 \subsubsection{Analisi di trade-off}
@@ -250,7 +250,7 @@ Successivamente il calcolo è uguale a quello per il punto C: si è calcolata la
     \caption{Diagramma payload-range dell'aeroplano.}
 \end{figure}
 
-\subsubsection{Famiglia di aerei}
+\subsubsection*{Famiglia di aerei}
 Si è ipotizzato di voler modificare l'aeroplano in modo da creare una famiglia, sulla falsa riga di quella dell'Airbus A320 con A319 e A321, quindi semplicemente modificando la fusoliera in modo da accogliere diversi numeri di passeggeri. In particolare, si è ipotizzata una configurazione a 150 passeggeri ed un'altra a 210 passeggeri. È stata inoltre considerata una configurazione a 210 passeggeri e range esteso, ipotizzando che grazie alla fusoliera più grande ci sia spazio per dei serbatoi aggiuntivi, in particolare fino a 35000 litri di carburante. 
 
 In maniera del tutto analoga per il caso a 180 passeggeri - con l'unica differenza nel numero di assistenti di bordo in quanto da normativa ne bastano 3 per il primo caso e ne servono 5 per il secondo - si sono calcolate le masse ed i range per l'intera famiglia.
@@ -282,7 +282,7 @@ Si notano ovvie differenze di range, dovute innanzitutto alla differenza di payl
 \subsection{Matching Chart}
 A partire dai risultati preliminari è stato creato il \textit{matching chart}. Si tratta di un grafico in cui sono riportate le curve della spinta necessaria (rapportata al peso), in diverse fasi di volo, in funzione del carico alare. Se ne ricava la spinta minima da installare sul veivolo in modo da soddisfare la normativa.
 
-\subsubsection{Carico alare massimo}
+\subsubsection*{Carico alare massimo}
 Il primo parametro da determinare è il carico alare massimo, che si ricava dalla formula della portanza alla velocità minima, ovvero quella di stallo:
 \[
 L = W = \dfrac{1}{2}\rho V^2 S C_L \implies \left(\dfrac{W}{S}\right)_{max} = \dfrac{1}{2}\rho V_{stall}^2 C_{L_{max}}
@@ -306,7 +306,7 @@ Il valore $S_{flapped}$ rappresenta l'intera superficie alare su cui sono instal
 \noindent Il coefficiente di portanza massimo così calcolato è pari a 2.49.
 
 In definitiva, si ricava un carico alare massimo di $715.5 \,kg/m^2$.
-\subsubsection{Decollo}
+\subsubsection*{Decollo}
 Per calcolare la spinta richiesta al decollo si è usato l'approccio semplificato elaborato da Raymer:
 \[\left(\dfrac{T}{W}\right)_{take-off} = \dfrac{W/S}{TOP\,\sigma\,C_L^{take-off}}\]
 dove: $\sigma$ è il rapporto tra la densità dell'aria alla quota dell'aeroporto e a livello del mare, in questo caso imposto a 1; come $C_L^{take-off}$ si è usato il coefficiente di portanza massimo, già ricavato per il calcolo del carico alare massimo; \textit{TOP} è il \textit{Take Off Parameter}, un parametro calcolato semi-empiricamente da Raymer e ricavato dal seguente grafico:
@@ -317,7 +317,7 @@ dove: $\sigma$ è il rapporto tra la densità dell'aria alla quota dell'aeroport
 \end{figure}
 Si entra nel grafico con la distanza di decollo, per cui è stata usata la \textit{Balanced Field Length} dell'A320 pari a 6900 ft e, intercettando la corretta curva relativa a due motori a getto, si legge il TOP pari a $165 \,\,lb/ft^2$, convertito nel sistema internazionale per effettuare i calcoli.
 
-\subsubsection{Salita}
+\subsubsection*{Salita}
 L'equazione per il rapporto di spinta è ricavata dalla meccanica del volo:
 \begin{equation}
     \dfrac{T}{W} = k_{OEI}\left(\frac{1}{2}\rho_{SL}\dfrac{V^2}{W/S}\left(C_D+\text{K}\left(\dfrac{W/S}{\rho_{SL}V^2}\cos{\gamma}\right)^2\right)+\sin{\gamma}\right)
@@ -356,7 +356,7 @@ dove il valore del peso al decollo è quello ricavato dal calcolo preliminare, e
 \vspace{0.5cm}
 Per rappresentare sul matching chart la spinta richiesta per la salita, è stata considerata la condizione più gravosa tra i tre segmenti, che corrisponde al secondo segmento in quanto è richiesto un gradiente maggiore.
 
-\subsubsection{Crociera}
+\subsubsection*{Crociera}
 Anche in questo caso l'equazione per la spinta richiesta è ricavata dalla meccanica del volo:
 \[\dfrac{T}{W} = \dfrac{\dfrac{1}{2}\rho_{cruise}V^2}{W/S}\left(C_{D_0}+\text{K}\left(\dfrac{W/S}{\rho_{cruise}V^2}\right)^2\right)\]
 dove la velocità e la quota di crociera sono, in questa fase, imposte da requisito rispettivamente a 835 km/h e a 33000 piedi, che con il modello dell'aria standard corrisponde ad una densità di 0.4097 kg/m$^3$.
@@ -364,13 +364,13 @@ dove la velocità e la quota di crociera sono, in questa fase, imposte da requis
 Si è infine riferita la spinta richiesta al livello del mare per poterla paragonare con le altre fasi di volo:
 \[\left(\dfrac{T}{W}\right)_{SL} = \dfrac{\left(\dfrac{T}{W}\right)_{cruise}}{\dfrac{\rho_{cruise}}{\rho_{SL}}}\]
 
-\subsubsection{Approach Climb}
+\subsubsection*{Approach Climb}
 È la condizione per cui si verifica un guasto ad un motore durante la fase di approccio (carrello retratto e flap a $20\si{\degree}$), ad una velocità pari a 1.41 volte la velocità di stallo. Il gradiente di salita richiesto è del 2.1\%. \newline L'equazione per ricavare il rapporto di spinta è esattamente la stessa per la fase di salita (equazione \ref{eq:spinta_salita}). 
 
-\subsubsection{Landing Climb}
+\subsubsection*{Landing Climb}
 È la condizione per cui si verifica un guasto ad un motore durante la fase di atterraggio (carrello esteso e flap a $35\si{\degree}$), ad una velocità pari a 1.23 volte la velocità di stallo. Il gradiente di salita richiesto è del 3.2\%. \newline L'equazione per ricavare il rapporto di spinta è esattamente la stessa per la fase di salita (equazione \ref{eq:spinta_salita}). 
 
-\subsubsection{Matching Chart}
+\subsubsection*{Matching Chart}
 \begin{figure}[H]
     \centering
     \includegraphics[width=\linewidth]{E1//Immagini/Matching Chart.png}
@@ -381,9 +381,9 @@ Ricavata la spinta minima richiesta per ogni fase di volo, si può definire la s
 \vspace{1cm}
 \subsection{Fusoliera}
 La prima parte del velivolo da disegnare, in quanto uguale per tutte le diverse configurazioni aerodinamiche e propulsive, è la fusoliera. La sua funzione primaria è accogliere il payload (passeggeri, bagagli e cargo); da requisito deve poter ospitare 180 passeggeri e relativi bagagli, 4 assistenti di volo e 2 piloti. 
-\subsubsection{Diametro esterno}
+\subsubsection*{Diametro esterno}
 Si è scelto, in questa fase di design preliminare, di mantenere una sezione circolare per tutta la lunghezza della fusoliera, nonostante nella realtà ciò è vero solo per i velivoli \textit{wide body}. \newline Si è ipotizzata una larghezza del singolo sedile pari a 0.54 metri, standard per sedili di classe economica. Con sei sedili per fila e la larghezza del corridoio pari a 0.50 metri, nel range di valori soliti per i velivoli \textit{narrow body}, si ricava il diametro interno pari a 3.74 metri; si posizionano i sedili in modo tale che la loro larghezza massima corrisponda al diametro massimo della sezione. \newline Si è inoltre considerato uno spessore ulteriore per la struttura stessa della fusoliera e per la pannellatura interna, che porta il diametro esterno della fusoliera a \textbf{4.10 metri}.
-\subsubsection{Lunghezza}
+\subsubsection*{Lunghezza}
 Il numero di passeggeri permette di stimare la lunghezza della cabina, ad esclusione della sezione di coda e di prua: si è assunto un \textit{pitch} tra i sedili pari a 0.72 metri, e calcolato il numero di file semplicemente dividendo il numero di passeggeri per il numero di sedili a fila, ovvero sei, ricavando così 30 file e quindi una lunghezza di 21.60 metri. 
 
 In realtà facendo così si sovrastima leggermente la lunghezza della cabina, in quanto alcune file rientrano nella parte di coda e di prua, ma ciò permette di considerare anche lo spazio in più necessario in cabina per elementi come i sedili degli assistenti di volo e le toilette.\newline La lunghezza delle sezioni di poppa e di prua è stata stimata grazie a formule statistiche: la parte di poppa pari a 2.5 volte il diametro esterno, quella di prua pari a 1.5 volte il diametro esterno: le loro lunghezze sono rispettivamente 6.15 e 10.25 metri. \newline La lunghezza totale della fusoliera è quindi di \textbf{38 metri}.
@@ -427,10 +427,10 @@ Sono stati quindi calcolati i parametri di peso, aerodinamici e di prestazione p
 \vspace{0.5cm}
 \newline Il primo step in ogni fase del ciclo è quello di calcolare mediante il matching chart il valore della spinta da installare per quella configurazione, funzione del carico alare. I passaggi successivi sono il calcolo dei parametri aerodinamici, la stima dei pesi, delle prestazioni in missione ed infine, una volta giunto a convergenza il ciclo, i costi associati alla particolare configurazione.
 
-\subsubsection{Aerodinamica}
+\subsection{Aerodinamica}
 L'obiettivo di questa sezione del calcolo è quello di trovare il coefficiente di resistenza del velivolo. I tre principali contributi alla resistenza sono la resistenza a portanza nulla $C_{D_0}$, a cui contribuisce l'intero velivolo, la resistenza indotta $C_{D_i}$ e la resistenza d'onda $C_{D_W}$, generate dal funzionamento dell'ala:\[C_D=C_{D_0}+ C_{D_i} + C_{D_W}\]
 
-\paragraph{\texorpdfstring{$\mathbf{C_{D_0}}$}{CD0}}
+\paragraph*{\texorpdfstring{$\mathbf{C_{D_0}}$}{CD0}}
     
     È calcolato come somma dei contributi del $C_{D_0}$ di ala, fusoliera, impennaggi di coda e gondole motore. È stato calcolato secondo la formula derivata da Raymer:
     \[C_{D_0} = \dfrac{\sum_i c_{F_i}\cdot FF_i\cdot Q_i\cdot S_{W_i}}{S}\]
@@ -542,7 +542,7 @@ L'obiettivo di questa sezione del calcolo è quello di trovare il coefficiente d
         \end{itemize}
         \vspace{0.6cm}
 
-        \paragraph{\texorpdfstring{$\mathbf{C_{D_i}}$}{CDi}}
+        \paragraph*{\texorpdfstring{$\mathbf{C_{D_i}}$}{CDi}}
     
     È calcolato come: \[C_{D_i} = K C_L^2\]
     dove K è il parametro adimensionale: \[K = \dfrac{1}{\pi AR\, e}\]
@@ -550,7 +550,7 @@ L'obiettivo di questa sezione del calcolo è quello di trovare il coefficiente d
     dove $f_\lambda$ è calcolato come: \[f_\lambda = 0.0524 \lambda^4 - 0.15 \lambda^3 + 0.1659 \lambda^2 - 0.0706 \lambda + 0.0119\]
     Infine, il coefficiente di portanza è calcolato direttamente dall'equazione della portanza in condizioni di crociera: \[C_L = \dfrac{2\,\,W/S}{\rho_{cruise} V_{cruise}^2}\]
 
-    \paragraph{\texorpdfstring{$\mathbf{C_{D_W}}$}{CDW}}
+    \paragraph*{\texorpdfstring{$\mathbf{C_{D_W}}$}{CDW}}
     La resistenza d'onda è direttamente legata all'angolo di freccia, che riduce il Mach del flusso incidente l'ala ed aumenta il Mach critico, a cui si iniziano a verificare fenomeni supersonici sul profilo. Esso è calcolato come: \begin{align*} 
         M_{dd} = \dfrac{0.90}{\cos \Lambda_{25}} &- \dfrac{(t/c)}{\cos^2 \Lambda_{25}} - \dfrac{0.10 \,C_L}{\cos^3 \Lambda_{25}} \\ \\
         M_{crit} = M_{dd} &- \left( \dfrac{0.1}{80} \right)^{1/3} 
@@ -562,10 +562,10 @@ Una volta ricavato il coefficiente di resistenza, è possibile calcolare l'effic
 
 \vspace{0.6cm}
 
-\subsubsection{Stima dei Pesi}
+\subsection{Stima dei Pesi}
 
 La stima dei pesi rappresenta una parte fondamentale nella progettazione preliminare del velivolo, in quanto consente di definire i valori di massa richiesti per soddisfare i requisiti operativi e strutturali. In questa sezione, si dettagliano i principali componenti della massa operativa a vuoto (OEW, \textit{Operating Empty Weight}) e le relative dipendenze dai parametri di progetto. Tutte le formule sono ricavate empiricamente, sulla base di dati statistici di velivoli già esistenti, da Raymer; di conseguenza, tutti i parametri sono espressi, nelle equazioni, nel sistema imperiale.
-\paragraph{Ala}
+\paragraph*{Ala}
 
 Il peso dell'ala dipende da diversi parametri geometrici e strutturali, sintetizzati nell'indice geometrico dell'ala ($I_w$):
 
@@ -589,7 +589,7 @@ W_{\text{wing}} = \begin{cases}
 \end{cases}
 \end{equation*}
 
-\paragraph{Coda}
+\paragraph*{Coda}
 
 Il peso della coda convenzionale, incluse sia le superfici orizzontali e che quella verticale, è calcolato come:
 
@@ -597,7 +597,7 @@ Il peso della coda convenzionale, incluse sia le superfici orizzontali e che que
 W_{\text{tail}} = 5.03 \cdot (S_{\text{orizz}} + S_{\text{vert}})
 \end{equation*}
 
-\paragraph{Fusoliera}
+\paragraph*{Fusoliera}
 
 Il peso della fusoliera dipende dalle sue dimensioni:
 
@@ -611,7 +611,7 @@ Dove:
     \item $D_{\text{fus}}$: diametro esterno della fusoliera.
 \end{itemize}
 
-\paragraph{Carrello di atterraggio}
+\paragraph*{Carrello di atterraggio}
 
 Il peso del carrello di atterraggio è calcolato considerando quattro contributi principali, tutti funzione del peso massimo al decollo ($W_{\text{TO}}$):
 
@@ -633,7 +633,7 @@ Il parametro $W_{\text{LG, param}}$ è definito come:
 W_{\text{LG, param}} = 0.044 \cdot W_{\text{TO}} - 672
 \end{equation*}
 
-\paragraph{Propulsione}
+\paragraph*{Propulsione}
 
 Il peso del sistema propulsivo comprende motori e gondole:
 
@@ -649,7 +649,7 @@ W_{\text{engine}} = \frac{\left(T/W\right) \cdot W_{\text{TO}}}{5.5}
 W_{\text{prop}} = W_{\text{nac}} + W_{\text{engine}}
 \end{equation*}
 
-\paragraph{Sistemi}
+\paragraph*{Sistemi}
 
 Il peso dei sistemi include i seguenti contributi:
 
@@ -672,7 +672,7 @@ Il peso dei sistemi include i seguenti contributi:
     \item \textbf{Sistema motore:} \begin{equation*} W_{\text{engine sys}} = 133 \cdot N_{\text{prop}} \end{equation*}
 \end{itemize}
 
-\paragraph{Arredi e Servizi}
+\paragraph*{Arredi e Servizi}
 
 Il peso degli arredi e dei servizi per i passeggeri è calcolato come:
 
@@ -686,7 +686,7 @@ Il peso dei servizi include contributi come catering e assistenza ai passeggeri:
 W_{\text{services}} = 2.529 \cdot N_{\text{passeggeri}} \cdot \left(\frac{\text{Range}}{M_{\text{cruise}}}\right)^{0.225}
 \end{equation*}
 
-\paragraph{Equipaggio}
+\paragraph*{Equipaggio}
 
 Il peso dell'equipaggio è calcolato considerando i due piloti ed i quattro assistenti di volo:
 
@@ -694,7 +694,7 @@ Il peso dell'equipaggio è calcolato considerando i due piloti ed i quattro assi
 W_{\text{crew}} = 2 \cdot 225 + 4 \cdot 155
 \end{equation*}
 
-\paragraph{OEW totale}
+\paragraph*{OEW totale}
 
 Il peso operativo a vuoto è infine calcolato sommando tutti i contributi:
 
@@ -706,7 +706,7 @@ Il peso operativo a vuoto è infine calcolato sommando tutti i contributi:
     \end{split} 
 \end{equation*}
 
-\paragraph{Payload}
+\paragraph*{Payload}
 Il carico pagante del velivolo è composto da passeggeri e relativi bagagli, e merci. 
 
 Come anticipato nel calcolo del peso preliminare, il peso di un singolo passeggero è 79.4 kg e il suo bagaglio, per un volo di corto-medio raggio, 13.6 kg; ciò porta ad una massa totale dei passeggeri di $\mathbf{16740 \textbf{ kg}}$.
@@ -715,7 +715,7 @@ Calcolando il volume della stiva dell'aereo, si è stimato che possa contenere c
 
 Il peso totale del payload si attesta quindi a $\mathbf{22415 \textbf{ kg}}$.
 
-\subsubsection{Prestazioni in Missione}
+\subsection{Prestazioni in Missione}
 L'ultimo step del ciclo è ricalcolare le prestazioni in missione, in particolare il consumo di carburante. Per ciò, si riutilizzano le formule di Breguet già usate nel calcolo preliminare, ma stavolta con la "vera" efficienza aerodinamica. si ricalcolano in particolare le differenze di peso (quindi i consumi di carburante) in crociera, loiter e diversione. 
 \begin{align*}
     \text{Autonomia chilometrica: }&\dfrac{W_{f}}{W_i} = e^{-\dfrac{c\Delta x}{VE}}\\
@@ -785,12 +785,13 @@ Il costo totale orario è quindi la somma di tutti questi contributi.
 
 Infine, è stato valutato l'impatto ambientale del velivolo sotto forma di emissioni di CO\textsubscript{2}, considerando che per ogni kg di carburante bruciato vengono prodotti 3.16 kg di CO\textsubscript{2}.
 
-\section{Risultati}
-Delle 2160 possibili combinazioni delle variabili di design, solo 412 configurazioni rispettano il vincolo del carico alare massimo calcolato dal \textit{matching chart} e dell'apertura alare massima di 36 metri. 
 
-Si sono raccolti i risultati nella seguente \textbf{matrice delle configurazioni}:
 
 \begin{landscape}
+    \section{Risultati}
+    Delle 2160 possibili combinazioni delle variabili di design, solo 412 configurazioni rispettano il vincolo del carico alare massimo calcolato dal \textit{matching chart} e dell'apertura alare massima di 36 metri. 
+
+    Si sono raccolti i risultati nella seguente \textbf{matrice delle configurazioni}:
     \vspace*{\fill}
     \begin{table}[H]
         \centering
@@ -877,8 +878,7 @@ Si sono raccolti i risultati nella seguente \textbf{matrice delle configurazioni
             \hline
         \end{tabular}
         }
-        \caption{Matrice delle Configurazioni}
-        Estratto delle configurazioni generate variando i parametri di design. Le righe sono ordinate per block fuel crescente. \newline
+        \caption{Matrice delle Configurazioni: estratto delle configurazioni generate variando i parametri di design. Le righe sono ordinate per block fuel crescente.}
         La configurazione scelta è evidenziata in celeste.
         \label{tab:configurazioni}
     \end{table}
@@ -920,90 +920,151 @@ Un altro parametro direttamente collegato ai costi, apparentemente anche meglio 
     \begin{figure}[H] \centering \includegraphics[width=0.8\textwidth]{E1/Immagini/block fuel = f(WTO, lambda).png} \caption{Scatter plot di block fuel e MTOW raggruppati per rapporto di rastremazione} \end{figure}
 \end{itemize}
 
-Di notevole considerazione è un outlier che si distingue per le ottime prestazioni, ovvero la configurazione con $W/S=650\,kg/m^2$, $AR=10$, $M=0.76$, $\Lambda_{25}=20^\circ$, $t/c=10\%$ e $\lambda=0.23$. È l'unica configurazione con allungamento alare pari a 10 che rientra nel vincolo dell'apertura alare massima di 36 metri; risulta quella con efficienza in crociera maggiore, minimo block fuel, PREE massimo e DOC minimi.
-Riassumendo, si nota che i valori più bassi di block fuel e MTOW si hanno per: carico alare di 600 o 650 kg/m$^2$, aspect ratio di 9, angolo di freccia di $20\si{\degree}$ o $25\si{\degree}$, spessore del profilo del 10\% e Mach di crociera di 0.76, mentre la sensibilità al $\lambda$ è molto bassa.
-
+\subsection*{Analisi di un Outlier Significativo}
+Di notevole considerazione è un outlier che si distingue per le ottime prestazioni, ovvero la configurazione con $W/S=650\,kg/m^2$, $AR=10$, $M=0.76$, $\Lambda_{25}=20^\circ$, $t/c=10\%$ e $\lambda=0.23$. 
+Questa è l'unica configurazione con allungamento alare pari a 10 che rientra nel vincolo geometrico dell'apertura alare massima di 36 metri. Dai risultati, è la configurazione tra tutte con efficienza in crociera maggiore, minimo block fuel, PREE massimo e DOC minimi.
+Nonostante le prestazioni superiori, serve valutare l'efficacia di questa soluzione. Data la sua vicinanza ai limiti geometrici (risulta appena 2 cm sotto il limite di apertura), l'elevato allungamento (molto superiore a quello degli aerei esistenti della stessa categoria), la ridotta superficie alare (che compromette le prestazioni a basse velocità), potrebbe essere conveniente optare per una configurazione più conservativa.
+\subsection*{Sintesi dei Trend}
+Riassumendo, si nota che i valori più bassi di block fuel e MTOW si hanno per: carico alare di 600 o 650 $kg/m^2$, aspect ratio di 9, angolo di freccia di $20\si{\degree}$ o $25\si{\degree}$, spessore del profilo del 10\% e Mach di crociera di 0.76, mentre la sensibilità al rapporto di rastremazione $\lambda$ è molto bassa.
+\newpage
 \subsection{Scelta della Configurazione}
 Sulla base dei risultati ottenuti, la configurazione finale scelta è:
 \[ W/S = 600\,kg/m^2, \quad AR=9, \quad M=0.76, \quad \Lambda_{25}=20^\circ, \quad t/c=0.10 \]
 
-Sulla base dell'analisi dei costi e delle prestazioni, è stata selezionata la configurazione che minimizza il \textbf{Direct Operating Cost (DOC)} e il consumo di carburante, garantendo al contempo un peso al decollo contenuto.
-La scelta è ricaduta sulla seguente combinazione di parametri:
-
-\begin{table}[H]
+Per validare questa scelta, è stato effettuato un confronto diretto con altre configurazioni "ottime":
+\begin{enumerate}
+    \item \textbf{Minimo DOC:} La configurazione che minimizza i costi operativi diretti in assoluto.
+    \item \textbf{Minimo MTOW:} La configurazione più leggera possibile.
+    \item \textbf{Minimo Block Fuel:} La configurazione che consuma meno in una missione standard.
+    \item \textbf{Miglior Alta Velocità:} La configurazione con $M = 0.82$ che presenta il DOC minore.
+\end{enumerate}
+\begin{figure}[H]
     \centering
-    \renewcommand{\arraystretch}{1.2}
-    \begin{tabular}{lc}
-    \toprule
-    \textbf{Parametro} & \textbf{Valore Scelto} \\
-    \midrule
-    Carico Alare ($W/S$) & $600 \, kg/m^2$ \\
-    Aspect Ratio ($AR$) & 9 \\
-    Mach di Crociera ($M$) & 0.76 \\
-    Spessore relativo ($t/c$) & 0.10 \\
-    Angolo di freccia ($\Lambda_{25}$) & $20^\circ$ \\
-    Rapporto di rastremazione ($\lambda$) & 0.23 \\
-    \bottomrule
-    \end{tabular}
-    \caption{Parametri della configurazione scelta}
-\end{table}
+    \includegraphics[width=\linewidth]{E1/Immagini/confronto_ottimizzato.png}
+    \caption{Confronto tra la configurazione scelta e gli ottimi globali.}
+\end{figure}
+Questa analisi evidenzia che:
 
-Come anticipato, la scelta di mantenere un carico alare di $600\,kg/m^2$ invece di spingersi verso il limite superiore di 650 o 700 è dettata dalla volontà di privilegiare l'efficienza aerodinamica operativa (minori consumi) rispetto al puro risparmio di peso strutturale statico. Inoltre, un carico alare inferiore garantisce migliori margini di manovra e prestazioni in salita e in atterraggio.
+\begin{itemize}
+    \item \textbf{Confronto con Minimo DOC:} Il grafico mostra che la configurazione ottimizzata per il DOC (ottenuta incrementando la velocità a $M=0.80$) offre un vantaggio economico minimo (inferiore allo 0.9\%) rispetto alla scelta effettuata. Tale vantaggio è però controbilanciato da un peggioramento delle prestazioni fisiche: si osserva infatti un aumento sia del peso al decollo (+1.5\%) che del consumo di carburante (+1.5\%), dovuto alla maggiore resistenza d'onda a Mach più elevati.
+    
+    \item \textbf{Confronto con Minimi Fisici (MTOW e Fuel):} Le configurazioni che minimizzano strettamente il peso (minimo MTOW) e il consumo (minimo block fuel) coincidono con un carico alare più elevato ($W/S=650\,kg/m^2$). Il confronto evidenzia che la configurazione scelta ($W/S=600\,kg/m^2$) paga una penalità estremamente contenuta rispetto a questi ottimi assoluti (differenze dei parametri inferiori all'1\%). Questa minima perdita di "ottimao matematico" è bilanciata e giustificata dal vantaggio di avere un'ala con superficie maggiore, che garantisce un volume interno superiore per il carburante e migliori prestazioni in decollo e atterraggio.
+    
+    \item \textbf{Confronto con Alta Velocità:} Il confronto con la migliore configurazione veloce ($M = 0.82$) conferma l'impatto negativo dell'aumento di Mach: il prezzo da pagare per la maggiore velocità è un incremento netto del peso (+1.5\%), del consumo (+7.1\%) e una riduzione dell'efficienza PREE (-6.6\%), rendendo questa opzione non competitiva.
+\end{itemize}
+
+Per confermare la robustezza della scelta, è stata eseguita un'ulteriore analisi "puntuale", confrontando la configurazione scelta con varianti che differiscono per una singola variabile di design.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1\linewidth]{E1/Immagini/Analisi comparativa.png}
+    \caption{Confronto tra la configurazione scelta e varianti su singole variabili di design.}
+\end{figure}
+
+L'analisi permette di trarre importanti conclusioni sulla sensibilità locale:
+\begin{enumerate}
+    \item \textbf{Variazione del Carico Alare ($W/S=650\,kg/m^2$ vs $600\,kg/m^2$):} Aumentando solo il carico alare a 650, si ottiene una riduzione marginale del MTOW (-0.6\%) ma un aumento del block fuel (+0.8\%). Questo conferma che il punto di ottimo è sostanzialmente piatto rispetto al carico alare. La scelta di 600, pur leggermente più pesante, è preferibile per garantire margini operativi e volume nei serbatoi.
+    
+    \item \textbf{Variazione della Freccia ($\Lambda=25^\circ$ vs $20^\circ$):} Aumentare la freccia a $25^\circ$ mantenendo il Mach a 0.76 risulta controproducente. Non vi è alcun vantaggio significativo in termini di resistenza d'onda, poiché a M=0.76 rappresenta meno del 4\% del $C_D$ complessivo, mentre si paga un aumento del peso strutturale che porta ad un incremento del OEW (+1.3\%), mentre la differenza di block fuel rientra nel margine di errore. Questo valida la scelta di una freccia moderata ($20^\circ$) per questo regime di volo.
+    
+    \item \textbf{Costo della Velocità (Best Fuel $M \ge 0.80$):} Anche selezionando la \textit{migliore} configurazione possibile ad alta velocità (ottimizzata in tutte le altre variabili per minimizzare il consumo), il salto da $M=0.76$ a $M = 0.80$ comporta un aumento del block fuel e del MTOW. Questo dimostra che non esiste una combinazione di parametri capace di rendere efficiente il volo a $M=0.80$ quanto quello a $M=0.76$ per questo specifico velivolo.
+\end{enumerate}
+
+In conclusione, la configurazione scelta rappresenta il \textbf{miglior compromesso} tecnico-economico, privilegiando la riduzione dei consumi e dei costi operativi, in linea con le attuali esigenze del mercato aeronautico civile.
 
 \newpage
-\subsection{Descrizione del Velivolo}
-Il velivolo risultante è un bimotore a fusoliera stretta (\textit{narrow-body}) destinato al trasporto di 180 passeggeri su rotte a medio raggio.
-L'architettura è convenzionale: ala bassa a sbalzo, impennaggi in coda classici e motori turbofan installati su piloni sotto le ali.
+\section{Descrizione del Velivolo}
+Il velivolo risultante dall'ottimizzazione è un bimotore \textit{narrow body} destinato al trasporto di 180 passeggeri su rotte a medio raggio.
+La configurazione generale è di tipo convenzionale: ala bassa a sbalzo, impennaggi in coda classici e motori turbofan installati su piloni sotto le ali.
+
+\subsection{Configurazione Interna e Fusoliera}
+La fusoliera è stata dimensionata per ospitare 180 passeggeri in classe unica, con una configurazione dei sedili 3+3. Sono previste 4 uscite di emergenza sull'ala, oltre alle porte anteriori e posteriori, per garantire l'evacuazione come da normativa.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{E1/Immagini/domi/250120_Aereo 1_pianta_CORRETTA.jpg}
-    \caption{Vista in pianta del velivolo configurato}
-    \label{fig:pianta_aereo1}
+    \includegraphics[width=1\linewidth]{E1/Immagini/domi/250120_Aereo 1_pianta2_CORRETTA.jpg}
+    \caption{Layout interno della cabina passeggeri}
 \end{figure}
 
-L'ala ha una pianta trapezoidale con una freccia moderata di $20^\circ$ e un'apertura di 35.6 metri, che le permette di rientrare (seppur al limite) nei box aeroportuali di classe C (max 36 m). L'elevato allungamento alare ($AR=9$) garantisce un'ottima efficienza aerodinamica, riducendo la resistenza indotta.
+La stiva è suddivisa in compartimenti anteriori e posteriori; le dimensioni permettono di accogliere 5 container standard LD3-45, oltre ai bagagli dei passeggeri.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=\linewidth]{E1/Immagini/domi/250119_Aereo 1_ala_disegno tecnico.jpg}
-    \caption{Disegno tecnico della semi-ala}
-    \label{fig:ala_tecnico_aereo1}
+    \includegraphics[width=0.9\linewidth]{E1/Immagini/domi/stiva.jpg}
+    \caption{Sezione longitudinale della fusoliera}
 \end{figure}
 
-Di seguito si riporta la scheda tecnica riassuntiva con i pesi e le prestazioni finali calcolate dal codice di ottimizzazione:
+\subsection{Geometria Alare}
+L'ala ha una pianta trapezoidale con angolo di freccia di $20^\circ$ al 25\% della corda e apertura di 35.56 metri, valore che permette al velivolo di rientrare nei box aeroportuali di classe C. L'elevato allungamento alare ($AR=9$) è stato scelto per massimizzare l'efficienza aerodinamica riducendo la resistenza indotta.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{E1/Immagini/domi/250119_Aereo 1_ala_disegno tecnico.jpg}
+    \caption{Disegno in pianta della semi-ala con quote principali.}
+\end{figure}
+
+Di seguito si alcune viste tridimensionali della geometria alare generata:
+
+\begin{figure}[H]
+    \centering
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{E1/Immagini/domi/250119_Aereo 1_ala_1.jpg}
+        \caption{Vista isometrica dell'ala.}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.48\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{E1/Immagini/domi/250119_Aereo 1_ala_3.jpg}
+        \caption{Dettaglio del profilo alare.}
+    \end{minipage}
+\end{figure}
+
+\subsection{Scheda Riassuntiva}
+Di seguito si riportano i parametri fondamentali della configurazione scelta.
 
 \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.3}
-    \begin{tabular}{|l|c|}
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Dati Generali}} \\
-    \hline
-    Massa Massima al Decollo (MTOW) & 84323 kg \\
-    Massa Operativa a Vuoto (OEW) & 43370 kg \\
-    Carburante Missione (Block Fuel) & 16874 kg \\
-    Carico Pagante Max (Payload) & 22415 kg \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Geometria}} \\
-    \hline
-    Superficie Alare ($S$) & $140.5 \, m^2$ \\
+    \begin{tabular}{lr}
+    \toprule
+    \multicolumn{2}{c}{\textbf{Dati Generali e Pesi}} \\
+    \midrule
+    Massa Massima al Decollo (MTOW) & $84\,323$ kg \\
+    Massa Operativa a Vuoto (OEW) & $43\,370$ kg \\
+    Block Fuel & $16\,874$ kg \\
+    Carico Pagante Max & $22\,415$ kg \\
+    \midrule
+    \multicolumn{2}{c}{\textbf{Geometria}} \\
+    \midrule
+    Superficie Alare ($S$) & $140.50 \, m^2$ \\
     Apertura Alare ($b$) & $35.56 \, m$ \\
+    Allungamento Alare ($AR$) & 9 \\
+    Angolo di Freccia ($\Lambda_{25}$) & $20^\circ$ \\
     Lunghezza Fusoliera & $38.0 \, m$ \\
     Diametro Fusoliera & $4.10 \, m$ \\
-    Superficie Impennaggio Orizzontale & $35.1 \, m^2$ \\
-    Superficie Impennaggio Verticale & $25.3 \, m^2$ \\
-    \hline
-    \multicolumn{2}{|c|}{\textbf{Propulsione e Prestazioni}} \\
-    \hline
-    Spinta al decollo (Totale) & $248.4 \, kN$ \\
+    Superficie Impennaggio Orizzontale & $35.12 \, m^2$ \\
+    Superficie Impennaggio Verticale & $25.29 \, m^2$ \\
+    \midrule
+    \multicolumn{2}{c}{\textbf{Propulsione e Prestazioni}} \\
+    \midrule
+    Spinta al decollo (Totale) & $25\,328 \, kgf \,(248.5\,kN)$ \\
     Rapporto Spinta/Peso ($T/W$) & 0.30 \\
-    Efficienza in Crociera ($E$) & 15.9 \\
-    Consumo Specifico Crociera ($SFC$) & $0.5 \, kg/kg/h$ \\
+    Mach di Crociera ($M$) & 0.76 \\
+    Efficienza in Crociera ($E$) & 15.91 \\
     DOC & $0.0424 \, \$/pax/km$ \\
-    \hline
+    \bottomrule
     \end{tabular}
-    \caption{Scheda tecnica finale del Velivolo Convenzionale}
+    \caption{Scheda tecnica finale del Velivolo Convenzionale.}
+    \label{tab:scheda_tecnica}
 \end{table}
 
-Il velivolo soddisfa pienamente i requisiti di progetto, posizionandosi come una valida alternativa agli attuali aeromobili di riferimento, con un focus particolare sulla riduzione dei costi operativi diretti attraverso un'attenta ottimizzazione dei parametri alari.
+\subsection{Diagramma Payload-Range}
+La capacità operativa del velivolo è sintetizzata nel diagramma Payload-Range. Il velivolo è in grado di soddisfare pienamente il requisito di missione: alla distanza di progetto di $4\,500$ km, la capacità di carico residua è di $20\,505$ kg, ampiamente superiore ai $16\,740$ kg necessari per trasportare i 180 passeggeri, permettendo di imbarcare anche una quota significativa di cargo ($3\,765$ kg residui) o di operare su tratte ancora più lunghe a pieno carico passeggeri. Il punto di massimo raggio con payload nullo (ferry range) si estende fino a quasi $6\,800$ km, confermando l'eccellente flessibilità operativa.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{E1/Immagini/payload_range_finale.png}
+    \caption{Diagramma payload-range per la configurazione scelta.}
+\end{figure}

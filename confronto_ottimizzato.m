@@ -61,7 +61,7 @@ row_min_wto = T(idx_min_wto, :);
 row_min_fuel = T(idx_min_fuel, :);
 
 % E. Migliore Alta Velocità (M >= 0.80 con minimo DOC)
-idx_high_speed = find(T.M >= 0.80);
+idx_high_speed = find(T.M > 0.80);
 [~, relative_idx] = min(T.DOC(idx_high_speed));
 idx_best_fast = idx_high_speed(relative_idx);
 row_fast = T(idx_best_fast, :);

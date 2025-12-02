@@ -111,7 +111,8 @@ if ~isempty(idx_fast_candidates)
     lbl_fast = sprintf('M=%.2f, \\Lambda=%.0f^\\circ', row_C.M, row_C.sweep25);
     set(gca, 'XTickLabel', {lbl_fast, 'M=0.76'}, 'FontWeight', 'bold', 'FontSize', 12);
     title('Confronto Alta Velocità');
-    grid on; ylim([0 9e4*1.0]);
+    legend({'MTOW', 'Fuel'}, 'Location', 'north');
+    grid on; ylim([0 9e4*1.05]);
     
     % Aggiunta Etichette Numeriche
     for k = 1:length(bC)
